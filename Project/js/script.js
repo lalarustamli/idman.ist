@@ -152,3 +152,10 @@ $('.box-item').hover(function () {
       $('.news-item').show().not($('.news-item').has(dataSelectorval)).hide()
 
   }
+
+
+  var tx=  $("#search-form-1").attr("text");
+  console.log(tx);
+
+
+  
