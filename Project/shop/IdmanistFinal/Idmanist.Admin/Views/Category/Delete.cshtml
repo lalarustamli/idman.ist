@@ -1,0 +1,25 @@
+﻿@model IdmanistData.Model.Category
+@{
+    ViewBag.Title = "Kateqoriya silmə";
+}
+
+<h2>Kateqoriya silmə</h2>
+<h3>Bu kateqoriyanı silmək istədiyinizdən əminsinizmi?</h3>
+<div class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.CategoryName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CategoryName)
+    </dd>
+</div>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+    <div>
+        <input type="submit" value="Sil" class="btn btn-default" /> 
+        @Html.ActionLink("Siyahıya qayıt", "Index")
+    </div>
+}

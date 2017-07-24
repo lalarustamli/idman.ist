@@ -1,0 +1,52 @@
+﻿@model IdmanistData.Model.Product
+@{
+    ViewBag.Title = "Məhsul detalları";
+}
+
+<h2>Məhsul detalları</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+    </dl>
+    @{
+        var productFirstImage = Model.ProductImages.FirstOrDefault();
+        if (productFirstImage != null)
+        {
+           <dl class="dl-horizontal">
+               <dt>
+
+               </dt>
+               <dd>
+                   <div class="form-group">
+                       <div class="col-md-10">
+                           <img src="@string.Format("data: {0}; base64, {1} ", productFirstImage.ContentType, Convert.ToBase64String(productFirstImage.Content))" alt="Alternate Text" />
+                           @*@Html.Base64Image(productFirstImage)*@
+                           </div>
+                       </div>
+
+               </dd>
+           </dl>
+        }
+
+    }
+
+    <p>
+        @Html.ActionLink("Dəyişdir","Edit", new { id= Model.ProductId}) |
+        @Html.ActionLink("Siyahıya qayıt", "Index")
+    </p>
+</div>
+

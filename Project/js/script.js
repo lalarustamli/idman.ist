@@ -156,6 +156,3 @@ $('.box-item').hover(function () {
 
   var tx=  $("#search-form-1").attr("text");
   console.log(tx);
-
-
-  

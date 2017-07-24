@@ -1,0 +1,13 @@
+﻿@model Idmanist.Web.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Məhsullar ana səhifə";
+}
+<div class="row">
+    @Html.Partial("MainMenu", Model.Categories)
+
+    <div class="col-md-9">
+        @Html.Partial("ProductList",Model.Products)
+    </div>
+</div>
+
+

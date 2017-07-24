@@ -1,0 +1,46 @@
+﻿@model IEnumerable<IdmanistData.Model.ProductFeature>
+@{
+    ViewBag.Title = "Məhsul xüsisiyyətləri";
+}
+
+<h2>@ViewBag.SelectedProduct.ProductName Xüsusiyyətləri</h2>
+<p>
+    @Html.ActionLink("Yeni xüsusiyyət", "Create", new { id = ViewBag.SelectedProduct.ProductId}, new { })
+     
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FeatureName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeatureValue)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @Html.Hidden("selectedProductId",(string)ViewBag.SelectedProduct.ProductId.ToString(), new { })
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeatureName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeatureValue)
+            </td>
+            <td>
+                @Html.ActionLink("Dəyişdir", "Edit", new { id = item.ProdcutFeatureId, productId= ViewBag.SelectedProduct.ProductId })  |
+                @Html.ActionLink("Detallar", "Details", new { id = item.ProdcutFeatureId, productId = ViewBag.SelectedProduct.ProductId })  |
+                @Html.ActionLink("Sil", "Delete", new { id = item.ProdcutFeatureId })  |          
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Siyahıya qayıt", "Index", "Product")
+</div>
+

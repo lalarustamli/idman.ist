@@ -1,0 +1,38 @@
+﻿@model IdmanistData.Model.Category
+
+@{
+    ViewBag.Title = "Create";
+
+}
+
+<h2>Yeni Kateqoriya</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryName, new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CategoryName, new {htmlAttributes= new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2  col-md-10">
+                <input accept="image/*" type="submit" value="Yadda saxla" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Siyahıya qayıt", "Index")
+</div>
+
+@section scripts
+{
+@Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,23 @@
+﻿@model IdmanistData.Model.Category
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Kateqoriya detalları</h2>
+
+<div>
+    <dl>
+        <dt>    
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Dəyişdir","Edit", new {id = Model.CategoryId }) |
+    @Html.ActionLink("Siyahıya qayıt", "Index");
+</p>
+

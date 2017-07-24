@@ -27,10 +27,15 @@
 }
 
 #myTable tr {
-  
+
   border-bottom: 1px solid #ddd;
 }
 
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
+}
+
+#slider-container {
+    width:350px;
+    margin-left:30px;
 }

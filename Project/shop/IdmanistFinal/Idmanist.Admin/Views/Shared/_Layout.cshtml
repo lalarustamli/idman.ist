@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <h1></h1>
+   <div class="navbar">
+       <div class="container">
+           @Html.ActionLink("Mağaza","Index","Home", new { }, new { @class="navbar-brand"})
+       </div>
+   </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-2">
+                <hr/>
+                <ul id ="adminMenu" class="list-unstyled">
+                    <li>
+                        <a href="/"><i class="glyphicon glyphicon-home">Ana Səhifə</i></a> 
+                    </li>
+                    <li>
+                        <a href="/category"><i class="glyphicon glyphicon-book">Kateqoriyalar</i></a>
+                    </li>
+                    <li>
+                        <a href="/product"><i class="glyphicon glyphicon-asterisk">Məhsullar</i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <hr/>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
