@@ -1,0 +1,32 @@
+﻿@model IEnumerable<IdmanistNews.News>
+@{
+    Layout = null;
+}
+@helper TitleDefiner(string title)
+{
+if (title.Length>15)
+{
+        <marque>@title</marque>
+}
+else
+{
+    @title
+}
+}
+<aside id="block_front_slider" class="block">
+    <div class="content ad-gallery">
+        <div class="ad-image-wrapper"></div>
+        <div class="ad-controls"></div>
+        <div class="ad-nav">
+            <div class="ad-thumbs">
+                <ul class="ad-thumb-list">
+                    @foreach (var news in Model)
+                    {
+                        <li><a href="@news.img_route"><img src="@news.img_route" title="@TitleDefiner(news.title) ..." alt="@news.description.Substring(0,news.description.Length) ..." /></a></li>
+                    }
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

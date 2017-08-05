@@ -65,7 +65,7 @@ namespace Idmanist.Admin.Controllers
             }
             _categoryRepository.Update(category);
             _categoryRepository.Save();
-            return RedirectToAction("Index");
+            return View(category);
 
         }
 

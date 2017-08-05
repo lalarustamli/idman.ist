@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+ <!-- content top -->
+<div id="content_top">
+    <div class="region">
+        <aside id="block_breaking_news" class="block">
+            <h3 class="block_title">Breaking News:</h3>
+            <div class="content">
+                <ul>
+                    <li><a href="#">Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede.</a></li>
+                    <li><a href="#">Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est.</a></li>
+                    <li><a href="#">Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipis.</a></li>
+                </ul>
+            </div>
+        </aside>
+       @{
+           Html.RenderAction("SliderGetir");
+           Html.RenderAction("EnSonXeberler");
+           Html.RenderAction("UstTab");
+           }
+       
+        <section id="block_editors_choice" class="block">
+            <h3 class="block_title">Editor's choice</h3>
+            <div class="content">
+                <ul>
+                    <li>
+                        <div class="editors_inner2">
+                            <article class="editors_inner">
+                                <div class="editors_left"><img src="~/Content/images/content/editors_choice_3.jpg" alt="Photo" /></div>
+                                <div class="editors_right">
+                                    <h4 class="title"><a href="#">Suspendisse sollicitudin velit sed leo.</a></h4>
+                                    <p class="date">
+                                        <time datetime="2012-01-24">Jan 24, 2012</time>
+                                        <span class="comments_count"><a href="#">37</a></span>
+                                    </p>
+                                    <p>Quisque diam lorem, interdum vitae, dapibus...</p>
+                                </div>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="editors_inner2">
+                            <article class="editors_inner">
+                                <div class="editors_left"><img src="images/content/editors_choice_2.jpg" alt="Photo" /></div>
+                                <div class="editors_right">
+                                    <h4 class="title"><a href="#">Ut pharetra augue nec.</a></h4>
+                                    <p class="date">
+                                        <time datetime="2012-01-20">Jan 20, 2012</time>
+                                        <span class="comments_count"><a href="#">18</a></span>
+                                    </p>
+                                    <p>Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum...</p>
+                                </div>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="editors_inner2">
+                            <article class="editors_inner">
+                                <div class="editors_left"><img src="images/content/editors_choice_3.jpg" alt="Photo" /></div>
+                                <div class="editors_right">
+                                    <h4 class="title"><a href="#">Nam elit agna,endrerit sit amet.</a></h4>
+                                    <p class="date">
+                                        <time datetime="2012-01-14">Jan 14, 2012</time>
+                                        <span class="comments_count"><a href="#">8</a></span>
+                                    </p>
+                                    <p>Vestibulum iaculis lacinia est. Proin dictum...</p>
+                                </div>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="editors_inner2">
+                            <article class="editors_inner">
+                                <div class="editors_left"><img src="images/content/editors_choice_4.jpg" alt="Photo" /></div>
+                                <div class="editors_right">
+                                    <h4 class="title"><a href="#">Suspendisse sollicitudin velit sed leo.</a></h4>
+                                    <p class="date">
+                                        <time datetime="2012-01-24">Jan 24, 2012</time>
+                                        <span class="comments_count"><a href="#">37</a></span>
+                                    </p>
+                                    <p>Quisque diam lorem, interdum vitae, dapibus...</p>
+                                </div>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="editors_inner2">
+                            <article class="editors_inner">
+                                <div class="editors_left"><img src="images/content/editors_choice_5.jpg" alt="Photo" /></div>
+                                <div class="editors_right">
+                                    <h4 class="title"><a href="#">Ut pharetra augue nec.</a></h4>
+                                    <p class="date">
+                                        <time datetime="2012-01-20">Jan 20, 2012</time>
+                                        <span class="comments_count"><a href="#">18</a></span>
+                                    </p>
+                                    <p>Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum...</p>
+                                </div>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="editors_inner2">
+                            <article class="editors_inner">
+                                <div class="editors_left"><img src="images/content/editors_choice_6.jpg" alt="Photo" /></div>
+                                <div class="editors_right">
+                                    <h4 class="title"><a href="#">Nam elit agna,endrerit sit amet.</a></h4>
+                                    <p class="date">
+                                        <time datetime="2012-01-14">Jan 14, 2012</time>
+                                        <span class="comments_count"><a href="#">8</a></span>
+                                    </p>
+                                    <p>Vestibulum iaculis lacinia est. Proin dictum...</p>
+                                </div>
+                            </article>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- end content top -->
+
