@@ -31,7 +31,7 @@ namespace IdmanistNews
         public int categoryId { get; set; }
         public string img_route { get; set; }
         public string thumbnail_route { get; set; }
-        public string VideoRoute { get; set; } 
+        public string video_Route { get; set; } 
         public int seen { get; set; }
         public System.DateTime publish_date { get; set; }
     
