@@ -6,22 +6,12 @@
 <div id="block_content_top_tabs" class="block">
     <ul>
         <li><a href="#block_video"><span class="bg">Video</span></a></li>
-        <li><a href="#block_opinions"><span class="bg">Opinions</span></a></li>
+        <li><a href="#block_opinions"><span class="bg">Fikirlər</span></a></li>
         <li><a href="#block_extra"><span class="bg">Extra</span></a></li>
-        <li><a href="#block_poll"><span class="bg">Poll</span></a></li>
+        <li><a href="#block_poll"><span class="bg">Sorğu</span></a></li>
     </ul>
-    <aside id="block_video" class="content">
-        <div class="video"></div>
-        <ul>
-            <li class="vimeo"><a href="http://vimeo.com/36597329"></a></li>
-            <li class="vimeo"><a href="http://vimeo.com/36597204"></a></li>
-            <li class="vimeo"><a href="http://vimeo.com/36597088"></a></li>
-            <li class="vimeo"><a href="http://vimeo.com/36596665"></a></li>
-            <li class="vimeo"><a href="http://vimeo.com/36597718"></a></li>
-            <li class="vimeo"><a href="http://vimeo.com/36597442"></a></li>
-        </ul>
-        <p><a href="#" class="view_all"><span><span>All Videos</span></span></a></p>
-    </aside>
+    @{Html.RenderAction("Tab_VideoGetir");
+    }
     <aside id="block_opinions" class="content">
         <ul>
             <li>

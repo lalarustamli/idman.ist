@@ -1335,6 +1335,7 @@
     <Content Include="Views\Home\SliderGetir.cshtml" />
     <Content Include="Views\Home\EnSonXeberler.cshtml" />
     <Content Include="Views\Home\UstTab.cshtml" />
+    <Content Include="Views\Home\Tab_VideoGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,5 +28,12 @@ namespace IdmanistNews.Controllers
         {
             return View();
         }
+
+        public ActionResult Tab_VideoGetir()
+        {
+            var videolar = db.News.OrderByDescending(x => x.publish_date).Take(8);
+            videolar = videolar.Where(x => x.typeId == 2 && x.VideoRoute != null);
+            return View(videolar);
+        }
     }
 }
