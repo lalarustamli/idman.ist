@@ -18,7 +18,7 @@ namespace IdmanistNews
         public aspnet_Users()
         {
             this.aspnet_PersonalizationPerUser = new HashSet<aspnet_PersonalizationPerUser>();
-            this.News = new HashSet<News>();
+            this.Opinions = new HashSet<Opinion>();
             this.aspnet_Roles = new HashSet<aspnet_Roles>();
         }
     
@@ -37,7 +37,7 @@ namespace IdmanistNews
         public virtual aspnet_Profile aspnet_Profile { get; set; }
         public virtual Author Author { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<News> News { get; set; }
+        public virtual ICollection<Opinion> Opinions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aspnet_Roles> aspnet_Roles { get; set; }
     }

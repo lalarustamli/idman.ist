@@ -2,7 +2,7 @@
 @{
     Layout = null;
 }
-
+@model IdmanistNews.Opinion
 <div id="block_content_top_tabs" class="block">
     <ul>
         <li><a href="#block_video"><span class="bg">Video</span></a></li>
@@ -10,40 +10,12 @@
         <li><a href="#block_extra"><span class="bg">Extra</span></a></li>
         <li><a href="#block_poll"><span class="bg">Sorğu</span></a></li>
     </ul>
-    @{Html.RenderAction("Tab_VideoGetir");
+    @{
+        Html.RenderAction("Tab_VideoGetir");
+        Html.RenderAction("Tab_FikirGetir");
+        Html.RenderAction("Tab_AnketGetir");
     }
-    <aside id="block_opinions" class="content">
-        <ul>
-            <li>
-                <article>
-                    <div class="photo"><a href="#"><img src="images/content/opinions_1.jpg" alt="Photo" /></a></div>
-                    <div class="details">
-                        <h4 class="title"><a href="#">Donec porta diam eu massa dictum elementum velit.</a></h4>
-                        <p class="date">
-                            <time datetime="2012-01-22">Jan 22, 2012</time>
-                            <span class="comments_count"><a href="#">27</a></span>
-                        </p>
-                    </div>
-                    <p class="text">Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit...</p>
-                    <p class="text"><a href="#" class="view_all"><span><span>Read More</span></span></a></p>
-                </article>
-            </li>
-            <li class="last">
-                <article>
-                    <div class="photo"><a href="#"><img src="images/content/opinions_2.jpg" alt="Photo" /></a></div>
-                    <div class="details">
-                        <h4 class="title"><a href="#">Quisque diam lorem, interdum vitae, dapibus ac..</a></h4>
-                        <p class="date">
-                            <time datetime="2012-01-24">Jan 24, 2012</time>
-                            <span class="comments_count"><a href="#">19</a></span>
-                        </p>
-                    </div>
-                    <p class="text">Sed laoreet aliquam leo. Ut tellus tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna...</p>
-                    <p class="text"><a href="#" class="view_all"><span><span>Read More</span></span></a></p>
-                </article>
-            </li>
-        </ul>
-    </aside>
+    
     <aside id="block_extra" class="content">
         <ul>
             <li>
@@ -72,41 +44,5 @@
             </li>
         </ul>
     </aside>
-    <aside id="block_poll" class="content">
-        <form action="#" method="post">
-            <h3>Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac?</h3>
-            <div id="edit-choice">
-                <div class="form-item">
-                    <input type="radio" value="1" name="choice" id="edit-choice-1" checked />
-                    <label for="edit-choice-1">Mauris accumsan</label>
-                </div>
-                <div class="form-item">
-                    <input type="radio" value="2" name="choice" id="edit-choice-2" />
-                    <label for="edit-choice-2">Nulla vel diam</label>
-                </div>
-                <div class="form-item">
-                    <input type="radio" value="3" name="choice" id="edit-choice-3" />
-                    <label for="edit-choice-3">Sed in lacus ut enim adipiscing</label>
-                </div>
-                <div class="form-item">
-                    <input type="radio" value="4" name="choice" id="edit-choice-4" />
-                    <label for="edit-choice-4">In pede mi, aliquet sit</label>
-                </div>
-                <div class="form-item">
-                    <input type="radio" value="5" name="choice" id="edit-choice-5" />
-                    <label for="edit-choice-5">Amet, euismod in</label>
-                </div>
-                <div class="form-item">
-                    <input type="radio" value="6" name="choice" id="edit-choice-6" />
-                    <label for="edit-choice-6">Mauris accumsan</label>
-                </div>
-                <div class="form-item">
-                    <input type="radio" value="7" name="choice" id="edit-choice-7" />
-                    <label for="edit-choice-7">Nulla vel diam</label>
-                </div>
-            </div>
-            <button type="submit"><span class="view_all"><span><span>Vote</span></span></span></button>
-            <a href="#" class="view_all"><span><span>Results</span></span></a>
-        </form>
-    </aside>
+    
 </div>

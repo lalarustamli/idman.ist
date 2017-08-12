@@ -1,0 +1,42 @@
+﻿@model IEnumerable<IdmanistNews.Opinion>
+@{
+    Layout = null;
+    int counter = 0;
+}
+
+<aside id="block_opinions" class="content">
+    <ul>
+        @foreach (var item in @Model)
+        {
+            <li @if (counter==Model.Count()-1)
+                {
+                Write("class='last'");
+                    counter++;
+                }>
+                <article>
+                    <div class="photo"><a href="/Author/AuthorDetail/@item.aspnet_User.Author.Name @item.aspnet_User.Author.Surname/@item.authorId"><img src="@item.aspnet_User.Author.img_Route" alt="Photo" /></a></div>
+                    <div class="details">
+                        <h4 class="title"><a href="/Opinion/ShowOpinions/@item.title/@item.id">@item.title</a></h4>
+                        <p class="date">
+                            <time datetime="2012-01-22">@item.opinion_date.ToString("dd MM yyyy")</time>
+                            <span class="comments_count"><a href="#">27</a></span>
+                        </p>
+                    </div>
+                    <p class="text">
+                    @if (item.description.Length > 100)
+                    {
+                        @item.description.Substring(0, 100)
+                        Write("...");
+                    }
+                    else
+                    {
+                        @item.description
+                    }
+                    </p>
+                    <p class="text"><a href="/Opinion/ShowOpinions/@item.title/@item.id" class="view_all"><span><span>Hamısına bax</span></span></a></p>
+                </article>
+            </li>
+        }
+        
+    </ul>
+</aside>

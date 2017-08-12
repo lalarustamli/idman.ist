@@ -8,7 +8,7 @@ namespace IdmanistNews.Controllers
 {
     public class HomeController : Controller
     {
-        Idmanist_XeberEntities1 db = new Idmanist_XeberEntities1();
+        Idmanist_XeberEntities db = new Idmanist_XeberEntities();
         
         public ActionResult Index()
         {
@@ -33,6 +33,17 @@ namespace IdmanistNews.Controllers
         {
             var videolar = db.News.Where(x => x.typeId == 2 && x.video_Route!= null).OrderByDescending(x => x.publish_date).Take(8);
             return View(videolar);
+        }
+
+        public ActionResult Tab_FikirGetir()
+        {
+            var fikirler = db.Opinions.OrderByDescending(x => x.opinion_date).Take(2);
+            return View(fikirler);
+        }
+        public ActionResult Tab_AnketGetir()
+        {
+            
+            return View();
         }
     }
 }

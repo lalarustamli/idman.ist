@@ -15,10 +15,10 @@ namespace IdmanistNews
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Idmanist_XeberEntities1 : DbContext
+    public partial class Idmanist_XeberEntities : DbContext
     {
-        public Idmanist_XeberEntities1()
-            : base("name=Idmanist_XeberEntities1")
+        public Idmanist_XeberEntities()
+            : base("name=Idmanist_XeberEntities")
         {
         }
     
@@ -27,6 +27,8 @@ namespace IdmanistNews
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Anket> Ankets { get; set; }
+        public virtual DbSet<AnketSecimler> AnketSecimlers { get; set; }
         public virtual DbSet<aspnet_Applications> aspnet_Applications { get; set; }
         public virtual DbSet<aspnet_Membership> aspnet_Membership { get; set; }
         public virtual DbSet<aspnet_Paths> aspnet_Paths { get; set; }
@@ -43,6 +45,7 @@ namespace IdmanistNews
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<NewsType> NewsTypes { get; set; }
+        public virtual DbSet<Opinion> Opinions { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<vw_aspnet_Applications> vw_aspnet_Applications { get; set; }

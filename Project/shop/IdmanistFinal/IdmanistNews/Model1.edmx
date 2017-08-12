@@ -5,6 +5,24 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Idmanist_XeberModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Anket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AnketSecimler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="anketId" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="vote_count" Type="int" Nullable="false" />
+          <Property Name="secim_sira" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -156,13 +174,13 @@
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="img_route" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="top_categoryId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Comment">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="newsId" Type="int" Nullable="false" />
+          <Property Name="opinionId" Type="int" />
+          <Property Name="newsId" Type="int" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ip" Type="nvarchar" MaxLength="16" Nullable="false" />
@@ -191,13 +209,14 @@
           <Property Name="title" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="content_text" Type="ntext" Nullable="false" />
-          <Property Name="authorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="authorId" Type="uniqueidentifier" />
           <Property Name="typeId" Type="int" Nullable="false" />
-          <Property Name="categoryId" Type="int" Nullable="false" />
-          <Property Name="img_route" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="thumbnail_route" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="categoryId" Type="int" />
+          <Property Name="img_route" Type="nvarchar" MaxLength="200" />
+          <Property Name="thumbnail_route" Type="nvarchar" MaxLength="200" />
           <Property Name="seen" Type="int" Nullable="false" />
           <Property Name="publish_date" Type="datetime" Nullable="false" />
+          <Property Name="video_Route" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="NewsTag">
           <Key>
@@ -213,6 +232,18 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Opinion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="opinion_date" Type="datetime" Nullable="false" />
+          <Property Name="authorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="likes" Type="int" Nullable="false" />
+          <Property Name="unlikes" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -512,6 +543,30 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Anket_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Anket" Type="Self.Anket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Anket">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnketSecimler_Anket">
+          <End Role="Anket" Type="Self.Anket" Multiplicity="1" />
+          <End Role="AnketSecimler" Type="Self.AnketSecimler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anket">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AnketSecimler">
+              <PropertyRef Name="anketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Author_aspnet_Users">
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
           <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
@@ -536,20 +591,8 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Category_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
-          <End Role="Category1" Type="Self.Category" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Category1">
-              <PropertyRef Name="top_categoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Comment_News">
-          <End Role="News" Type="Self.News" Multiplicity="1" />
+          <End Role="News" Type="Self.News" Multiplicity="0..1" />
           <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="News">
@@ -557,6 +600,18 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Principal>
             <Dependent Role="Comment">
               <PropertyRef Name="newsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Opinion">
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opinion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="opinionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -572,32 +627,8 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_News_aspnet_Users">
-          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
-          <End Role="News" Type="Self.News" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="aspnet_Users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="News">
-              <PropertyRef Name="authorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_News_Author">
-          <End Role="Author" Type="Self.Author" Multiplicity="1" />
-          <End Role="News" Type="Self.News" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Author">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="News">
-              <PropertyRef Name="authorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_News_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="News" Type="Self.News" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -641,6 +672,18 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Principal>
             <Dependent Role="NewsTag">
               <PropertyRef Name="tagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opinion_aspnet_Users">
+          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="authorId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1007,6 +1050,8 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Idmanist_XeberModelStoreContainer">
+          <EntitySet Name="Anket" EntityType="Self.Anket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnketSecimler" EntityType="Self.AnketSecimler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" Schema="dbo" store:Type="Tables" />
@@ -1025,6 +1070,7 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewsTag" EntityType="Self.NewsTag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewsType" EntityType="Self.NewsType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opinion" EntityType="Self.Opinion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo">
@@ -1162,6 +1208,14 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
+          <AssociationSet Name="FK_Anket_Category" Association="Self.FK_Anket_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Anket" EntitySet="Anket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnketSecimler_Anket" Association="Self.FK_AnketSecimler_Anket">
+            <End Role="Anket" EntitySet="Anket" />
+            <End Role="AnketSecimler" EntitySet="AnketSecimler" />
+          </AssociationSet>
           <AssociationSet Name="FK_Author_aspnet_Users" Association="Self.FK_Author_aspnet_Users">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="Author" EntitySet="Author" />
@@ -1170,25 +1224,17 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             <End Role="Category" EntitySet="Category" />
             <End Role="Author" EntitySet="Author" />
           </AssociationSet>
-          <AssociationSet Name="FK_Category_Category" Association="Self.FK_Category_Category">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="Category1" EntitySet="Category" />
-          </AssociationSet>
           <AssociationSet Name="FK_Comment_News" Association="Self.FK_Comment_News">
             <End Role="News" EntitySet="News" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Opinion" Association="Self.FK_Comment_Opinion">
+            <End Role="Opinion" EntitySet="Opinion" />
             <End Role="Comment" EntitySet="Comment" />
           </AssociationSet>
           <AssociationSet Name="FK_Image_News" Association="Self.FK_Image_News">
             <End Role="News" EntitySet="News" />
             <End Role="Image" EntitySet="Image" />
-          </AssociationSet>
-          <AssociationSet Name="FK_News_aspnet_Users" Association="Self.FK_News_aspnet_Users">
-            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-            <End Role="News" EntitySet="News" />
-          </AssociationSet>
-          <AssociationSet Name="FK_News_Author" Association="Self.FK_News_Author">
-            <End Role="Author" EntitySet="Author" />
-            <End Role="News" EntitySet="News" />
           </AssociationSet>
           <AssociationSet Name="FK_News_Category" Association="Self.FK_News_Category">
             <End Role="Category" EntitySet="Category" />
@@ -1206,12 +1252,37 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             <End Role="Tag" EntitySet="Tag" />
             <End Role="NewsTag" EntitySet="NewsTag" />
           </AssociationSet>
+          <AssociationSet Name="FK_Opinion_aspnet_Users" Association="Self.FK_Opinion_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Idmanist_XeberModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Anket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="categoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Anket_Category" FromRole="Anket" ToRole="Category" />
+          <NavigationProperty Name="AnketSecimlers" Relationship="Self.FK_AnketSecimler_Anket" FromRole="Anket" ToRole="AnketSecimler" />
+        </EntityType>
+        <EntityType Name="AnketSecimler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="anketId" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vote_count" Type="Int32" Nullable="false" />
+          <Property Name="secim_sira" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Anket" Relationship="Self.FK_AnketSecimler_Anket" FromRole="AnketSecimler" ToRole="Anket" />
+        </EntityType>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -1334,7 +1405,7 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Self.FK__aspnet_Pe__UserI__25518C17" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
           <NavigationProperty Name="aspnet_Profile" Relationship="Self.FK__aspnet_Pr__UserI__7E37BEF6" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
           <NavigationProperty Name="Author" Relationship="Self.FK_Author_aspnet_Users" FromRole="aspnet_Users" ToRole="Author" />
-          <NavigationProperty Name="News" Relationship="Self.FK_News_aspnet_Users" FromRole="aspnet_Users" ToRole="News" />
+          <NavigationProperty Name="Opinions" Relationship="Self.FK_Opinion_aspnet_Users" FromRole="aspnet_Users" ToRole="Opinion" />
           <NavigationProperty Name="aspnet_Roles" Relationship="Self.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
         </EntityType>
         <EntityType Name="aspnet_WebEvent_Events">
@@ -1370,7 +1441,6 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <Property Name="categoryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="aspnet_Users" Relationship="Self.FK_Author_aspnet_Users" FromRole="Author" ToRole="aspnet_Users" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Author_Category" FromRole="Author" ToRole="Category" />
-          <NavigationProperty Name="News" Relationship="Self.FK_News_Author" FromRole="Author" ToRole="News" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -1380,17 +1450,16 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="img_route" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="top_categoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ankets" Relationship="Self.FK_Anket_Category" FromRole="Category" ToRole="Anket" />
           <NavigationProperty Name="Authors" Relationship="Self.FK_Author_Category" FromRole="Category" ToRole="Author" />
-          <NavigationProperty Name="Category1" Relationship="Self.FK_Category_Category" FromRole="Category" ToRole="Category1" />
-          <NavigationProperty Name="Category2" Relationship="Self.FK_Category_Category" FromRole="Category1" ToRole="Category" />
           <NavigationProperty Name="News" Relationship="Self.FK_News_Category" FromRole="Category" ToRole="News" />
         </EntityType>
         <EntityType Name="Comment">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="newsId" Type="Int32" Nullable="false" />
+          <Property Name="opinionId" Type="Int32" />
+          <Property Name="newsId" Type="Int32" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ip" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
@@ -1402,6 +1471,7 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <Property Name="unlike" Type="Int32" Nullable="false" />
           <Property Name="publish_time" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="News" Relationship="Self.FK_Comment_News" FromRole="Comment" ToRole="News" />
+          <NavigationProperty Name="Opinion" Relationship="Self.FK_Comment_Opinion" FromRole="Comment" ToRole="Opinion" />
         </EntityType>
         <EntityType Name="Image">
           <Key>
@@ -1421,15 +1491,14 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <Property Name="title" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="content_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="authorId" Type="Guid" Nullable="false" />
+          <Property Name="authorId" Type="Guid" />
           <Property Name="typeId" Type="Int32" Nullable="false" />
-          <Property Name="categoryId" Type="Int32" Nullable="false" />
-          <Property Name="img_route" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="thumbnail_route" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="categoryId" Type="Int32" />
+          <Property Name="img_route" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="thumbnail_route" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="seen" Type="Int32" Nullable="false" />
           <Property Name="publish_date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="aspnet_Users" Relationship="Self.FK_News_aspnet_Users" FromRole="News" ToRole="aspnet_Users" />
-          <NavigationProperty Name="Author" Relationship="Self.FK_News_Author" FromRole="News" ToRole="Author" />
+          <Property Name="video_Route" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Category" Relationship="Self.FK_News_Category" FromRole="News" ToRole="Category" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_News" FromRole="News" ToRole="Comment" />
           <NavigationProperty Name="Images" Relationship="Self.FK_Image_News" FromRole="News" ToRole="Image" />
@@ -1443,6 +1512,20 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="News" Relationship="Self.FK_News_NewsType" FromRole="NewsType" ToRole="News" />
+        </EntityType>
+        <EntityType Name="Opinion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="opinion_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="authorId" Type="Guid" Nullable="false" />
+          <Property Name="likes" Type="Int32" Nullable="false" />
+          <Property Name="unlikes" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Self.FK_Opinion_aspnet_Users" FromRole="Opinion" ToRole="aspnet_Users" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Opinion" FromRole="Opinion" ToRole="Comment" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1593,6 +1676,30 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <Property Name="DataSize" Type="Int32" />
           <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <Association Name="FK_Anket_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Anket" Type="Self.Anket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Anket">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnketSecimler_Anket">
+          <End Role="Anket" Type="Self.Anket" Multiplicity="1" />
+          <End Role="AnketSecimler" Type="Self.AnketSecimler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anket">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AnketSecimler">
+              <PropertyRef Name="anketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__aspnet_Me__Appli__693CA210">
           <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
@@ -1713,14 +1820,14 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_News_aspnet_Users">
+        <Association Name="FK_Opinion_aspnet_Users">
           <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
-          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="aspnet_Users">
               <PropertyRef Name="UserId" />
             </Principal>
-            <Dependent Role="News">
+            <Dependent Role="Opinion">
               <PropertyRef Name="authorId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1737,32 +1844,8 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_News_Author">
-          <End Role="Author" Type="Self.Author" Multiplicity="1" />
-          <End Role="News" Type="Self.News" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Author">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="News">
-              <PropertyRef Name="authorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Category_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
-          <End Role="Category1" Type="Self.Category" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Category1">
-              <PropertyRef Name="top_categoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_News_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="News" Type="Self.News" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -1774,7 +1857,7 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_News">
-          <End Role="News" Type="Self.News" Multiplicity="1" />
+          <End Role="News" Type="Self.News" Multiplicity="0..1" />
           <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="News">
@@ -1782,6 +1865,18 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             </Principal>
             <Dependent Role="Comment">
               <PropertyRef Name="newsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Opinion">
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opinion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="opinionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1817,7 +1912,9 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <End Role="News" Type="Self.News" Multiplicity="*" />
           <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Idmanist_XeberEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Idmanist_XeberEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ankets" EntityType="Self.Anket" />
+          <EntitySet Name="AnketSecimlers" EntityType="Self.AnketSecimler" />
           <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" />
           <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" />
           <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" />
@@ -1834,6 +1931,7 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <EntitySet Name="Images" EntityType="Self.Image" />
           <EntitySet Name="News" EntityType="Self.News" />
           <EntitySet Name="NewsTypes" EntityType="Self.NewsType" />
+          <EntitySet Name="Opinions" EntityType="Self.Opinion" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Tags" EntityType="Self.Tag" />
           <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" />
@@ -1845,6 +1943,14 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="Self.vw_aspnet_WebPartState_Paths" />
           <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="Self.vw_aspnet_WebPartState_Shared" />
           <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="Self.vw_aspnet_WebPartState_User" />
+          <AssociationSet Name="FK_Anket_Category" Association="Self.FK_Anket_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Anket" EntitySet="Ankets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnketSecimler_Anket" Association="Self.FK_AnketSecimler_Anket">
+            <End Role="Anket" EntitySet="Ankets" />
+            <End Role="AnketSecimler" EntitySet="AnketSecimlers" />
+          </AssociationSet>
           <AssociationSet Name="FK__aspnet_Me__Appli__693CA210" Association="Self.FK__aspnet_Me__Appli__693CA210">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -1885,21 +1991,13 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="Author" EntitySet="Authors" />
           </AssociationSet>
-          <AssociationSet Name="FK_News_aspnet_Users" Association="Self.FK_News_aspnet_Users">
+          <AssociationSet Name="FK_Opinion_aspnet_Users" Association="Self.FK_Opinion_aspnet_Users">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-            <End Role="News" EntitySet="News" />
+            <End Role="Opinion" EntitySet="Opinions" />
           </AssociationSet>
           <AssociationSet Name="FK_Author_Category" Association="Self.FK_Author_Category">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Author" EntitySet="Authors" />
-          </AssociationSet>
-          <AssociationSet Name="FK_News_Author" Association="Self.FK_News_Author">
-            <End Role="Author" EntitySet="Authors" />
-            <End Role="News" EntitySet="News" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Category_Category" Association="Self.FK_Category_Category">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="Category1" EntitySet="Categories" />
           </AssociationSet>
           <AssociationSet Name="FK_News_Category" Association="Self.FK_News_Category">
             <End Role="Category" EntitySet="Categories" />
@@ -1907,6 +2005,10 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
           </AssociationSet>
           <AssociationSet Name="FK_Comment_News" Association="Self.FK_Comment_News">
             <End Role="News" EntitySet="News" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Opinion" Association="Self.FK_Comment_Opinion">
+            <End Role="Opinion" EntitySet="Opinions" />
             <End Role="Comment" EntitySet="Comments" />
           </AssociationSet>
           <AssociationSet Name="FK_Image_News" Association="Self.FK_Image_News">
@@ -2352,7 +2454,27 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Idmanist_XeberModelStoreContainer" CdmEntityContainer="Idmanist_XeberEntities1">
+        <EntityContainerMapping StorageEntityContainer="Idmanist_XeberModelStoreContainer" CdmEntityContainer="Idmanist_XeberEntities">
+          <EntitySetMapping Name="Ankets">
+            <EntityTypeMapping TypeName="Idmanist_XeberModel.Anket">
+              <MappingFragment StoreEntitySet="Anket">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnketSecimlers">
+            <EntityTypeMapping TypeName="Idmanist_XeberModel.AnketSecimler">
+              <MappingFragment StoreEntitySet="AnketSecimler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anketId" ColumnName="anketId" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="vote_count" ColumnName="vote_count" />
+                <ScalarProperty Name="secim_sira" ColumnName="secim_sira" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="aspnet_Applications">
             <EntityTypeMapping TypeName="Idmanist_XeberModel.aspnet_Applications">
               <MappingFragment StoreEntitySet="aspnet_Applications">
@@ -2505,13 +2627,13 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="img_route" ColumnName="img_route" />
-                <ScalarProperty Name="top_categoryId" ColumnName="top_categoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Comments">
             <EntityTypeMapping TypeName="Idmanist_XeberModel.Comment">
               <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="opinionId" ColumnName="opinionId" />
                 <ScalarProperty Name="newsId" ColumnName="newsId" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2550,6 +2672,7 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
                 <ScalarProperty Name="thumbnail_route" ColumnName="thumbnail_route" />
                 <ScalarProperty Name="seen" ColumnName="seen" />
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="video_Route" ColumnName="video_Route" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2558,6 +2681,19 @@ warning 6002: The table/view 'Idmanist_Xeber.dbo.vw_aspnet_WebPartState_User' do
               <MappingFragment StoreEntitySet="NewsType">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opinions">
+            <EntityTypeMapping TypeName="Idmanist_XeberModel.Opinion">
+              <MappingFragment StoreEntitySet="Opinion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="opinion_date" ColumnName="opinion_date" />
+                <ScalarProperty Name="authorId" ColumnName="authorId" />
+                <ScalarProperty Name="likes" ColumnName="likes" />
+                <ScalarProperty Name="unlikes" ColumnName="unlikes" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

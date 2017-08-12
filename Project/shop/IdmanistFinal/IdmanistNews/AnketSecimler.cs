@@ -12,17 +12,14 @@ namespace IdmanistNews
     using System;
     using System.Collections.Generic;
     
-    public partial class Author
+    public partial class AnketSecimler
     {
-        public System.Guid id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string img_Route { get; set; }
-        public string number { get; set; }
-        public string mail { get; set; }
-        public int categoryId { get; set; }
+        public int id { get; set; }
+        public int anketId { get; set; }
+        public string description { get; set; }
+        public int vote_count { get; set; }
+        public int secim_sira { get; set; }
     
-        public virtual aspnet_Users aspnet_Users { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual Anket Anket { get; set; }
     }
 }

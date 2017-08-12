@@ -26,17 +26,15 @@ namespace IdmanistNews
         public string title { get; set; }
         public string description { get; set; }
         public string content_text { get; set; }
-        public Nullable<System.Guid>     authorId { get; set; }
+        public Nullable<System.Guid> authorId { get; set; }
         public int typeId { get; set; }
-        public int categoryId { get; set; }
+        public Nullable<int> categoryId { get; set; }
         public string img_route { get; set; }
         public string thumbnail_route { get; set; }
-        public string video_Route { get; set; } 
         public int seen { get; set; }
         public System.DateTime publish_date { get; set; }
+        public string video_Route { get; set; }
     
-        public virtual aspnet_Users aspnet_Users { get; set; }
-        public virtual Author Author { get; set; }
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }

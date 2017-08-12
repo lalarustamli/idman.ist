@@ -4,25 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="16c5e6a59eba4de4af0503f86abf7946" Name="Diagram1">
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Membership" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Paths" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Roles" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+      <Diagram DiagramId="545988684b1e40bfb7d46cabc6fbfe07" Name="Diagram1">
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Anket" Width="1.5" PointX="13.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.AnketSecimler" Width="1.5" PointX="15.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Membership" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Paths" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Roles" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.Author" Width="1.5" PointX="13.5" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.Category" Width="1.5" PointX="11.25" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.Comment" Width="1.5" PointX="18" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.Image" Width="1.5" PointX="18" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.News" Width="1.5" PointX="15.75" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.NewsType" Width="1.5" PointX="13.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Author" Width="1.5" PointX="13.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Category" Width="1.5" PointX="11.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Comment" Width="1.5" PointX="12.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Image" Width="1.5" PointX="12.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.News" Width="1.5" PointX="10.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.NewsType" Width="1.5" PointX="8.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Opinion" Width="1.5" PointX="10.5" PointY="20.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.sysdiagram" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Idmanist_XeberModel.Tag" Width="1.5" PointX="18" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="Idmanist_XeberModel.Tag" Width="1.5" PointX="12.75" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.vw_aspnet_Applications" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.vw_aspnet_Profiles" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
@@ -32,6 +35,8 @@
         <EntityTypeShape EntityType="Idmanist_XeberModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Idmanist_XeberModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Idmanist_XeberModel.FK_Anket_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Idmanist_XeberModel.FK_AnketSecimler_Anket" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK__aspnet_Me__Appli__693CA210" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK__aspnet_Pa__Appli__1AD3FDA4" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK__aspnet_Ro__Appli__07C12930" ManuallyRouted="false" />
@@ -42,12 +47,11 @@
         <AssociationConnector Association="Idmanist_XeberModel.FK__aspnet_Pe__UserI__25518C17" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK__aspnet_Pr__UserI__7E37BEF6" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK_Author_aspnet_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="Idmanist_XeberModel.FK_News_aspnet_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Idmanist_XeberModel.FK_Opinion_aspnet_Users" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK_Author_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="Idmanist_XeberModel.FK_News_Author" ManuallyRouted="false" />
-        <AssociationConnector Association="Idmanist_XeberModel.FK_Category_Category" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK_News_Category" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK_Comment_News" ManuallyRouted="false" />
+        <AssociationConnector Association="Idmanist_XeberModel.FK_Comment_Opinion" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK_Image_News" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.FK_News_NewsType" ManuallyRouted="false" />
         <AssociationConnector Association="Idmanist_XeberModel.aspnet_UsersInRoles" ManuallyRouted="false" />

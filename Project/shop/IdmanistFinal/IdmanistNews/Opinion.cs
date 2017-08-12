@@ -12,26 +12,24 @@ namespace IdmanistNews
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class Opinion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public Opinion()
         {
-            this.Ankets = new HashSet<Anket>();
-            this.Authors = new HashSet<Author>();
-            this.News = new HashSet<News>();
+            this.Comments = new HashSet<Comment>();
         }
     
         public int id { get; set; }
-        public string name { get; set; }
+        public string title { get; set; }
         public string description { get; set; }
-        public string img_route { get; set; }
+        public System.DateTime opinion_date { get; set; }
+        public System.Guid authorId { get; set; }
+        public int likes { get; set; }
+        public int unlikes { get; set; }
     
+        public virtual aspnet_Users aspnet_Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Anket> Ankets { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Author> Authors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<News> News { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

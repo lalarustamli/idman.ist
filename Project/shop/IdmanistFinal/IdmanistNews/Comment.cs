@@ -14,7 +14,8 @@ namespace IdmanistNews
     
     public partial class Comment
     {
-        public int newsId { get; set; }
+        public Nullable<int> opinionId { get; set; }
+        public Nullable<int> newsId { get; set; }
         public int id { get; set; }
         public string title { get; set; }
         public string ip { get; set; }
@@ -27,5 +28,6 @@ namespace IdmanistNews
         public System.DateTime publish_time { get; set; }
     
         public virtual News News { get; set; }
+        public virtual Opinion Opinion { get; set; }
     }
 }
