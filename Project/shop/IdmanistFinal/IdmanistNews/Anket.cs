@@ -23,7 +23,12 @@ namespace IdmanistNews
         public int id { get; set; }
         public string title { get; set; }
         public int categoryId { get; set; }
-    
+        public bool isActive { get; set; }
+        public int votedNum { get; set; }
+        public DateTime deadlineDate { get; set; }
+        public DateTime lastVoteDate { get; set; }
+
+
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AnketSecimler> AnketSecimlers { get; set; }

@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdmanistCore", "IdmanistCor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdmanistData", "IdmanistData\IdmanistData.csproj", "{C2DA69A4-674C-492F-A6B0-A641FA1122B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdmanistConsole", "IdmanistConsole\IdmanistConsole.csproj", "{1D5922CE-F71E-4EA3-B7B9-6DD2C1A1ED6C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdmanistNews", "IdmanistNews\IdmanistNews.csproj", "{6EFFFAAA-7304-445C-8F80-3373E875BBEE}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{C2DA69A4-674C-492F-A6B0-A641FA1122B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2DA69A4-674C-492F-A6B0-A641FA1122B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2DA69A4-674C-492F-A6B0-A641FA1122B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D5922CE-F71E-4EA3-B7B9-6DD2C1A1ED6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D5922CE-F71E-4EA3-B7B9-6DD2C1A1ED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D5922CE-F71E-4EA3-B7B9-6DD2C1A1ED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D5922CE-F71E-4EA3-B7B9-6DD2C1A1ED6C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6EFFFAAA-7304-445C-8F80-3373E875BBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6EFFFAAA-7304-445C-8F80-3373E875BBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EFFFAAA-7304-445C-8F80-3373E875BBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -42,8 +42,58 @@ namespace IdmanistNews.Controllers
         }
         public ActionResult Tab_AnketGetir()
         {
-            
-            return View();
+            //if (Session["anketvoted"] != null)
+            //{
+
+            //}
+            //else
+            //{
+                HttpCookie anktckie = Request.Cookies["anketler"];
+                if (anktckie == null)
+                {
+                    anktckie = new HttpCookie("anketler");
+                }
+                string anketcookie = anktckie.Value;
+                if (anketcookie == null)
+                {
+                    anketcookie = "0";
+                }
+                int[] voted = anketcookie.Split(',').Select(x => Convert.ToInt32(x)).ToArray();
+                var anketler = db.Ankets.ToList();
+                //anketler = anketler.Where(x => x.isActive == true && x.lastVoteDate <= DateTime.Now && !voted.Contains(x.id)).ToList();
+                if (anketler.Any())
+                {
+                    Random rnd = new Random();
+                    return View(anketler[rnd.Next(0, anketler.Count)]);
+                }
+                return View("BosAnket");
+            //}
         }
+        public ActionResult Vote(int id)
+        {
+            int choiceId = Convert.ToInt32(Request.Form["choice"]);
+            Anket anket = db.Ankets.FirstOrDefault(x=>x.id==id);
+            AnketSecimler anketsecim = db.AnketSecimlers.FirstOrDefault(x => x.id == id);
+            anket.votedNum++;
+            anketsecim.vote_count++;
+            db.SaveChanges();
+            HttpCookie anketcookie = Request.Cookies["anketler"];
+            if (anketcookie!=null)
+            {
+                anketcookie.Value += "," + id;
+
+            }
+            else
+            {
+                anketcookie = new HttpCookie("anketler");
+                anketcookie.Value = "0";
+            }
+
+            anketcookie.Expires = anket.lastVoteDate.AddDays(1);
+            HttpContext.Response.Cookies.Add(anketcookie);
+            Session["votedanket"] = id;
+            return View("Index");  
+        }
+
     }
 }
