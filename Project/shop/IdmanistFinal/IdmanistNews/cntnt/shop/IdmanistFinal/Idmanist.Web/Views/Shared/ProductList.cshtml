@@ -1,0 +1,32 @@
+﻿@model IEnumerable<IdmanistData.Model.Product>
+@foreach(var product in Model)
+{
+    <div class="product">
+        <div class="product-title">
+            <h3>
+                @Html.ActionLink(product.ProductName, "Index","Product", new { id = product.ProductId}, new { })
+            </h3>
+        </div>
+        <div class="product-image">
+            <a href="@Url.Action("Index","Product", new { id= product.ProductId})">
+            <img width="300" height="200" src="@string.Format("data:{0};base64,{1}",product.ProductImages.FirstOrDefault().ContentType, product.ProductImages.FirstOrDefault().ContentType)"/>
+            </a>
+            </div>
+            <div class="price">
+                @{ 
+                    var priceFeature = product.ProductFeatures.FirstOrDefault(x => x.FeatureName == "Qiymət");
+                    if (priceFeature !=null)
+                    {
+                        <span>@priceFeature.FeatureValue</span>
+                    }
+                    else
+                    {
+                        <span>&nbsp;</span>
+                    }
+                }
+                
+            </div>
+        
+
+    </div>
+}

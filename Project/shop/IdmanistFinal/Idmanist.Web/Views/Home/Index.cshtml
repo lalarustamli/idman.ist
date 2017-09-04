@@ -2,12 +2,15 @@
 @{
     ViewBag.Title = "Məhsullar ana səhifə";
 }
-<div class="row">
+
+@*<div class="row">
     @Html.Partial("MainMenu", Model.Categories)
 
     <div class="col-md-9">
         @Html.Partial("ProductList",Model.Products)
+        
     </div>
-</div>
+</div>*@
+@Html.Partial("_newItems", Model.Products);
 
 

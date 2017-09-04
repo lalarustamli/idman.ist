@@ -16,6 +16,9 @@
             @Html.DisplayNameFor(model => model.ProductName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Product_date)
+        </th>
+        <th>
 
         </th>
     </tr>
@@ -28,6 +31,9 @@
             </td>
             <td>
                 @Html.DisplayFor(model => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Product_date)
             </td>
             <td>
                 @Html.ActionLink("Dəyişdir","Edit", new { id= item.ProductId}) |

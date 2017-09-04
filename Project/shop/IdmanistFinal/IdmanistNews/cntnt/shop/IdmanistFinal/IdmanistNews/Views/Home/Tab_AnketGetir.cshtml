@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+@model IdmanistNews.Anket
+<aside id="block_poll" class="content">
+    <form action="/Anket/SesVer/@Model.id" method="post">
+        <h3>@Model.title</h3>
+        <div id="edit-choice">
+            @foreach (var item in Model.AnketSecimlers)
+            {
+                <div class="form-item">
+                    <input type="radio" value="@item.id" name="choice" id="edit-choice-1" checked />
+                    <label for="edit-choice-@item.secim_sira">@item.description</label>
+                </div>
+            }
+            
+            
+        </div>
+        <button type="submit"><span class="view_all"><span><span>Səs ver</span></span></span></button>
+        <a href="#" class="view_all"><span><span>Nəticələr</span></span></a>
+    </form>
+</aside>

@@ -1,0 +1,109 @@
+/*
+	xBreadcrumbs (Extended Breadcrumbs) jQuery Plugin
+	© 2009 ajaxBlender.com
+	For any questions please visit www.ajaxblender.com 
+	or email us at support@ajaxblender.com
+*/
+
+.xbreadcrumbs {
+	z-index: 1000;
+	float: right;
+	position: relative;
+}
+
+.xbreadcrumbs li {
+	float: right;
+	list-style: none;
+	font-size: 11px;
+	line-height: 38px;
+	height: 38px;
+	position: relative;
+}
+
+.xbreadcrumbs li a {
+	color: #666666;
+	display: block;
+	height: 38px;
+	margin: 0;
+	padding: 0 15px;
+	background: url(../../img/breadarrow.png) no-repeat left center;
+}
+
+.xbreadcrumbs li a:hover, .xbreadcrumbs li:hover > a {
+	text-decoration: none;
+	color: #4c93c1
+}
+
+.xbreadcrumbs li a.current {
+	background: none;
+	color: #b1b1b1;
+}
+
+.xbreadcrumbs, .xbreadcrumbs li, .xbreadcrumbs ul, .xbreadcrumbs ul li {
+	list-style: none;
+	padding: 0;
+}
+
+.xbreadcrumbs li ul {
+	display: none;
+	width: 180px;
+	position: absolute;
+	right: 15px;
+	top: 35px;
+}
+
+.xbreadcrumbs li ul:after, .xbreadcrumbs li ul:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.xbreadcrumbs li ul:after {
+	border-bottom-color: #4e5051;
+	border-width: 6px 4px 6px 4px;
+	right: 15px;
+	margin-left: -30px;
+}
+
+.xbreadcrumbs li ul:before {
+	border-bottom-color: #4e5051;
+	border-width: 7px 5px 7px 5px;
+	right: 14px;
+	margin-left: -31px;
+}
+
+.xbreadcrumbs li ul li {
+	list-style: none;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	background: url(../../img/main-bg-dark.png);
+	border-bottom: 1px solid #404040;
+	border-top: 1px solid #545454;
+}
+
+.xbreadcrumbs li ul li:first-child { 
+	border-top: none; 
+	padding-top: 1px; 
+}
+
+.xbreadcrumbs li ul li a {
+	background: none;
+	height: 32px;
+	line-height: 32px;
+	display: block;
+	padding: 0 0 0 15px;
+	color: #cccccc;
+	width: 158px;
+	
+}
+
+.xbreadcrumbs li ul li a:hover {
+	background: #454545;
+	color: #cccccc !important;
+}
+

@@ -48,8 +48,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext\IdmanistDataContext.cs" />
+    <Compile Include="Migrations\201707171528082_InitialCreate.cs" />
+    <Compile Include="Migrations\201707171528082_InitialCreate.Designer.cs">
+      <DependentUpon>201707171528082_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709020715060_ProductDateTime.cs" />
+    <Compile Include="Migrations\201709020715060_ProductDateTime.Designer.cs">
+      <DependentUpon>201709020715060_ProductDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709021507573_migBrand.cs" />
+    <Compile Include="Migrations\201709021507573_migBrand.Designer.cs">
+      <DependentUpon>201709021507573_migBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709021510042_ForeignKeysAdded.cs" />
+    <Compile Include="Migrations\201709021510042_ForeignKeysAdded.Designer.cs">
+      <DependentUpon>201709021510042_ForeignKeysAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709021525556_EFMig.cs" />
+    <Compile Include="Migrations\201709021525556_EFMig.Designer.cs">
+      <DependentUpon>201709021525556_EFMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031129215_CustomerClassAdd.cs" />
+    <Compile Include="Migrations\201709031129215_CustomerClassAdd.Designer.cs">
+      <DependentUpon>201709031129215_CustomerClassAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductBrand.cs" />
     <Compile Include="Model\ProductFeature.cs" />
     <Compile Include="Model\ProductImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +84,26 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707171528082_InitialCreate.resx">
+      <DependentUpon>201707171528082_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709020715060_ProductDateTime.resx">
+      <DependentUpon>201709020715060_ProductDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709021507573_migBrand.resx">
+      <DependentUpon>201709021507573_migBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709021510042_ForeignKeysAdded.resx">
+      <DependentUpon>201709021510042_ForeignKeysAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709021525556_EFMig.resx">
+      <DependentUpon>201709021525556_EFMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031129215_CustomerClassAdd.resx">
+      <DependentUpon>201709031129215_CustomerClassAdd.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

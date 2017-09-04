@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IdmanistNews.News>
+@{
+    Layout = null;
+}
+
+<aside id="block_latest_headlines" class="block">
+    <h3 class="block_title">Son xəbərlər</h3>
+    <div class="content">
+        <ul>
+            @{
+                int counter = 0;
+            }
+            @foreach (var news in Model)
+            {
+                if (counter == 0)
+                {
+                    <li class="first"><a href="/News/Show/@news.title/@news.id">@news.title</a></li>
+                }
+                else if (counter == 6)
+                {
+                    <li class="last"><a href="/News/Show/@news.title/@news.id">@news.title</a></li>
+                }
+                else
+                {
+                    <li><a href="/News/Show/@news.title/@news.id">@news.title</a></li>  
+                }
+
+
+
+            }
+            
+            
+            
+            
+            
+        </ul>
+        <p><a href="#" class="view_all"><span><span>All News</span></span></a></p>
+    </div>
+</aside>
+
+
+
+

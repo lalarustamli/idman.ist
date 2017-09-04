@@ -24,7 +24,7 @@ namespace Idmanist.Admin.Controllers
         public ActionResult Create()
         {
             return View();
-        }
+        } 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Category category)

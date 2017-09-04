@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -194,6 +195,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,17 +203,114 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\404error.html" />
+    <Content Include="Content\about_us.html" />
+    <Content Include="Content\blog.html" />
+    <Content Include="Content\blog_detail.html" />
+    <Content Include="Content\checkout.html" />
+    <Content Include="Content\compare.html" />
+    <Content Include="Content\contact_us.html" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\blogmate.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\fancybox.css" />
+    <Content Include="Content\css\flexslider.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\owl.theme.css" />
+    <Content Include="Content\css\revslider.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\dashboard.html" />
+    <Content Include="Content\faq.html" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\grid.html" />
+    <Content Include="Content\images\avatar60x60.jpg" />
+    <Content Include="Content\images\b-logo1.png" />
+    <Content Include="Content\images\b-logo2.png" />
+    <Content Include="Content\images\b-logo3.png" />
+    <Content Include="Content\images\b-logo4.png" />
+    <Content Include="Content\images\b-logo5.png" />
+    <Content Include="Content\images\b-logo6.png" />
+    <Content Include="Content\images\bkg_rating.png" />
+    <Content Include="Content\images\blog-img1.jpg" />
+    <Content Include="Content\images\btn_remove.png" />
+    <Content Include="Content\images\category-banner1.jpg" />
+    <Content Include="Content\images\close_icon.png" />
+    <Content Include="Content\images\custom-img1.jpg" />
+    <Content Include="Content\images\custom-img2.jpg" />
+    <Content Include="Content\images\custom-img3.jpg" />
+    <Content Include="Content\images\custom-img4.jpg" />
+    <Content Include="Content\images\english.png" />
+    <Content Include="Content\images\fancybox_overlay.png" />
+    <Content Include="Content\images\fancybox_sprite.png" />
+    <Content Include="Content\images\francais.png" />
+    <Content Include="Content\images\german.png" />
+    <Content Include="Content\images\icon_arrow_down.png" />
+    <Content Include="Content\images\icon_arrow_prev_over.png" />
+    <Content Include="Content\images\icon_arrow_up.png" />
+    <Content Include="Content\images\icon_grid.png" />
+    <Content Include="Content\images\icon_grid_act.png" />
+    <Content Include="Content\images\icon_list.png" />
+    <Content Include="Content\images\icon_list_act.png" />
+    <Content Include="Content\images\jewelry-banner.jpg" />
+    <Content Include="Content\images\left-a.png" />
+    <Content Include="Content\images\leftNav.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\menu-sunglass.png" />
+    <Content Include="Content\images\menu_furniture1.png" />
+    <Content Include="Content\images\minus.png" />
+    <Content Include="Content\images\nav-img1.jpg" />
+    <Content Include="Content\images\offer-banner1.jpg" />
+    <Content Include="Content\images\payment-1.png" />
+    <Content Include="Content\images\payment-2.png" />
+    <Content Include="Content\images\payment-3.png" />
+    <Content Include="Content\images\payment-4.png" />
+    <Content Include="Content\images\plus-img.png" />
+    <Content Include="Content\images\plus.png" />
+    <Content Include="Content\images\rhs-banner.jpg" />
+    <Content Include="Content\images\rhs-banner1.jpg" />
+    <Content Include="Content\images\right-a.png" />
+    <Content Include="Content\images\search-icon.png" />
+    <Content Include="Content\images\select-arrow.png" />
+    <Content Include="Content\images\signal.png" />
+    <Content Include="Content\images\slide-img1.jpg" />
+    <Content Include="Content\images\slide-img2.jpg" />
+    <Content Include="Content\images\slider-arrow.png" />
+    <Content Include="Content\images\slideshow-arrows.png" />
+    <Content Include="Content\images\test_arrow.png" />
+    <Content Include="Content\images\to-top-arrow.png" />
+    <Content Include="Content\images\tool_arrow_down.png" />
+    <Content Include="Content\images\tool_arrow_down_o.png" />
+    <Content Include="Content\images\tool_arrow_up.png" />
+    <Content Include="Content\images\top-arrow.png" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\cloud-zoom.js" />
+    <Content Include="Content\js\common.js" />
+    <Content Include="Content\js\jquery.fancybox.js" />
+    <Content Include="Content\js\jquery.flexslider.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\owl.carousel.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\js\parallax.js" />
+    <Content Include="Content\js\revslider.js" />
+    <Content Include="Content\js\toggle.js" />
+    <Content Include="Content\list.html" />
+    <Content Include="Content\login.html" />
+    <Content Include="Content\multiple_addresses.html" />
+    <Content Include="Content\products-images\product1.jpg" />
+    <Content Include="Content\product_detail.html" />
+    <Content Include="Content\quick_view.html" />
+    <Content Include="Content\shopping_cart.html" />
+    <Content Include="Content\wishlist.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -220,6 +319,15 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -247,6 +355,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\ProductList.cshtml" />
+    <Content Include="Views\Shared\_newItems.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\_topNav.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -260,9 +373,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IdmanistCore\IdmanistCore.csproj">

@@ -1,0 +1,42 @@
+﻿@model IdmanistData.Model.ProductFeature
+
+@{
+    ViewBag.Title = "Məhsul xüsusiyyəti detallar";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductFeature</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeatureName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeatureValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Dəyişdir", "Edit", new { id = Model.ProdcutFeatureId, productId = Model.Product.ProductId }) |
+    @Html.ActionLink("Siyahıya qayıt", "Index", new { id = Model.Product.ProductId})
+</p>

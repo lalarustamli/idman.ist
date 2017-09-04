@@ -15,6 +15,7 @@ namespace IdmanistData.DataContext
         public DbSet<Product> Product { get; set; }
         public DbSet<ProductFeature> ProductFeature { get; set; }
         public DbSet<ProductImage> ProductImage { get; set; }
+        public DbSet<ProductBrand> ProductBrand { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

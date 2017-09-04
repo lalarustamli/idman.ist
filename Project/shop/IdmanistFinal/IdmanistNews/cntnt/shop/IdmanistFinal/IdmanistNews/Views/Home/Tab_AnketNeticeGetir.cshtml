@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+@model IdmanistNews.Anket
+<style>
+    .yuz{
+        width:100%;
+        height:10px;
+        position:relative;
+    }
+    .noidea {
+        height:100%;
+        position:relative;
+
+    }
+</style>
+@helper  noideaGetir(int id)
+{
+    var noidea = 100* Model.AnketSecimlers.FirstOrDefault()
+}
+
+<aside id="block_poll" class="content">
+    <form action="/Anket/SesVer/@Model.id" method="post">
+        <h3>@Model.title</h3>
+        <div id="edit-choice">
+            @foreach (var item in Model.AnketSecimlers)
+            {
+                <div class="form-item">
+                    <div class="yuz">
+                        <div class="noidea" style="width:@{ }">&nbsp;</div>
+                    </div>
+                    
+                    <label for="edit-choice-@item.secim_sira">@item.description</label>
+                </div>
+            }
+
+
+        </div>
+        <button type="submit"><span class="view_all"><span><span>Səs ver</span></span></span></button>
+        <a href="#" class="view_all"><span><span>Nəticələr</span></span></a>
+    </form>
+</aside>

@@ -1,0 +1,21 @@
+ @media screen and (max-width:765px) {
+.topBanner .topContainer #navbar {
+  background: none;
+}
+}
+@media screen and(max-width:992px){
+  .news-item{
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .topLogo img {
+    display: none;
+ }
+    .post-head .post-head-text h1 {
+      font-size: 20px;
+    }
+    .news-item .image-left{
+      padding-right: 0px;
+    }
+}

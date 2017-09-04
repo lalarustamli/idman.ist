@@ -1,0 +1,15 @@
+﻿@model IEnumerable<IdmanistData.Model.Category>
+    <div>
+        @if(Model.Any())
+        {
+            <ul class="nav nav-pills nav-stacked">
+                @foreach(var category in Model)
+                {
+                    <li>
+                        @Html.ActionLink(category.CategoryName, "Index", "Category", new { id = category.CategoryId })
+                    </li>
+                }
+            </ul>
+
+        }
+    </div>
