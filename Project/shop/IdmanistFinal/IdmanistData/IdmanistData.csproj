@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201709031129215_CustomerClassAdd.Designer.cs">
       <DependentUpon>201709031129215_CustomerClassAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709051113403_NewMigration.cs" />
+    <Compile Include="Migrations\201709051113403_NewMigration.Designer.cs">
+      <DependentUpon>201709051113403_NewMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709051115307_migadsa.cs" />
+    <Compile Include="Migrations\201709051115307_migadsa.Designer.cs">
+      <DependentUpon>201709051115307_migadsa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -103,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709031129215_CustomerClassAdd.resx">
       <DependentUpon>201709031129215_CustomerClassAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709051113403_NewMigration.resx">
+      <DependentUpon>201709051113403_NewMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709051115307_migadsa.resx">
+      <DependentUpon>201709051115307_migadsa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

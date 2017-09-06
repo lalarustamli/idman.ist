@@ -32,12 +32,7 @@ namespace IdmanistData.Model
         [DisplayName("Kateqoriya adı")]
         public virtual Category Category { get; set; }
 
-        [Required]
-        public int ProductBrandId { get; set; }
-
-        [DisplayName("Brend adı")]
-        [ForeignKey("ProductBrandId")]
-        public virtual ProductBrand Brand { get; set; }
+        
 
     }
 }

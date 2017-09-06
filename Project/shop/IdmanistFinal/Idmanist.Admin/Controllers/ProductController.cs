@@ -15,11 +15,12 @@ namespace Idmanist.Admin.Controllers
         private readonly IProductRepository _productRepository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IProductImageRepository _productImageRepository;
-        public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository, IProductImageRepository productImageRepository)
+        public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository, IProductImageRepository productImageRepository/*, IBrandRepository brandRepository*/)
         {
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
             _productImageRepository = productImageRepository;
+            //_BrandRepository = brandRepository
         }
         // GET: Product
         public ActionResult Index()
