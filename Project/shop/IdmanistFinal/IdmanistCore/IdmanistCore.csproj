@@ -80,10 +80,14 @@
     <Compile Include="Infrastructure\IProductFeatureRepository.cs" />
     <Compile Include="Infrastructure\IProductImageRepository.cs" />
     <Compile Include="Infrastructure\IProductRepository.cs" />
+    <Compile Include="Infrastructure\IReklamRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\ISliderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BrandRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\ReklamRepository.cs" />
+    <Compile Include="Repository\SliderRepository.cs" />
     <Compile Include="Repository\ProductFeatureRepository.cs" />
     <Compile Include="Repository\ProductImageRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />

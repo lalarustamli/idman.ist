@@ -1,0 +1,55 @@
+#app_wrapper {
+	// min-height: calc(100vh - 65px);
+	// padding-bottom: 270px;
+	// margin-bottom: -270px;
+	position: relative;
+	min-height: 100%;
+}
+#app_wrapper:after,
+#app_wrapper:before {
+    display: table;
+    content: " ";
+}
+#app_wrapper:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: inherit;
+    background-color: #eef5f9;
+    border: inherit;
+    content: "";
+}
+#app_wrapper:after {
+    clear: both;
+}
+//Expand content area fullscreen
+#app_wrapper.content-expanded {
+    #content_outer_wrapper {
+        z-index: 999;
+        top: 0!important;
+        left: 0!important;
+        right: 0!important;
+        margin: 0 !important;
+        bottom: 0!important;
+        padding: 0 !important;
+        background: #EEF5F9;
+        .leftnav_v3,
+        .rightnav_v3 {
+            top: 0;
+            background: #EEF5F9;
+        }
+        #content_wrapper {
+            #footer_wrapper {
+                margin: 0;
+            }
+        }
+        &.has--content_sidebar-panel-right {
+            right: 250px!important;
+        }
+        &.has--content_sidebar-panel-left {
+            left: 250px!important;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.input-group.search-target{
+  width:100%;
+  .input-group-addon{
+  padding:0;
+    i{
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      top:17px;
+      transition:all .2s linear;
+      font-size: 22px;
+    }
+  }
+  .form-group{
+    margin:10px 0;
+    .form-control{
+      text-indent: 25px;
+    }
+  }
+}
+.input-group.search-target.open{
+    .input-group-addon{
+      i{
+          margin-left:90%;
+      }
+    
+  
+    }
+    .form-group{
+      .form-control{
+        text-indent: 0;
+      }
+    }
+}

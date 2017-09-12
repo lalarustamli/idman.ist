@@ -1,0 +1,87 @@
+/*
+*
+*   Material design lite
+*   Pagination buttons
+*/
+.mdl-button {
+  background: 0 0;
+  border: none;
+  border-radius: 30px;
+  position: relative;
+  height: 30px;
+  margin: 0 6px;
+  min-width: 30px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(.4,0,1,1),background-color 0.2s cubic-bezier(.4,0,.2,1),color 0.2s cubic-bezier(.4,0,.2,1);
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 26px;
+  padding: 0px 10px;
+}
+
+.mdl-button:not(.mdl-button--raised):active,
+.mdl-button:not(.mdl-button--raised):hover,
+.mdl-button:not(.next):active,
+.mdl-button:not(.next):hover,
+.mdl-button:not(.previous):active,
+.mdl-button:not(.previous):hover {
+  background-color: rgba(158,158,158, 0.20);
+}
+
+#productsTable_next,
+#productsTable_previous {
+  width: auto;
+}
+
+.mdl-button::-moz-focus-inner {
+  border: 0;
+}
+
+.mdl-button:focus:not(:active) {
+  background-color: rgba(0,0,0, 0.12);
+}
+
+.mdl-button.mdl-button--colored:focus:not(:active) {
+  background-color: rgba(0,0,0, 0.12);
+}
+
+input.mdl-button[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.mdl-button--primary.mdl-button--primary .mdl-ripple {
+  background: rgb(255,255,255);
+}
+
+.mdl-button.mdl-button--disabled.mdl-button--disabled,
+.mdl-button[disabled][disabled] {
+  color: rgba(0,0,0, 0.26);
+  cursor: default;
+  background-color: transparent;
+}
+
+.mdl-button--fab.mdl-button--disabled.mdl-button--disabled,
+.mdl-button--fab[disabled][disabled] {
+  background-color: rgba(0,0,0, 0.12);
+  color: rgba(0,0,0, 0.26);
+}
+
+.mdl-button--raised.mdl-button--disabled.mdl-button--disabled,
+.mdl-button--raised[disabled][disabled] {
+  background-color: rgba(0,0,0, 0.12);
+  color: rgba(0,0,0, 0.26);
+  box-shadow: none;
+}
+
+.mdl-button--colored.mdl-button--disabled.mdl-button--disabled,
+.mdl-button--colored[disabled][disabled] {
+  color: rgba(0,0,0, 0.26);
+}

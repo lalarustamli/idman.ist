@@ -1,0 +1,195 @@
+//------------------------------------------------------------------------------
+// Content Layout - Boxed style lsyouts
+//------------------------------------------------------------------------------
+
+#content_type.boxed-leftnav {
+  height: calc(100vh - 200px);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-bottom: 130px;
+  -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.10);
+  -khtml-box-shadow: 0 10px 15px rgba(0,0,0,.10);
+  -moz-box-shadow: 0 10px 15px rgba(0,0,0,.10);
+  -ms-box-shadow: 0 10px 15px rgba(0,0,0,.10);
+  -o-box-shadow: 0 10px 15px rgba(0,0,0,.10);
+  box-shadow: 0 10px 15px rgba(0,0,0,.10);
+
+  #leftnav {
+    width: 240px;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    .card {
+      .card-heading {
+        height: 60px;
+        max-height: 60px;
+        vertical-align: middle;
+
+        .card-title {
+          font-size: em(18);
+        }
+
+        .circle-profile-photo {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 0;
+      height: calc(100vh - 260px);
+      overflow-x: hidden;
+
+      .list-group {
+        height: calc(100% - 20px);
+
+        .list-group-item {
+          border: 0;
+          margin: 0;
+          padding: 12px 20px;
+          z-index: 0;
+        }
+      }
+    }
+    .list-group .list-group-item.active, .list-group .list-group-item.active:focus, .list-group .list-group-item.active:hover{
+      background-color: #EEF5F9;
+      color: #607188;
+      border-left: solid 3px $mw-green;
+    }
+  }
+
+  .content-body {
+    padding-left: 240px;
+    height: 100%;
+
+    .card {
+      .card-heading {
+        height: 60px;
+        max-height: 60px;
+        vertical-align: middle;
+
+        .card-title {
+          font-size: em(18);
+        }
+
+        .circle-profile-photo {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          vertical-align: middle;
+        }
+
+        .actions {
+          .js-hamburger {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .card-body {
+      padding: 50px 25px 0;
+      height: calc(100vh - 260px);
+      overflow-x: hidden;
+
+    }
+
+    .card-footer {
+      border-top: 1px solid #EEF5F9;
+      position: absolute;
+      height: 90px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 65px 15px 15px;
+      background: #fff;
+
+      .form-group.compose {
+        padding-bottom: 0;
+        margin: 0;
+        position: relative;
+
+        .btn-fab {
+          position: absolute;
+          right: -45px;
+          top: -45px;
+        }
+      }
+      ul.card-actions.icons.left-bottom{
+        top: 28px;
+      }
+      ul.card-actions.icons li i{
+        font-size: em(22);
+      }
+    }
+  }
+}
+@media (max-width : 1450px) {
+  #content_type.boxed-leftnav {}
+}
+@media (max-width : $screen-lg) {
+  #content_type.boxed-leftnav {
+    #leftnav {
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 60px;
+      .card-body .list-group .list-group-item{
+        padding: 10px;
+      }
+      .list-group-item-body{
+        display: none;
+      }
+      .card-actions.icons.right-top{
+        display: none;
+      }
+    }
+    #chat-wrapper{
+      position: relative;
+      width: 100%;
+      bottom: initial;
+    }
+    .content-body {
+      padding-left: 60px;
+      .card {
+        .card-heading {
+          .actions {
+            .js-hamburger {
+              display: block;
+            }
+          }
+        }
+        .card-body{
+          padding:0 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width : $screen-md) {
+  #content_type.boxed-leftnav {
+    margin-bottom: 30px;
+    .content-body .card-body {
+      padding: 20px 20px 0;
+    }
+
+  }
+}
+@media (max-width : $screen-xs) {
+  #content_type.boxed-leftnav {
+    margin-bottom: 30px;
+    .content-body .card-body {
+      padding: 20px 20px 0;
+    }
+
+  }
+}

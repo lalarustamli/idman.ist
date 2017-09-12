@@ -1,0 +1,107 @@
+﻿@model IdmanistData.Model.Customer
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <section class="main-container col1-layout">
+        <div class="main container">
+            <div class="account-login">
+                <div class="page-title">
+                    <h2>Login or Create an Account</h2>
+                </div>
+                <fieldset class="col2-set">
+                    <legend>Login or Create an Account</legend>
+                    <div class="col-1 new-users">
+                        <strong>New Customers</strong>
+                        <div class="content">
+                            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                            <div class="buttons-set">
+                                <a href="@Url.Action("register","user")" class="button"> Create an account</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 registered-users">
+                        <strong>Registered Customers</strong>
+
+                        <form action="@Url.Action("Login","user")" method="post">
+
+
+                            <div class="form-group">
+                                <label for="Email">Email</label>
+                 
+                                @Html.EditorFor(model => model.Email, new { htmlAttribute = new { @id="Email",@class="validate",@name="Email" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class="text-danger"})
+                                <span class="glyphicon form-control-feedback"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Password">Password</label>
+                               
+                                @Html.EditorFor(model => model.Password, new { htmlAttribute = new { @id = "Password", @class = "validate", @name = "Password" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                <span class="glyphicon form-control-feedback"><i class="fa fa-key" aria-hidden="true"></i></span>
+
+                            </div>
+
+
+                            <div class="row home">
+                                <div class="input-field col s12">
+                                    <button type="submit" class=" button waves-effect waves-light  btn--form btn-log-in">Login</button>
+
+                                </div>
+
+                            </div>
+                            <div class="row home">
+
+
+
+
+                            </div>
+
+
+                            @if (Session["error_message"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    <p>@Session["error_message"]</p>
+                                </div>
+                                {
+                                    Session.Clear();
+                                }
+                            }
+
+                            @if (Session["error_input"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    <p>@Session["error_input"]</p>
+                                </div>
+                                {
+                                    Session.Clear();
+                                }
+                            }
+                        </form>
+
+
+                    </div>
+                </fieldset>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+    <script src="~/Content/js/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+
+</body>

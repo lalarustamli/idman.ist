@@ -1,0 +1,47 @@
+//
+// Sidebar Type Push
+// --------------------------
+#app_sidebar-left{
+    position: fixed;
+    width:240px;
+    height: 100%;
+    min-height: 100%;
+    z-index: $zindex_leftsidebar_wrapper;
+}
+
+#app_sidebar-left:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: inherit;
+    background-color: inherit;
+    border: inherit;
+    content: "";
+}
+
+.app_sidebar-menu-collapsed #app_wrapper {
+     #app_sidebar-left {
+        width: 50px;
+    }
+    #content_outer_wrapper {
+        padding-left: 50px;
+    }
+    #app_topnavbar-wrapper #navbar_header {
+        width: 50px;
+        .navbar-brand {
+            padding: 0;
+        }
+    }
+    #app_topnavbar-wrapper #navbar_header .navbar-brand img {
+        position: absolute;
+        top: 24px;
+        left: 13px;
+        width: 25px;
+        height: 25px;
+    }
+
+    #app_sidebar-left:hover{
+      width:240px;
+    }
+}

@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "summernote";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/summernote.eot?ad8d7e2d177d2473aecd9b35d16211fb");
+    src: url("../fonts/summernote.eot?#iefix") format("embedded-opentype"),url("../fonts/summernote.woff?ad8d7e2d177d2473aecd9b35d16211fb") format("woff"),url("../fonts/summernote.ttf?ad8d7e2d177d2473aecd9b35d16211fb") format("truetype");
+}
+
+.note-editor.note-frame {
+    border: solid thin #9daec4;
+
+    .panel {
+        border-radius: 0;
+        border: none;
+        background: #fff;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -ms-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -o-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        position: relative;
+    }
+
+    .note-popover .popover-content,
+    .panel-heading.note-toolbar {
+        background-color: #fff;
+        border: none;
+    }
+
+    .note-toolbar {
+        .btn,
+        .btn.btn-default,
+        .navbar .navbar-nav > li > a.btn {
+            padding: 3px 5px !important;
+            font-size: 10px!important;
+            background-color: #fff;
+            color: #9daec4;
+            box-shadow: none;
+        }
+    }
+
+    .note-statusbar {
+        background-color: #9daec4;
+    }
+
+    .note-statusbar .note-resizebar .note-icon-bar {
+        border-top: 1px solid #ffffff;
+    }
+
+    .note-editing-area .note-editable {
+        color: inherit;
+        line-height: 1.6em;
+        font-size: 14px;
+    }
+}

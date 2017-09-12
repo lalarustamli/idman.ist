@@ -1,0 +1,575 @@
+.contact-app {
+  #header_wrapper {
+    padding: 15px 0;
+    display: inline-block;
+    
+    .card-actions.left-top {
+      left: 21px!important;
+      top: 13px!important;
+      z-index: 10;
+    }
+    
+    .card-actions.icons.right-top {
+      right: 30px;
+      top: 0;
+    }
+    
+    .card-actions.icons > a,
+    .card-actions.icons > li > a {
+      width: 40px;
+      height: 40px;
+      padding-top: 11px;
+    }
+    
+    #header {
+      display: inline-block;
+      
+      h1 {
+        padding-top: 6px;
+        display: inline-block;
+      }
+    }
+  }
+  
+  #content {
+    margin: 0 !important;
+    padding: 0;
+  }
+  
+  ul.note-labels {
+    padding: 10px 0;
+    margin-bottom: 0;
+    list-style: none;
+    position: relative;
+    
+    li {
+      position: relative;
+      display: block;
+      padding: 10px 20px 10px 30px;
+      font-size: 14px;
+      
+      a {
+        position: relative;
+        display: block;
+        -webkit-transition: all 250ms linear;
+        -khtml-transition: all 250ms linear;
+        -moz-transition: all 250ms linear;
+        -ms-transition: all 250ms linear;
+        -o-transition: all 250ms linear;
+        transition: all 250ms linear;
+        
+        &:hover {
+          color: #516073;
+        }
+      }
+      
+      &:hover {
+        background: rgba(200,200,200,.2);
+        cursor: pointer;
+      }
+    }
+    
+    i {
+      width: 25px;
+      font-size: 1.4em;
+      margin-right: 30px;
+      text-align: center;
+      vertical-align: text-top;
+      display: inline-block;
+    }
+  }
+  
+  #contact-wrapper {
+    .block-header {
+      padding: 10px 24px;
+      position: relative;
+      
+      ul.card-actions.icons.right-top {
+        right: 33px;
+        top: 15px;
+      }
+    }
+    
+    .panel {
+      .panel-heading {
+        .panel-title {
+          position: relative;
+          
+          > a {
+          
+            min-height: 50px;
+            font-size: 13px;
+            
+            .avatar,
+            .content-teaser,
+            .email-wrapper,
+            .sender-wrapper {
+              float: left;
+              font-size: em(16);
+              color: #536b78;
+            }
+            
+            .avatar {
+              margin: 0 10px;
+            }
+            
+            .sender-wrapper {
+              width: 155px;
+              margin-top: 6px;
+            }
+            
+            .sender {
+              text-overflow: ellipsis;
+              display: inline-block;
+              white-space: nowrap;
+              overflow: hidden;
+              width: 100%;
+              font-weight: 400;
+            }
+            
+            .email-wrapper {
+              box-sizing: border-box;
+              overflow: hidden;
+              display: inline-block;
+              margin-top: 5px;
+            }
+            
+            .email {
+              text-overflow: ellipsis;
+              display: inline-block;
+              white-space: nowrap;
+              overflow: hidden;
+              width: 100%;
+              font-weight: 200;
+              min-height: 25px;
+            }
+            
+            .phone-wrapper {
+              position: absolute;
+              right: 15%;
+              top: 19px;
+              
+              .phone {}
+            }
+            
+            &:hover {
+              color: #536b78;
+            }
+          }
+          
+          ul.card-actions.right-top {
+            right: 10px;
+            top: 10px;
+            
+            li {
+              margin-left: 0;
+            }
+            
+            .dropdown-menu {
+              a {
+                font-size: 18px;
+                
+                i {
+                  margin-right: 10px;
+                  font-size: 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      .panel-footer {
+        height: 60px;
+        position: relative;
+        background: #F7FBFE;
+        
+        ul.card-actions.icons.right-bottom {
+          top: -5px;
+        }
+        
+        ul.card-actions.left-bottom {
+          left: 10px;
+          bottom: 14px;
+          
+          > li a {
+            font-size: 13px;
+            margin: 7px 0;
+            padding: 10px;
+          }
+        }
+        
+        ul.card-actions.right-bottom > li a {
+          margin: 20px 0;
+        }
+      }
+    }
+    
+    .panel-group {
+      margin: 0 auto 60px;
+      
+      .panel.active {
+        .content-teaser {
+          display: none;
+        }
+      }
+      
+      .panel .panel-heading a.collapsed:after,
+      .panel .panel-heading a:after {
+        content: '';
+      }
+      
+      .panel-body {
+        padding: 30px 110px;
+        
+        p {
+          font-size: em(16);
+        }
+      }
+    }
+  }
+  
+  .btn-fab-group {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+@media (max-width: 1380px) {
+  .contact-app #contact-wrapper {
+    padding: 0;
+  }
+}
+@media (max-width: 1280px) {
+  .contact-app {
+    .container {
+      margin: 0 !important;
+    }
+    
+    #header_wrapper form {
+      width: 65%;
+      display: inline-block;
+      margin: 0 30px 0 45px;
+    }
+    
+    #contact-wrapper {
+      .panel-group {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0;
+        
+        .block-header {
+          padding: 10px 0;
+        }
+      }
+      
+      .panel-group .panel {
+        margin: 0;
+      }
+      
+      .panel {
+        .panel-heading {
+          .panel-title {
+            position: relative;
+            
+            > a {
+          
+              min-height: 50px;
+              
+              .avatar,
+              .content-teaser,
+              .email-wrapper,
+              .sender-wrapper {
+                float: left;
+                font-size: em(16);
+                color: #536b78;
+              }
+              
+              .avatar {
+                margin: 0 10px;
+              }
+              
+              .sender-wrapper {
+                width: 155px;
+              }
+              
+              .sender {
+                text-overflow: ellipsis;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 100%;
+              }
+              
+              .email-wrapper {
+                box-sizing: border-box;
+                overflow: hidden;
+                display: inline-block;
+                margin-top: 9px;
+                width: 70%;
+              }
+              
+              .email {
+                text-overflow: ellipsis;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 100%;
+              }
+              
+              &:hover {
+                color: #536b78;
+              }
+            }
+            
+            ul.card-actions.right-top {
+              right: 10px;
+              top: 10px;
+              
+              li {
+                margin-left: 0;
+              }
+              
+              .dropdown-menu {
+                a {
+                  font-size: 18px;
+                  
+                  i {
+                    margin-right: 10px;
+                    font-size: 22px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: $screen-lg) {
+  .contact-app {
+    #header_wrapper form {
+      display: none;
+    }
+    
+    #contact-wrapper {
+      margin: 0;
+      padding: 0;
+      
+      .panel-group .panel {
+        margin: 0;
+        
+        ul.card-actions.right-top {
+          right: 33px;
+          top: 10px;
+        }
+        
+        .panel-body {
+          padding: 20px;
+        }
+      }
+    }
+    
+    #contact-wrapper .panel .panel-heading .panel-title > a {
+      padding: 10px;
+    }
+    
+    #contact-wrapper {
+      .panel {
+        .panel-heading {
+          .panel-title {
+            > a {
+              .sender-wrapper {
+                margin-top: 9px;
+                padding: 0;
+              }
+              
+              .email-wrapper {
+                margin-top: 9px;
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: $screen-md) {
+  .contact-app {
+    #header_wrapper form {
+      display: none;
+    }
+    
+    #contact-wrapper {
+      padding: 20px;
+      margin: 0;
+      
+      .panel-group .panel {
+        margin: 0;
+        
+        ul.card-actions.right-top {
+          right: 5px;
+          top: 10px;
+        }
+        
+        .panel-body {
+          padding: 20px;
+        }
+      }
+      
+      .panel .panel-heading .panel-title > a .sender-wrapper {
+        width: 120px;
+      }
+    }
+    
+    #contact-wrapper .panel .panel-heading .panel-title > a {
+      padding: 10px;
+    }
+    
+    #contact-wrapper {
+      .panel {
+        .panel-heading {
+          .panel-title {
+            > a {
+              .sender-wrapper {
+                margin-top: 0;
+                padding: 0;
+              }
+              
+              .email-wrapper {
+                margin-top: 0;
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    #content .nav-pills > li {
+      padding: 6px 15px;
+      
+      a {
+        display: block;
+      }
+    }
+    
+    .contact-app #contact-wrapper .panel .panel-heading .panel-title > a {
+      padding: 10px;
+      height: 60px;
+    }
+    
+    .contact-app #contact-wrapper .block-header ul.card-actions.icons.right-top {
+      right: 6px;
+      top: 15px;
+    }
+  }
+}
+@media (max-width: $screen-md) {
+  .contact-app {
+    #contact-wrapper {
+      .phone-wrapper {
+        display: none!important;
+      }
+      
+      .email-wrapper {
+        display: none!important;
+      }
+    }
+  }
+}
+//Contact Modals
+.modal#contactEditUser,
+.modal#newContactModal  {
+  .user-avatar-wrapper {
+    text-align: center;
+    
+    figure {
+      position: relative;
+      
+      span.edit-avatar {
+        display: block;
+        width: 135px;
+        height: 135px;
+        margin: auto;
+        .no-avatar{
+          border-radius: 50%;
+          font-size: 24px;
+          height: 135px;
+          margin: auto;
+          width: 135px;
+          padding: 0;
+          position: relative;
+          text-align: center;
+          color: #fff;
+          line-height: 2em;
+          font-size: 60px;
+        }
+      }
+      
+      span.edit-avatar:hover {
+        cursor: pointer;
+        
+        &:before {
+          content: "\f28c";
+          font-family: Material-Design-Iconic-Font;
+          position: absolute;
+          z-index: 5;
+          color: rgba(255,255,255,.7);
+          font-size: 40px;
+          top: 59px;
+          right: 264px;
+        }
+        
+        &:after {
+          content: '';
+          display: absolute;
+          width: 60px;
+          height: 60px;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          background-color: rgba(0,0,0,.36);
+          top: 39px;
+          position: absolute;
+          right: 250px;
+        }
+      }
+      
+      .avatar,
+      .no-avatar {
+        border: solid 3px rgba(255,255,255,.4);
+        position: relative;
+      }
+      figcaption{
+        position: relative;
+        height: 70px;
+        .card-actions.icons{
+          right: 250px;
+          top: 41px;
+          position: initial;
+          li{
+            a{
+              color:#fff;
+              font-size: em(20);
+            }
+          }
+        }
+        
+      }
+    }
+    
+    .name {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.7em;
+    }
+  }
+  
+  .input-group-addon {
+    i {}
+  }
+}

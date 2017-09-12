@@ -1,0 +1,159 @@
+#packages {
+  text-align: center!important;
+    @include border-radius(3px);
+    padding-bottom:20px;
+        margin-bottom: 0;
+  h2 {
+    font-size: em(40);
+    margin: 20px 0 0 0;
+  }
+  p {
+    font-size: em(18);
+  }
+  .togglebutton label {
+    cursor: pointer;
+    font-weight: 400;
+    color: #607188;
+  }
+}
+.pricing-wrapper {
+  max-width: 1170px;
+  margin: 0 auto 120px;
+  .card.pricing-card {
+    @include border-radius(3px);
+    .feature-pricing-card {
+      box-shadow: 0 20px 25px rgba(0,0,0,.15)!important;
+      margin: 0;
+      z-index: 5;
+    }
+    
+    .card-heading {
+      text-align: center;
+      padding-top: 60px;
+      
+      .card-title {
+        h1 {
+          font-size: 70px;
+          margin: 0;
+          font-weight: 400;
+          display: inline;
+          letter-spacing: -5px;
+          
+          sup {
+            font-size: 30%;
+            top: -1.8em;
+            font-weight: 200;
+          }
+        }
+        
+        .pricing-period {
+          font-size: em(12);
+          font-style: italic;
+        }
+        
+        .pricing-title {
+          display: block;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 200;
+          letter-spacing: 5px;
+        }
+      }
+    }
+    
+    .card-body {
+      .pricing-feature-list {
+        margin: 0;
+        padding: 0.25em 0 2.5em;
+        list-style: none;
+        text-align: center;
+        
+        .pricing-feature {
+          padding: 0.7em 0;
+        }
+      }
+    }
+  }
+}
+
+.card-container {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  margin-bottom: 30px;
+  //Card Flip
+  .card.card-flip {
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    -o-transition: -o-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+    
+    .card-back,
+    .card-front {
+      border: none;
+      background: #fff;
+      box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 420px;
+    }
+    
+    .card-back {
+      -webkit-transform: rotateY( 180deg );
+      -moz-transform: rotateY( 180deg );
+      -o-transform: rotateY( 180deg );
+      transform: rotateY( 180deg );
+      z-index: 3;
+    }
+    
+    .card-front {
+      z-index: 2;
+    }
+  }
+}
+
+.card-back,
+.card-container,
+.card-front {
+  width: 100%;
+  height: 420px;
+  border-radius: 4px;
+}
+
+.card-container.flipped .card {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+
+@media (max-width : $screen-md) {
+  #packages {
+    h2{
+      font-size: em(26);
+    }
+    p {
+      font-size: em(14);
+    }
+  }
+  .pricing-wrapper .card.pricing-card .card-heading{
+        padding-top: 25px;
+  }
+  .pricing-wrapper .card.pricing-card .card-body .pricing-feature-list{
+        padding: 0;
+  }
+}

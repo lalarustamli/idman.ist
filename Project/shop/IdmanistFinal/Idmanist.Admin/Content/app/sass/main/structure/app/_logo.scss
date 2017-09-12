@@ -1,0 +1,92 @@
+//
+// Logo & Nav Menu
+// --------------------------
+#logo_wrapper {
+  height: 65px;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      .logo {
+        float: none;
+        padding: 0;
+        height: auto;
+        img {
+          position: absolute;
+          top: 19px;
+          left: 13px;
+          width: 25px;
+          height: 25px;
+        }
+      }
+      h1.brand-text {
+        font-size: em(17);
+        padding: 5px 0 0 46px;
+        letter-spacing: 0.07em;
+        font-weight: 300;
+        color:#fff;
+      }
+    }
+    li.app_menu-close {
+      float: right;
+      display: none;
+      padding:19px 20px;
+      a {
+        i {
+          font-size: 30px;
+          color: #fff;
+        }
+      }
+    }
+    li.menu-icon {
+      float: right;
+      a {
+        padding: 23px 15px 0 0;
+        display: block;
+        &:hover{
+          color:#fff;
+        }
+        i{
+          font-size: 25px;
+          height: 35px;
+          width: 35px;
+        }
+        i:before{
+          transition: all 150ms;
+        }
+      }
+    }
+  }
+}
+.app_sidebar-menu-collapsed {
+  #app_topnavbar-wrapper #navbar_header .navbar-brand img {
+    position: absolute;
+    top: 24px;
+    left: 13px;
+    width: 25px;
+    height: 25px;
+  }
+  #app_sidebar-left #logo_wrapper li.menu-icon a{
+    display: none;
+    i:before{
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+  #app_sidebar-left:hover #logo_wrapper li.menu-icon a{
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  #navbar_header {
+    display: none;
+  }
+}

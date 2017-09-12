@@ -1,0 +1,89 @@
+.page-profile {
+  #header_wrapper {
+    &.profile-header {
+      background-color: #EEF5F9;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.45))), url("../img/headers/header-lg-03.jpg")!important;
+      height: 320px;
+      min-height: 320px;
+      max-height: 320px;
+      padding: 25px;
+      background-size: cover;
+      background-position: 0 90%!important;
+    }
+  }
+  #profile-contacts {
+    [class*=col-] {
+      padding: 0 7px;
+    }
+    .profile-mini {
+      width: 85px;
+      height: 85px;
+      margin-left: -45px;
+    }
+    .card-heading {
+      min-height: 60px;
+    }
+    .card-body {
+      .name {
+        font-size: em(16)!important;
+        padding: 10px 0 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+      }
+      span {
+        font-size: em(13)!important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+      }
+      .btn {
+        margin: 12px 0 5px !important;
+      }
+    }
+    ul.card-actions.left-bottom > li .btn {
+      font-size: em(13);
+    }
+    ul.card-actions.icons li {
+      margin-left: 0;
+      margin-right: 0;
+      i {
+        font-size: em(22);
+      }
+    }
+  }
+}
+@media (max-width : 767px) {
+  .page-profile {
+    #content .card > .card-body.wrapper {
+      padding: 80px 15px !important;
+      .card.card-comment{
+        .card-heading {
+          min-height: 60px;
+          .card-title {
+            display: none;
+          }
+      }
+      .card-footer {
+        .form-group {
+          margin: 0 !important;
+          padding: 0 !important;
+          .input-group {
+            display: block;
+            .form-control {
+              width: 80%;
+            }
+          }
+          .input-group .input-group-btn {
+            top: 0;
+            position: absolute;
+            right: 25px;
+          }
+        }
+      }
+      }
+    }
+  }
+}

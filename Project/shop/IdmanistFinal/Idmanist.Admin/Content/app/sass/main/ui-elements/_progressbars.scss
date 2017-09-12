@@ -1,0 +1,61 @@
+.progress {
+    border-radius: 20px;
+    height: 4px;
+    overflow: hidden;
+    background-color: #E5EFF5;
+}
+.progress,
+.progress-bar {
+    box-shadow: none;
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fff;
+    text-align: center;
+    box-shadow: none;
+    -webkit-transition: width 0.6s ease;
+    -o-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+    span{
+      right: 20px;
+      font-weight: 700;
+      bottom: 20px;
+      text-align: right;
+      position: absolute;
+      font-size:em(13);
+    }
+    &.progress-bar-primary{
+      background-color:$brand-info;
+      span{
+        color:$brand-info;
+      }
+    }
+    &.progress-bar-success{
+      background-color:$brand-success;
+      span{
+        color:$brand-success;
+      }
+    }
+    &.progress-bar-info{
+      background-color:$brand-info;
+      span{
+        color:$brand-info;
+      }
+    }
+    &.progress-bar-warning{
+      background-color:$brand-warning;
+      span{
+        color:$brand-warning;
+      }
+    }
+    &.progress-bar-danger{
+      background-color:$brand-danger;
+      span{
+        color:$brand-danger;
+      }
+    }
+}

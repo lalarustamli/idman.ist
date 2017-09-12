@@ -1,0 +1,20 @@
+.sidebar-inner {
+    margin-bottom: 75px;
+}
+@media (max-width: 768px) {
+    #app_main-menu-wrapper {
+        left: 0;
+    }
+    #content_outer_wrapper {
+        left: 0 !important;
+    }
+    .app_sidebar-menu-collapsed #app_main-menu-wrapper {
+        display: block;
+        left: 0;
+    }
+    .app_sidebar-menu-collapsed #app_main-menu-wrapper + #content_outer_wrapper {
+        padding-left: 0!important;
+        overflow: hidden;
+        margin-left: 0 !important;
+    }
+}

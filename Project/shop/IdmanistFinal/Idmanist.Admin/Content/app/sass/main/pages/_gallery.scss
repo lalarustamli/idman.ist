@@ -1,0 +1,21 @@
+.page-gallery{
+  //crop image sizes
+  .card-image {
+    /* max-width: 1200px; /* img src width (if known) */
+    max-width: 720px;
+    overflow: hidden;
+    img {
+      /* corrects inline gap in enclosing div */
+      display: block;
+      max-width: 100%;
+
+      /* just in case, to force correct aspect ratio */
+      height: auto !important;
+      width: auto\9; /* ie8+9 */
+      /* lt ie8 */
+      -ms-interpolation-mode: bicubic;
+    }
+  }
+
+
+}

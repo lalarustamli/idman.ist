@@ -1,0 +1,132 @@
+.stepper .nav-tabs {
+  position: relative;
+}
+.stepper .nav-tabs > li {
+  width: 25%;
+  position: relative;
+}
+.stepper .nav-tabs > li:after {
+  content: '';
+  position: absolute;
+  background: #f1f1f1;
+  display: block;
+  width: 100%;
+  height: 5px;
+  top: 30px;
+  left: 50%;
+  z-index: 1;
+}
+.stepper .nav-tabs > li.completed::after {
+  background: $brand-success;
+}
+.stepper .nav-tabs > li:last-child::after {
+  background: transparent;
+}
+.stepper .nav-tabs > li.active:last-child .round-tab {
+  background: $brand-success;
+}
+.stepper .nav-tabs > li.active:last-child .round-tab::after {
+  content: "\f26b";
+  color: #fff;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  display: block;
+  font-family: Material-Design-Iconic-Font;
+  position: absolute;
+  font-size: 18px;
+  -webkit-transition: all,250ms;
+  -khtml-transition: all,250ms;
+  -moz-transition: all,250ms;
+  -ms-transition: all,250ms;
+  -o-transition: all,250ms;
+  transition: all,250ms;
+}
+.stepper .nav-tabs [data-toggle='tab'] {
+  width: 25px;
+  height: 25px;
+  margin: 20px auto;
+  border-radius: 100%;
+  border: none;
+  padding: 0;
+  color: #f1f1f1;
+}
+.stepper .nav-tabs [data-toggle='tab']:hover {
+  background: transparent;
+  border: none;
+}
+.stepper .nav-tabs > .active > [data-toggle='tab'], .stepper .nav-tabs > .active > [data-toggle='tab']:hover, .stepper .nav-tabs > .active > [data-toggle='tab']:focus {
+  color: $brand-success;
+  cursor: default;
+  border: none;
+}
+.stepper .tab-pane {
+  position: relative;
+  padding: 0;
+}
+.stepper .round-tab {
+  width: 25px;
+  height: 25px;
+  line-height: 22px;
+  display: inline-block;
+  border-radius: 25px;
+  background: #fff;
+  border: 2px solid $brand-success;
+  color: $brand-success;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  font-size: 14px;
+}
+.stepper .completed .round-tab {
+  background: $brand-success;
+}
+.stepper .completed .round-tab::after {
+  content: "\f26b";
+  color: #fff;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  display: block;
+  font-family: Material-Design-Iconic-Font;
+  position: absolute;
+  font-size: 18px;
+  -webkit-transition: all,250ms;
+  -khtml-transition: all,250ms;
+  -moz-transition: all,250ms;
+  -ms-transition: all,250ms;
+  -o-transition: all,250ms;
+  transition: all,250ms;
+
+}
+.stepper .active .round-tab {
+  background: #fff;
+  border: 2px solid $brand-success;
+}
+.stepper .active .round-tab:hover {
+  background: #fff;
+  border: 2px solid $brand-success;
+}
+.stepper .active .round-tab::after {
+  display: none;
+}
+.stepper .disabled .round-tab {
+  background: #fff;
+  color: #f1f1f1;
+  border-color: #f1f1f1;
+}
+.stepper .disabled .round-tab:hover {
+  color: #4dd3b6;
+  border: 2px solid #a6dfd3;
+}
+.stepper .disabled .round-tab::after {
+  display: none;
+}
+.stepper{
+  .nav-tabs li.active a:after{
+    background: transparent;
+  }
+}

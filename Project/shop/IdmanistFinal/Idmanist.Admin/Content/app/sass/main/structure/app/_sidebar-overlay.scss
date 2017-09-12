@@ -1,0 +1,230 @@
+//
+// Sidebar Type Overlay
+// --------------------------
+
+.sidebar-overlay {
+  position: fixed;
+  border-top: solid thin #e6edf1;
+  top: 0;
+  bottom: 0;
+  right: -280px;
+  width: 280px;
+  height: calc(100% - 65px);
+  margin-top: 65px;
+  background-color: #fff;
+  overflow: auto;
+  @include box-shadow();
+  -webkit-overflow-scrolling: touch;
+  z-index: $zindex_sidebar_menu_wrapper;
+  @include transition(all 0.2s);
+  
+  .toolbar {
+    background-color: #222F3C;
+    padding: 15px 0 40px 15px;
+    
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      
+      li {
+        display: inline-block;
+        padding: 0 10px;
+      }
+      
+      li a {
+        color: #fff;
+        
+        i {
+          font-size: em(22);
+        }
+      }
+    }
+  }
+  
+  .overlay-header {
+    background-color: #222F3C;
+    height: 110px;
+    width: 100%;
+    
+    figure {
+      padding: 15px 0;
+      
+      img {
+        max-width: 85px;
+        display: block;
+        margin: 0 auto;
+        border: solid 3px rgba(255,255,255,.3);
+      }
+    }
+  }
+  
+  .tabpanel {
+    .nav-tabs {
+      position: fixed;
+      display: inline-block;
+      z-index: 15;
+      width: auto;
+      
+      li a {
+        font-size: em(13);
+      }
+      
+      li.active a i {
+        color: #516073;
+      }
+      
+      li a i {
+        color: #9daec4;
+      }
+    }
+    
+    .tab-content {
+      position: absolute;
+      width: 100%;
+      overflow: auto;
+      padding: 0;
+      margin-top: 50px;
+      height: calc(100% - 65px);
+      .title{
+        font-size: 14px;
+    line-height: 1.42857;
+    color: #758396;
+    display: block;
+    margin:7px 0 10px -10px;
+      }
+      ul.description {
+        margin: 5px 20px;
+        padding: 0;
+        list-style: none;
+        
+        > li.title {
+          font-size: 15px;
+          text-transform: uppercase;
+          font-weight: 600;
+          padding-bottom: 5px;
+        }
+        > li{
+          padding: 5px 0;
+          font-size:13px;
+          small{
+            display: block;
+            font-size: 12px;
+            color:#b1bdcc;
+          }
+        }
+      }
+
+    }
+
+    .tab-pane {
+      .btn-float {
+        position: absolute;
+        bottom: 30px;
+        right: 15px;
+      }
+    }
+  }
+
+  #chat_fab_new {
+    position: absolute;
+    right: 20px;
+    bottom: 29px;
+  }
+}
+
+
+
+
+.sidebar-overlay-open {
+  #app_sidebar-right {
+    .sidebar-overlay {
+      right: 0;
+      z-index: $zindex_rightsidebar_wrapper;
+      @include transition(all 0.2s);
+    }
+  }
+}
+//
+// Sidebar Type Drawer
+// --------------------------
+
+.sidebar-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -280px;
+  width: 280px;
+  height: 100%;
+  margin-top: 65px;
+  background-color: #fff;
+  overflow: auto;
+  @include box-shadow();
+  -webkit-overflow-scrolling: touch;
+  z-index: $zindex_sidebar_menu_wrapper;
+  @include transition(all 0.2s);
+  
+  .toolbar {
+    background-color: #222F3C;
+    padding: 15px 0 40px 15px;
+    
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      
+      li {
+        display: inline-block;
+        padding: 0 10px;
+      }
+      
+      li a {
+        color: #fff;
+        
+        i {
+          font-size: em(28);
+        }
+      }
+    }
+  }
+  
+  .drawer-header {
+    background-color: #222F3C;
+    height: 110px;
+    width: 100%;
+    
+    figure {
+      padding: 15px 0;
+      
+      img {
+        max-width: 85px;
+        display: block;
+        margin: 0 auto;
+        border: solid 3px rgba(255,255,255,.3);
+      }
+    }
+  }
+  
+  .tabpanel {
+    .nav-tabs {
+      background-color: #222F3C;
+      
+      li.active a i {
+        color: #fff;
+      }
+      
+      li a i {
+        font-size: em(40);
+        color: rgba(255,255,255,.3);
+      }
+    }
+    
+    .tab-pane {
+      .btn-float {
+        position: absolute;
+        bottom: 30px;
+        right: 15px;
+      }
+    }
+  }
+}

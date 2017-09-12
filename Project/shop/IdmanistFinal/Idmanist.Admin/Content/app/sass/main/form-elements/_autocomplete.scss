@@ -1,0 +1,27 @@
+//autocomplete
+
+.typeahead {
+    width: 100%;
+
+    li a:hover {
+        cursor: pointer;
+        background-color: $mw-blue!important;
+    }
+
+    li.active a {
+        color: #fff!important;
+        background-color: $mw-blue!important;
+    }
+}
+
+.autocomplete_clear {
+    .zmdi-close {
+        position: absolute;
+        right: 15px;
+        top: 4px;
+        font-size: 20px;
+        &:hover{
+          cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.circle{
+ @include border-radius(50%);
+ &.xs{
+   width:10px;
+   height: 10px;
+ }
+ &.sm{
+   width:20px;
+   height: 20px;
+ }
+ &.md{
+   width:40px;
+   height: 40px;
+ }
+ &.lg{
+   width:60px;
+   height: 60px;
+ }
+ &.xl{
+   width:100px;
+   height: 100px;
+ }
+ &.xxl{
+   width:200px;
+   height: 200px;
+ }
+}

@@ -1,0 +1,31 @@
+
+//BOXED
+
+body.boxed-layout{
+  background: #597582; //gray
+  #app_wrapper{
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      box-shadow: 0 0 12px rgba(0,0,0,.45);
+      overflow: hidden;
+  }
+  #app_topnavbar-wrapper{
+        position: absolute;
+  }
+  #content_wrapper.rightnav_v3 #rightnav{
+    position: absolute;
+        top: 0;
+  }
+  .sidebar-overlay{
+    position: absolute;
+  }
+  .sidebar-overlay .tabpanel .nav-tabs{
+    position: absolute;
+  }
+  .backdrop{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}

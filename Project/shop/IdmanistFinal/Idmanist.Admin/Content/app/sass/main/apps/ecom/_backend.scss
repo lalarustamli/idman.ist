@@ -1,0 +1,77 @@
+.customer-table,
+.order-table,
+.product-table {
+  border: none;
+  
+  img {
+    width: 75px;
+    max-width: 75px;
+  }
+.card.card-data-tables .mdl-data-table td, .card.card-data-tables .mdl-data-table th,
+.card.card-data-tables .mdl-data-table td{
+        text-align: center;
+  }
+  td {
+    a.icon {
+      background: #E8F0FE;
+      border: none;
+      border-radius: 100%;
+      height: 35px;
+      margin: 0 6px;
+      width: 35px;
+      display: inline-block;
+      line-height: 3em;
+      text-indent: 5px;
+      
+      i {
+        font-size: em(27);
+        margin-right: 15px;
+      }
+      &:hover{
+        background: #688696;
+        color: #fff;
+      }
+    }
+    .label{
+      font-size: em(12);
+    }
+  }
+}
+
+.cart-total {
+  font-size: em(23);
+  font-weight: 600;
+}
+
+.ecom-edit-panel {
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 20px;
+    line-height: 1;
+    color: #1c2732;
+    opacity: 0.75;
+  }
+  
+  .slick-prev {
+    left: -5px;
+    z-index: 99;
+  }
+  
+  .slick-next {
+    right: -5px;
+    z-index: 99;
+  }
+  
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 20px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 11px;
+  }
+  
+  .slick-dots li {
+    margin: 0 1px;
+  }
+}

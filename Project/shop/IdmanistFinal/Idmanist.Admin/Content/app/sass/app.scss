@@ -1,0 +1,128 @@
+/*
+ *
+ *   MaterialWrap - Bootstrap + Material Design Admin Theme
+ *   version 1.0
+*/
+//== Variables, Mixins, and Functions
+@import 'main/util/_var';
+@import 'main/util/_var-bootstrap';
+@import 'main/util/_var-mdb';
+@import 'main/util/_var-material-colors';
+@import 'main/util/_mixins';
+@import 'main/util/_functions';
+@import 'main/util/_helpers';
+//== Common
+@import 'main/_base';
+//== Colors, Gradient
+@import 'main/colors/_material-colors';
+@import 'main/colors/_mw-colors';
+
+
+//== App layouts
+@import 'main/structure/app/_app-wrapper';
+@import 'main/structure/app/_sidebar-collapse';
+@import 'main/structure/app/_main-menu';
+@import 'main/structure/app/_sidebar-overlay';
+@import 'main/structure/app/_sidebar-wrappers';
+@import 'main/structure/app/_topbar-nav';
+@import 'main/structure/app/_boxed';
+@import 'main/structure/app/_logo';
+//== Page laouts
+@import 'main/structure/page/_main';
+//== Common page structures
+@import 'main/structure/common/_main';
+//== UI Elements
+@import 'main/ui-elements/_avatars';
+//Form Elements
+@import 'main/form-elements/_forms';
+@import 'main/form-elements/_dropdowns';
+@import 'main/form-elements/_buttons';
+@import 'main/form-elements/_checkboxes';
+@import 'main/form-elements/_radios';
+@import 'main/form-elements/_inputs-size';
+@import 'main/form-elements/_inputs';
+@import 'main/form-elements/_toggle';
+@import 'main/form-elements/_autocomplete';
+@import 'main/form-elements/_form-wizard';
+//UI Elements
+@import 'main/ui-elements/_alerts';
+@import 'main/ui-elements/_badges';
+@import 'main/ui-elements/_breadcrumbs';
+@import 'main/ui-elements/_labels';
+@import 'main/ui-elements/_list-group';
+@import 'main/ui-elements/_loaders';
+@import 'main/ui-elements/_pagination';
+@import 'main/ui-elements/_popovers';
+@import 'main/ui-elements/_progressbars';
+@import 'main/ui-elements/_tabs';
+@import 'main/ui-elements/_scrollbar';
+@import 'main/ui-elements/_ripples';
+@import 'main/ui-elements/_animated-icons';
+@import 'main/ui-elements/_tooltips';
+@import 'main/ui-elements/_nav-pills';
+@import 'main/ui-elements/_media';
+@import 'main/ui-elements/_preloader';
+@import 'main/ui-elements/_wells';
+@import 'main/ui-elements/_collapsible';
+@import 'main/ui-elements/_sliders';
+@import 'main/ui-elements/_shapes';
+@import 'main/ui-elements/_animations';
+//== Components
+@import 'main/components/_stepper';
+@import 'main/components/_chips';
+@import 'main/components/_toolbars';
+@import 'main/components/_drawers-left';
+@import 'main/components/_drawers-right';
+@import 'main/components/_context-menu';
+@import 'main/components/_modals';
+//== Tables
+@import 'main/tables/_tables';
+@import 'main/tables/_data-tables';
+//== Charts
+@import 'main/charts/_charts';
+@import 'main/charts/chartist/chartist';
+@import 'main/charts/chartist/_chartist-demo';
+//== Apps
+@import 'main/apps/ecom/_dashboard';
+@import 'main/apps/ecom/_backend';
+@import 'main/apps/_calendar';
+@import 'main/apps/_social';
+@import 'main/apps/_notes';
+@import 'main/apps/_mail';
+@import 'main/apps/_file-manager';
+@import 'main/apps/_chat';
+@import 'main/apps/_contacts';
+@import 'main/apps/_taskboard';
+@import 'main/apps/_locations';
+//== Page Views
+@import 'main/pages/_authentication';
+@import 'main/pages/_profile';
+@import 'main/pages/_invoice';
+@import 'main/pages/_timeline';
+@import 'main/pages/_pricing-tables';
+@import 'main/pages/_gallery';
+//== Cards
+@import 'main/cards/_card-templates';
+@import 'main/cards/_card-demos';
+//== Weather Icons
+@import 'main/weather-icons/weather-icons';
+//== Video Player
+@import 'main/media/_video';
+@import 'main/media/_audio';
+//== Plugins
+@import 'main/plugins/_plugin-prism';
+@import 'main/plugins/_plugin-summernote';
+@import 'main/plugins/_plugin-slick';
+@import 'main/plugins/_plugin-pikaday';
+@import 'main/plugins/_plugin-material-design-calendar';
+@import 'main/plugins/_plugin-photoswipe';
+@import 'main/plugins/_plugin-fullcalendar';
+@import 'main/plugins/_plugin-masonry';
+@import 'main/plugins/_plugin-bootstrap-select';
+@import 'main/plugins/_plugin-toolbar';
+@import 'main/plugins/_plugin-customScrollbar';
+//== Profile Styles
+@import 'main/profiles/_user-profile';
+//== Demo styles
+@import 'main/demo/_demo-styles';
+@import 'main/demo/_demo-theme-colors';

@@ -1,0 +1,145 @@
+// @import url(//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+// @import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+//== Import Icons
+@import 'icons/mdi/_mdi-var';
+//
+// Base
+// --------------------------
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+		min-height: 100vh!important;
+    font-size: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    display: block!important;
+    font-family: $font-family-body;
+    font-weight: 400;
+    line-height: em(20);
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-overflow-scrolling: touch;
+		overflow-x: hidden;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+    outline: none;
+    @include transition(all 250ms);
+}
+a:active,
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+*,:focus,:active {
+    outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $font-family-header;
+    font-weight: 400;
+}
+h1{
+  font-size: em(24);
+}
+h2{
+  font-size: em(20);
+}
+h3{
+  font-size: em(18);
+}
+p {
+    font-size: em(14);
+    line-height: 1.9em;
+}
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6{
+  font-family: $font-family-header;
+}
+.h1 .small,
+.h1 small,
+.h2 .small,
+.h2 small,
+.h3 .small,
+.h3 small,
+.h4 .small,
+.h4 small,
+.h5 .small,
+.h5 small,
+.h6 .small,
+.h6 small,
+h1 .small,
+h1 small,
+h2 .small,
+h2 small,
+h3 .small,
+h3 small,
+h4 .small,
+h4 small,
+h5 .small,
+h5 small,
+h6 .small,
+h6 small {
+    color: #575f6c;
+}
+.dl-horizontal,
+.dl-vertical{
+  margin-bottom:12px;
+  dt{
+  font-weight: 600;
+  }
+  dt,dd{
+    font-size:em(14);
+  }
+}
+small{
+  font-size: 11px;
+  font-weight: 600;
+}
+caption {
+    color: $text_color;
+}
+img {
+    max-width: 100%;
+}
+pre{
+  background-color: #eef5f9;
+border: 1px solid #dae8ef;
+color:#607188;
+}
+::-webkit-input-placeholder {
+    color: rgba(140, 155, 174,.6)!important;
+}
+:-moz-placeholder {
+      color: rgba(140, 155, 174,.6)!important;
+}
+::-moz-placeholder {
+      color: rgba(140, 155, 174,.6)!important;
+}
+:-ms-input-placeholder {
+      color: rgba(140, 155, 174,.6)!important;
+}
+blockquote{
+  border-left: 5px solid #E3ECF7;
+}
+canvas {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+}
+address{
+  line-height: 1.5em;
+  font-size: em(14);
+}

@@ -1,0 +1,94 @@
+.app-locations {
+  .location-menu {
+    padding: 0 !important;
+    
+    .header-search-form {
+      background: #20adac;
+      height: 70px;
+      margin: 0;
+      
+      .header-search-icon {
+        position: absolute;
+        z-index: 15;
+        left: 35px;
+        top: 26px;
+        
+        i {
+          color: #bcced6!important;
+          font-size: 1.25em;
+        }
+      }
+      
+      .form-group .form-control {
+        background-image: none;
+        margin: -5px 0 0;
+        padding: 10px 20px;
+        height: 45px;
+        display: inline-block;
+        background-color: #fff;
+        -webkit-transition: all 150ms ease-in-out;
+        -khtml-transition: all 150ms ease-in-out;
+        -moz-transition: all 150ms ease-in-out;
+        -ms-transition: all 150ms ease-in-out;
+        -o-transition: all 150ms ease-in-out;
+        transition: all 150ms ease-in-out;
+        width: 89%;
+        text-indent: 30px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -khtml-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -ms-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        -o-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        @include border-radius(3px);
+        margin: 13px 20px 20px;
+      }
+      
+      .form-control:focus {
+        color: #4b5a6d;
+        box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+      }
+    }
+    
+    .location-list {
+      background: #fff;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      -khtml-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      -ms-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      -o-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      margin: 20px 20px 100px;
+      
+      .list-group {
+        .list-group-item {
+          border-bottom: 1px solid rgba(215,225,237,.8)!important;
+          padding:10px;
+          display: table;
+              width: 100%;
+          .list-group-item-body {
+            display: table-cell;
+            float: left;
+          }
+        }
+      }
+    }
+  }
+  
+  #storeLocations {
+    .list-group-item {
+      border: none;
+      display: table;
+        width: 100%;
+    }
+    .list-group-item-body{
+      display: table-cell;
+      float: left;
+      span{
+        line-height: 1.7em;
+        font-size: 12px;
+      }
+    }
+  }
+}

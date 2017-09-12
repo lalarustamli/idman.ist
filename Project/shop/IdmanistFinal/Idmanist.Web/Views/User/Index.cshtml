@@ -1,0 +1,78 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserProfile.cshtml";
+}
+
+
+
+@using IdmanistData.Model;
+@{
+
+    var user = Session["user"] as Customer;
+    
+
+}
+
+
+<!-- Content
+================================================== -->
+<div class="dashboard-content">
+    <!-- Titlebar -->
+    <div id="titlebar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Profilim</h2>
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li><a href="#">Ev</a></li>
+                        @*<li><a href="#">Dashboard</a></li>*@
+                        <li>Profilim</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Profile -->
+        <div class="col-lg-6 col-md-12">
+            <div class="dashboard-list-box margin-top-0">
+                <h4 class="gray">Profil Detalları</h4>
+                <div class="dashboard-list-box-static">
+                    <!-- Details -->
+
+                    @Html.AntiForgeryToken()
+                    @using (Html.BeginForm("Edit", "user", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="my-profile">
+                            <div class="form-group">
+                                <label>İstifadəçi adı</label>
+                                <input value="@user.UserName" type="text" name="UserName">
+                                <label>Email</label>
+                                <input value="@user.Email" type="text" name="Email">
+                            </div>
+                        </div>
+                        <input type="hidden" name="UserID" value="@user.UserID" />
+                        <button class="button margin-top-15">Yadda saxla</button>
+
+
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+     
+        <div class="col-lg-6 col-md-12">
+        
+        </div>
+
+    </div>
+</div>
+
+
+
+

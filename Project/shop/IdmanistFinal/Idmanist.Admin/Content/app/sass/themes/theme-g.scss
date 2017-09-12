@@ -1,0 +1,478 @@
+@import '../main/util/_var-material-colors';
+@import '../main/util/_var';
+@import '../main/util/_var-mdb';
+@import '../main/util/_mixins'; //
+// Variables to change theme colors
+// --------------------------------------------------
+//== Default Skin Colors
+$app_primary:#31429B ;//** Main App Color
+$app_darker_primary:#4053B1;//** Main App Color
+$app_accent:#FD4582;//** Main Accent Color
+$body_bg: #eef5f9;  //** Background color for <body>
+$text_color: #607188;  //** Global text color on <body>
+$header_text_color: #516073; //** Global text color for all h1 - h6
+
+
+
+$app_topnavbar-wrapper_bg: $app_darker_primary; //** Text color for <header id="app_topnavbar-wrapper">
+$app_topnavbar-wrapper_color: #fff;
+$app_topnavbar-wrapper_hover_color: rgba(255,255,255,.2); //** Background color for <aside id="sidebar_menu_wrapper">
+
+
+
+$navbar_header_bg: $app_darker_primary;//** Background color for <div id="navbar_header">
+$sidebar_menu_wrapper_bg: #fff; //** Background color
+$sidebar_menu_active_bg: #EEF5F9; //** Background active color
+$sidebar_menu_text_color: #688696; //** Text active color
+$sidebar_menu_active_text_color: #688696; //** Text active color
+//GENERAL STYLES--------------------------------------------------------------->
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+  color:$header_text_color;
+}
+a:link,
+a:visited {
+  color: #688696;
+  transition: all 0.5s ease;
+}
+a:active,
+a:hover {
+  color: $app_accent;
+}
+a.accent:link,
+a.accent:visited {
+  color: $app_accent;
+  transition: all 0.5s ease;
+}
+a.accent:active,
+a.accent:hover {
+  color: darken($app_accent, 13%);
+}
+//HELPER CLASSES--------------------------------------------------------------->
+.app_primary_bg {
+  background: $app_primary;
+}
+.app_primary_lighten_bg {
+  background: lighten($app_primary,5%);
+}
+.app_primary_darken_bg {
+  background: darken($app_primary,5%);
+}
+.app_accent_bg {
+  background-color: $app_accent;
+}
+//----------------------------------------------------------------------------->
+//LAYOUT
+//----------------------------------------------------------------------------->
+body {
+  background-color: $body_bg;
+  color: $text_color;
+  #app_wrapper {
+    //TOP NAVBAR--------------------------------------------------------------->
+    #app_topnavbar-wrapper {
+      background-color: $app_topnavbar-wrapper_bg;
+      color: $app_topnavbar-wrapper_color;
+      .navbar-nav {
+        li a {
+          color: $app_topnavbar-wrapper_color;
+        }
+        ul.dropdown-menu li a {
+          color: #688696;
+        }
+        li ul li,
+        li ul li a{
+          color: #688696;
+        }
+      }
+      .navbar-nav {
+        > li > a {
+          &:active,
+          &:focus,
+          &:hover,
+          &:active .name,
+            &:focus .name,
+            &:hover .name{
+            background: $app_topnavbar-wrapper_hover_color;
+
+          }
+        }
+      }
+      .avatar-menu .name,
+       .select-menu .form-group .dropdownjs>input[readonly],
+       .select-menu .form-group .dropdownjs::after{
+          color: $app_topnavbar-wrapper_color;
+      }
+      .close-search{
+        color: #688696!important;
+      }
+    }
+    #app_sidebar-left {
+      background-color: $sidebar_menu_wrapper_bg;
+      //LOGO------------------------------------------------------------------->
+      #logo_wrapper {
+        background-color:$app_darker_primary;
+        box-shadow:none;
+        ul li a{
+          color:$app_topnavbar-wrapper_color;
+        }
+      }
+      #app_main-menu-wrapper {
+        //LEFT SIDEBAR--------------------------------------------------------->
+        background-color: $sidebar_menu_wrapper_bg;
+        .nav-pills > li > a {
+          color: $sidebar_menu_text_color;
+        }
+        .nav .open > a,
+        .nav .open > a:focus,
+        .nav .open > a:hover,
+        .nav-pills > li > a:active,
+        .nav-pills > li > a:hover {
+          color: $sidebar_menu_active_text_color;
+          background-color: $sidebar_menu_active_bg;
+        }
+        .nav > li > a:focus {
+          background-color: $sidebar_menu_wrapper_bg;
+        }
+        .nav > li > a:hover {
+          background-color: $sidebar_menu_active_bg;
+        }
+        .nav-pills > li.active > a,
+        .nav-pills > li.active > a:focus,
+        .nav-pills > li.active > a:hover {
+          color: $sidebar_menu_active_text_color;
+          background-color:$sidebar_menu_active_bg;
+        }
+        .nav .nav-sub {
+          background-color: $sidebar_menu_active_bg;
+        }
+        .nav .nav-sub li > a {
+          color: $sidebar_menu_text_color;
+        }
+        .nav .nav-sub li a:hover,
+        .nav > li > .nav-sub li a:hover,
+        .nav > li > .nav-sub li.active a,
+        .nav > li > .nav-sub li.active a:hover {
+          color: $sidebar_menu_active_text_color;
+        }
+        .nav-pills > li.active > a,
+        .nav-pills > li.active > a:focus,
+        .nav-pills > li.active > a:hover {
+        color: $sidebar_menu_active_text_color;
+          border-left-color: $app_accent;
+        }
+        .nav.nav-pills.nav-stacked {
+          .nav-dropdown.active {
+            > a {
+              border-left-color: $app_accent;
+            }
+            > .nav-sub {
+              border-left-color: $app_accent;
+            }
+          }
+        }
+      }
+    }
+
+    //RIGHT OVERLAY SIDEBAR-------------------------------------------------------->
+    #app_sidebar-right{
+      .sidebar-overlay {
+      }
+    }
+    //HEADER----------------------------------------------------------------------->
+    #content_wrapper {
+      #header_wrapper {
+        background: $app_primary;
+      }
+    }
+    //FOOTER----------------------------------------------------------------------->
+    #footer_wrapper {
+      background: $app_primary;
+    }
+  }
+}
+//----------------------------------------------------------------------------->
+//Components
+//----------------------------------------------------------------------------->
+//Nav Tabs-------------------------------------------------------->
+.nav-tabs li.active a:after {
+background: $app_accent;
+}
+//Modals
+// Styles pulled from: main/modals/_bs-modals.scss
+.modal {
+  .modal-header {
+    color: #fff;
+    background: $app_primary;
+    .close {
+      color: #fff;
+    }
+  }
+}
+//Cards
+// Styles pulled from: main/cards/_cards.scss
+.card {
+  &.card-accent {
+    .card-body,
+    .card-footer,
+    .card-footer a,
+    .card-footer a:visited,
+    .card-title,
+    > .card-heading {
+      color: #fff!important;
+      background-color: $app_accent;
+    }
+    .card-footer a:active,
+    .card-footer a:hover {
+      color: lighten( $app_accent,30%)!important;
+    }
+  }
+  .card-body.card-accent,
+  .card-footer.card-accent,
+  .card-heading.card-accent,
+  .card-heading.card-accent .card-actions > a,
+  .card-heading.card-accent .card-actions > li > a,
+  .card-heading.card-accent .card-title {
+    color: #fff;
+    background-color: $app_accent;
+    border-color: transparent;
+  }
+}
+//Context Menu
+// Styles pulled from: main/components/_context-menu.scss
+.context-menu__link:hover {
+  background-color: $app_accent;
+  border-left: solid 6px darken($app_accent, 20%);
+}
+//Buttons
+// Styles pulled from: main/form-elements/_buttons.scss
+.btn,
+.navbar .navbar-nav > li > a.btn {
+  &.btn-primary {
+    @include btn-styles($app_accent);
+    &.btn-flat {
+      &.btn-primary:hover {
+        background-color: rgba($app_accent,.1);
+      }
+    }
+  }
+}
+.btn-primary-hover:hover {
+  background-color: $app_accent;
+  box-shadow: 0 14px 26px -12px rgba($app_accent,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba($app_accent,.2);
+  color: #fff!important;
+}
+.mdl-button.mdl-button--colored {
+  color: $app_accent;
+}
+.mdl-button--raised {
+  box-shadow: 0 12px 20px -10px rgba($app_accent,.98),0 5px 20px 0 rgba(0,0,0,.14),0 5px 19px -7px rgba($app_accent,.67);
+}
+.mdl-button--raised.mdl-button--colored {
+  background: $app_accent;
+  color: rgb(255,255,255);
+}
+.mdl-button--raised.mdl-button--colored:hover {
+  background-color: $app_accent;
+}
+.mdl-button--raised.mdl-button--colored:active {
+  background-color: $app_accent;
+}
+.mdl-button--raised.mdl-button--colored:focus:not(:active) {
+  background-color: $app_accent;
+}
+.mdl-button--primary.mdl-button--primary {
+  color: $app_accent;
+}
+.mdl-button--primary.mdl-button--primary.mdl-button--fab,
+.mdl-button--primary.mdl-button--primary.mdl-button--raised {
+  color: rgb(255,255,255);
+  background-color: $app_accent;
+}
+//Drop Downs
+// Styles pulled from: main/form-elements/_dropdowns.scss
+.btn-primary + .dropdown-menu > li > a:active,
+.btn-primary + .dropdown-menu > li > a:focus,
+.btn-primary + .dropdown-menu > li > a:hover,
+.btn-primary + .dropdown-menu li a:active,
+.btn-primary + .dropdown-menu li a:focus,
+.btn-primary + .dropdown-menu li a:hover,
+.btn-primary.dropdown-menu > li > a:active,
+.btn-primary.dropdown-menu > li > a:focus,
+.btn-primary.dropdown-menu > li > a:hover,
+.btn-primary.dropdown-menu li a:active,
+.btn-primary.dropdown-menu li a:focus,
+.btn-primary.dropdown-menu li a:hover {
+  background-color: $app_accent;
+  color: #fff!important;
+  box-shadow: 0 14px 26px -12px rgba($app_accent, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($app_accent, 0.2);
+}
+//Form Wizard
+// Styles pulled from: main/form-elements/_form-wizard.scss
+#rootwizard {
+  .pager li > a,
+  .pager li > span {
+    background-color: $app_accent;
+  }
+}
+//Toggles
+// Styles pulled from: main/form-elements/_toggles.scss
+.togglebutton {
+  label {
+    input.toggle-primary[type=checkbox]:checked {
+      + .toggle {
+        background-color: rgba($app_accent, (70/100));
+      }
+      + .toggle:after {
+        border-color: $app_accent;
+      }
+      + .toggle:active:after {
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba($app_accent, (10/100));
+      }
+    }
+  }
+}
+//Authentication Wrapper
+// Styles pulled from: main/pages/_authentication.scss
+#login-wrapper {
+  .card.active {
+    #signup_wrapper {
+      background: $app_accent;
+    }
+  }
+}
+//No ui slider plugin
+// Styles pulled from: main/plugins/_plugin-nouislider.scss
+.slider {
+  &.noUi-connect {
+    background-color: $app_accent;
+  }
+  .noUi-handle {
+    border-color: $app_accent;
+  }
+  &.slider-primary {
+    & .noUi-connect,
+    &.noUi-connect {
+      background-color: $brand-primary;
+    }
+    .noUi-handle {
+      border-color: $brand-primary;
+    }
+  }
+}
+//Pik a Day Calendar Plugin
+// Styles pulled from: main/plugins/_plugin-pikaday.scss
+.pika-button:hover {
+  background: $app_accent;
+}
+.dark-theme .is-today .pika-button {
+  color: $app_accent;
+}
+// Prism - Syntax Highlighter
+// Styles pulled from: main/plugins/_plugin-prism.scss
+code {
+  color: $app_accent;
+  background-color: lighten($app_accent,45%);
+}
+//Alerts
+// Styles pulled from: main/ui-elements/_plugin-alerts.scss
+.swal2-modal {
+  .swal2-confirm {
+    background-color: $app_accent!important;
+    color: #FFF!important;
+    box-shadow: 0 2px 2px 0 rgba($app_accent,.14), 0 3px 1px -2px rgba($app_accent,.2), 0 1px 5px 0 rgba($app_accent,.12)!important;
+    &:hover {
+      box-shadow: 0 14px 26px -12px rgba($app_accent,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba($app_accent,.2);
+    }
+  }
+}
+.alertify .alert nav button.ok:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button),
+.alertify .dialog nav button.ok:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button) {
+  @include btn-styles($app_accent);
+}
+//Demo styles for icon page
+.icon a:hover {
+  background-color: $app_accent;
+}
+//Badges
+.nav-pills > .active > a > .badge,
+list-group-item.active > .badge {
+  color: $app_accent;
+}
+//Nav Pills
+#content {
+  .nav-pills > li.active > a {
+    background-color: $app_accent;
+  }
+  .nav-pills > li.active > a:focus,
+  .nav-pills > li.active > a:hover {
+    background-color: $app_accent;
+  }
+}
+//Preloaders
+.preloader {
+  &.pls-pink .plc-path {
+    stroke: $app_accent;
+  }
+}
+.loader {
+  &.loader-pink:before {
+    background-color: $app_accent;
+  }
+}
+//Progressbars
+.progress-bar {
+  background-color: $app_accent;
+}
+//Tabs
+.card.card-nav-tabs {
+  .card-heading {
+    &.heading-primary {
+      background: $brand-primary;
+      @include button-shadow-color($brand-primary);
+      color: #fff;
+    }
+  }
+}
+//Selec menuIconState.dropdownjs > ul > li .selected,
+.dropdownjs > ul > li:active,
+.dropdownjs > ul > li:focus,
+.dropdownjs > ul > li:hover {
+  background-color: $app_accent;
+  box-shadow: 0 14px 26px -12px rgba( $app_accent, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba( $app_accent, 0.2);
+  color: #fff;
+}
+//----------------------------------------------------------------------------->
+//Video Plaer
+//----------------------------------------------------------------------------->
+.mejs__controls:not([style*="display: none"]) {
+    background: rgba($app_primary, 1);
+}
+//----------------------------------------------------------------------------->
+//Pages
+//----------------------------------------------------------------------------->
+#auth_wrapper{
+	background: $app_primary;
+}
+//----------------------------------------------------------------------------->
+//Apps
+//----------------------------------------------------------------------------->
+//== Mail
+//Pin toggle
+.checkbox-pin label {
+  background: lighten($app_primary,50%);
+}
+.checkbox-pin input:checked + label {
+  background: darken($app_primary,5%);
+}
+.checkbox-pin input:checked + label:after,
+.checkbox-pin input:checked + label:before {
+  background: $app_primary;
+}
+.checkbox-pin label:before {
+  color: $app_primary;
+}

@@ -23,6 +23,8 @@ namespace Idmanist.Admin
             builder.RegisterType<ProductRepository>().As<IProductRepository>();
             builder.RegisterType<ProductFeatureRepository>().As<IProductFeatureRepository>();
             builder.RegisterType<ProductImageRepository>().As<IProductImageRepository>();
+            builder.RegisterType<SliderRepository>().As<ISliderRepository>();
+            builder.RegisterType<BrandRepository>().As<IBrandRepository>();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

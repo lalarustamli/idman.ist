@@ -7774,7 +7774,7 @@ button.button.btn-proceed-checkout span {
 	padding-top: 12px;
 }
 .account-login .content p {
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	font-size: 12px;
 }
 .account-login .content p.required {
@@ -8720,8 +8720,8 @@ nav {
 .toplinks .links {
 	text-align: right;
 }
-.toplinks div.links div a {
-	padding: 0 0 0 12px;
+.toplinks .links a {
+	color:white!important;
 }
 .toplinks>div>div.myaccount>a:before {
 	content: '\f007';

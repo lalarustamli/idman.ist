@@ -1,0 +1,19 @@
+﻿@model IEnumerable<IdmanistData.Model.Product>
+     <!-- end breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <ul>
+                @foreach (var product in model)
+                {
+                    <li class="home"> <a href="index.html" title="Go to Home Page">Home</a><span>&mdash;›</span></li>
+                <li class=""> <a href="grid.html" title="Go to Home Page"></a><span>&mdash;›</span></li>
+                <li class="category13"><strong> Sample Product </strong></li>
+                }
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumbs --> 
+

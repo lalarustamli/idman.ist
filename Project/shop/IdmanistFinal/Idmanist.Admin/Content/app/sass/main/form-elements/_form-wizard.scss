@@ -1,0 +1,120 @@
+#rootwizard {
+  .form-wizard-nav {
+    .progress {
+      position: absolute;
+      display: inline-block;
+      top: 50px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 5px;
+      border-radius: 0;
+    }
+
+    li {
+      a {
+        color: inherit!important;
+        background-color: transparent!important;
+        box-shadow: none!important;
+      }
+
+      .title {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -15px;
+      }
+    }
+
+    li {
+      .step {
+        background-color: #fff;
+        color: #3e4c5e;
+        display: inline-block;
+        line-height: 28px;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 4px solid #E3ECF7;
+        @include transition(all .4s);
+      }
+
+      .step:hover {
+        display: inline-block;
+        line-height: 28px;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 4px solid #ec407a;
+        background: #fff;
+        color: #ec407a;
+        box-shadow: 0 14px 26px -12px rgba(233,30,99,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(233,30,99,.2);
+      }
+    }
+
+    li.active {
+      .step {
+        display: inline-block;
+        line-height: 28px;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 4px solid #ec407a;
+        background: #fff;
+        color: #ec407a;
+        box-shadow: 0 14px 26px -12px rgba(233,30,99,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(233,30,99,.2);
+      }
+    }
+
+    li.done {
+      .step {
+        display: inline-block;
+        line-height: 28px;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 4px solid #ec407a;
+        background: #ec407a;
+        color: #fff;
+        box-shadow: 0 14px 26px -12px rgba(233,30,99,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(233,30,99,.2);
+      }
+    }
+  }
+
+  .pager li > a,
+  .pager li > span {
+    display: inline-block;
+    padding: 12px 30px;
+    border: none;
+  }
+
+  .pager .disabled > a,
+  .pager .disabled > a:focus,
+  .pager .disabled > a:hover,
+  .pager .disabled > span {
+    color: #ced9e8;
+    cursor: not-allowed;
+    background-color: #9daec4;
+    box-shadow: none;
+  }
+}
+
+
+
+
+@media (max-width : 768px) {
+#rootwizard {
+  .card-heading{
+        padding-bottom: 0;
+  }
+  .nav-justified>li {
+      display: table-cell;
+      width: 1%;
+      text-align: center;
+      .title{
+        display: none;
+      }
+  }
+
+  }
+}

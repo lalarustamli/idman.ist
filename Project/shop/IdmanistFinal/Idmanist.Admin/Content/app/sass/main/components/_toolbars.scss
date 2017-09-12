@@ -1,0 +1,490 @@
+//--------------------------------------------
+// Actions - is used for the header icons on
+// the content header, side panels and cards
+//--------------------------------------------
+//Card Actions
+//------------------------------------------------------------------------------
+
+ul.card-actions.left-bottom,
+ul.card-actions.left-top,
+ul.card-actions.right-bottom,
+ul.card-actions.right-top {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  
+  > li {
+    display: inline-block;
+    
+    a {
+      font-size: em(18);
+      text-transform: uppercase;
+    }
+    
+    a.btn,
+    button.btn {
+      font-size: em(13);
+    }
+  }
+}
+
+ul.card-actions.right-top {
+  right: 20px;
+  top: 20px;
+}
+
+ul.card-actions.left-top {
+  left: 20px;
+  top: 20px;
+  
+  > li {
+    margin-right: 20px;
+  }
+  
+  i {
+    font-size: em(18);
+  }
+}
+
+ul.card-actions.right-bottom {
+  right: 10px;
+  bottom: 0;
+  
+  > li {
+    .btn {
+      margin: 7px 0;
+      padding: 10px;
+    }
+    
+    a {
+      margin: 15px 0;
+    }
+  }
+}
+
+ul.card-actions.left-bottom {
+  left: 10px;
+  bottom: 0;
+  
+  > li {
+    .btn {
+      margin: 7px 0;
+      padding: 10px;
+    }
+    
+    a {
+      margin: 15px 0;
+    }
+  }
+}
+
+ul.card-actions.icons {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    display: inline-block;
+    
+    i {
+      font-size: em(18);
+    }
+    
+    ul {
+      li {
+        display: block;
+      }
+    }
+  }
+  
+  li a i {
+    font-size: em(18);
+  }
+  
+  li {
+    .btn-fab {
+      i {
+        font-size: 24px!important;
+      }
+    }
+  }
+}
+
+//Card Toolbars with buttons
+ul.card-actions.buttons.right-top {
+  right: 20px;
+  top: 0;
+  li{
+    .btn{
+      font-size: 14px;
+    }
+  }
+  li.dropdown{
+    a{
+        font-size: 14px;
+    }
+  }
+}
+
+#header_wrapper {
+  .card-actions.icons > a,
+  .card-actions.icons > li > a {
+    width: 40px;
+    height: 40px;
+    padding-top: 11px;
+  }
+  
+  .card-actions.left-top {
+    left: 21px!important;
+    top: 10px!important;
+    z-index: 10;
+    
+    li {
+      padding-right: 8px;
+    }
+  }
+  
+  .card-actions.right-top {
+    right: 20px!important;
+    top: 10px!important;
+    z-index: 10;
+    
+    li {
+      padding-left: 8px;
+    }
+  }
+}
+@media (max-width : 767px) {
+  #header_wrapper {
+  .card-actions.right-top {
+    right: 20px!important;
+    top: 10px!important;
+    z-index: 10;
+    
+    li {
+      padding-left: 8px;
+    }
+  }
+    }
+}
+.card-actions.icons > a,
+.card-actions.icons > li > a {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  padding-top: 5px;
+  position: relative;
+}
+
+.card-actions.icons > a:hover,
+.card-actions.icons > li > a:hover {
+  color: #3e4c5e;
+}
+
+.card-actions.icons > a:before,
+.card-actions.icons > li > a:before {
+  left: 0;
+  top: 0;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale3d(0, 0, 0);
+  -moz-transform: scale3d(0, 0, 0);
+  -ms-transform: scale3d(0, 0, 0);
+  -o-transform: scale3d(0, 0, 0);
+  transform: scale3d(0, 0, 0);
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.card-actions.icons > a.open:before,
+.card-actions.icons > a:hover:before,
+.card-actions.icons > li > a.open:before,
+.card-actions.icons > li > a:hover:before {
+  -webkit-transform: scale3d(1, 1, 1);
+  -moz-transform: scale3d(1, 1, 1);
+  -ms-transform: scale3d(1, 1, 1);
+  -o-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.card-actions.icons.lg > a,
+.card-actions.icons.lg > li > a {
+  font-size: em(23);
+}
+
+.card-actions.icons.lg > a:before,
+.card-actions.icons.lg > li > a:before {
+  top: 3px;
+}
+
+.card-actions.icons.lg > a.open:before,
+.card-actions.icons.lg > a:hover:before,
+.card-actions.icons.lg > li > a.open:before,
+.card-actions.icons.lg > li > a:hover:before {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+  -moz-transform: scale3d(1.2, 1.2, 1.2);
+  -ms-transform: scale3d(1.2, 1.2, 1.2);
+  -o-transform: scale3d(1.2, 1.2, 1.2);
+  transform: scale3d(1.2, 1.2, 1.2);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.card-actions.icons > li.open > a > i,
+.card-actions.icons.open > a > i {
+  color: #000;
+}
+
+.card-actions.icons > li.open > a:before,
+.card-actions.icons.open > a:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.card-actions.icons.alt-actions > li > a > i {
+  color: rgba(255,255,255,.9);
+}
+
+.card-actions.icons.alt-actions > li > a:hover > i {
+  color: rgba(255,255,255,1);
+}
+
+.card-actions.icons.alt-actions > li.open > a > i {
+  color: rgba(255,255,255,1);
+}
+
+.card-actions.icons.open {
+  z-index: 3;
+}
+
+ul.card-actions.icons.right-top {
+  right: 10px;
+  top: 15px;
+}
+
+ul.card-actions.icons.left-top {
+  left: 10px;
+  top: 15px;
+}
+
+ul.card-actions.icons.right-bottom {
+  right: 15px;
+  z-index: 2;
+  position: absolute;
+  z-index: 2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.card-actions.icons.left-bottom {
+  left: 15px;
+  z-index: 2;
+  position: absolute;
+  z-index: 2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-footer,
+.card-heading {
+  ul.card-actions.icons {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul.card-actions.icons.right {
+    right: 20px;
+    bottom: 20px;
+    
+    &.fab-action {
+      bottom: 30px;
+    }
+  }
+  
+  ul.card-actions.icons.left {
+    left: 20px;
+    bottom: 20px;
+    
+    &.fab-action {
+      bottom: 30px;
+    }
+  }
+}
+//Content Header
+//------------------------------------------------------------------------------
+
+#header_wrapper.header-md {
+  #header {
+    ul.card-actions.icons.right-top {
+      top: 40px;
+      right: 10px;
+    }
+    
+    ul.card-actions.icons.left-top {
+      top: 20px;
+      left: 0;
+    }
+    
+    ul.card-actions.fab-action {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    ul.card-actions.right.fab-action {
+      right: 20px;
+      bottom: -57px;
+      position: absolute;
+    }
+    
+    ul.card-actions.left.fab-action {
+      left: 20px;
+      bottom: -85px;
+      position: absolute;
+    }
+  }
+}
+
+#header_wrapper.header-xl {
+  ul.card-actions {
+    z-index: 99;
+  }
+  
+  ul.card-actions.icons.right-top {
+    top: 40px;
+    right: 10px;
+  }
+  
+  ul.card-actions.icons.left-top {
+    top: 40px;
+    left: 10px;
+  }
+  
+  ul.card-actions.fab-action {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul.card-actions.right.fab-action {
+    right: 3%;
+    bottom: -27px;
+    position: absolute;
+  }
+  
+  ul.card-actions.left.fab-action {
+    left: 10%;
+    bottom: -27px;
+    position: absolute;
+  }
+}
+
+#header_wrapper {
+  #header {
+    ul.card-actions.left-bottom > li a,
+    ul.card-actions.left-top > li a,
+    ul.card-actions.right-bottom > li a,
+    ul.card-actions.right-top > li a {
+      font-size: em(22);
+    }
+    
+    .card-actions.icons > a,
+    .card-actions.icons > li > a {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+@media (max-width : 767px) {
+  #header_wrapper {
+    ul.card-actions.right.fab-action {
+      right: 15px!important;
+      bottom: 15px!important;
+      position: fixed!important;
+    }
+    
+    ul.card-actions.left.fab-action {
+      left: 15px!important;
+      bottom: 15px!important;
+      position: fixed!important;
+    }
+  }
+}
+//Content Sidebar Navs
+//------------------------------------------------------------------------------
+
+#content_sidebarnav-left,
+#content_sidebarnav-right {
+  .header_wrapper {
+    ul.card-actions.icons.right-top {
+      top: 15px;
+      right: 25px;
+    }
+    
+    ul.card-actions.icons.right-bottom {
+      bottom: 15px;
+      right: 25px;
+    }
+    
+    ul.card-actions.icons.left-top {
+      top: 15px;
+      left: 25px;
+    }
+    
+    ul.card-actions.icons.left-bottom {
+      bottom: 15px;
+      left: 25px;
+    }
+  }
+  
+  .card {
+    margin-bottom: 10px;
+    
+    .card-footer {
+      ul.card-actions.icons.left-bottom {
+        bottom: 6px;
+        left: 8px;
+      }
+      
+      ul.card-actions.icons.right-bottom {
+        bottom: 6px;
+        right: 8px;
+      }
+    }
+  }
+}
+
+#rightnav .card .card-heading {
+  ul.card-actions.icons.right-top {
+    right: 10px;
+    top: 8px;
+  }
+}
+
+ul.card-actions.icons.left-top {
+  .content_sidebarnav-left-trigger {
+    display: none;
+  }
+}

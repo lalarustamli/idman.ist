@@ -80,13 +80,31 @@
     <Compile Include="Migrations\201709051115307_migadsa.Designer.cs">
       <DependentUpon>201709051115307_migadsa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709061524125_SliderAdded.cs" />
+    <Compile Include="Migrations\201709061524125_SliderAdded.Designer.cs">
+      <DependentUpon>201709061524125_SliderAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709080733101_locationSlideradded.cs" />
+    <Compile Include="Migrations\201709080733101_locationSlideradded.Designer.cs">
+      <DependentUpon>201709080733101_locationSlideradded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081306491_ReklamAdded.cs" />
+    <Compile Include="Migrations\201709081306491_ReklamAdded.Designer.cs">
+      <DependentUpon>201709081306491_ReklamAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111000200_AdileAdded.cs" />
+    <Compile Include="Migrations\201709111000200_AdileAdded.Designer.cs">
+      <DependentUpon>201709111000200_AdileAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\MainSlider.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductBrand.cs" />
     <Compile Include="Model\ProductFeature.cs" />
     <Compile Include="Model\ProductImage.cs" />
+    <Compile Include="Model\Reklam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +135,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709051115307_migadsa.resx">
       <DependentUpon>201709051115307_migadsa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061524125_SliderAdded.resx">
+      <DependentUpon>201709061524125_SliderAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709080733101_locationSlideradded.resx">
+      <DependentUpon>201709080733101_locationSlideradded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081306491_ReklamAdded.resx">
+      <DependentUpon>201709081306491_ReklamAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111000200_AdileAdded.resx">
+      <DependentUpon>201709111000200_AdileAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

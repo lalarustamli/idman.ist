@@ -1,4 +1,5 @@
-﻿using IdmanistCore.Infrastructure;
+﻿using Idmanist.Web.ViewModels;
+using IdmanistCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Idmanist.Web.Controllers
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IProductRepository _productRepository;
+        
         public ProductController(ICategoryRepository categoryRepository, IProductRepository productRepository)
         {
             _categoryRepository = categoryRepository;
@@ -20,16 +22,21 @@ namespace Idmanist.Web.Controllers
         // GET: Product
         public ActionResult Index(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var product = _productRepository.GetById(id.Value);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
+            IndexViewModel model = new IndexViewModel();
+            model.Categories = _categoryRepository.GetAll().ToList();
+            model.Products = _productRepository.GetAll().ToList();
+           
+            return View(model);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //var product = _productRepository.GetById(id.Value);
+            //if (product == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(product);
         }
     }
 }

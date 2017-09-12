@@ -1,0 +1,388 @@
+.taskboard-app {
+  #taskboard-wrapper {
+    .card.card-task {
+      margin-bottom: 10px;
+      
+      ul.card-actions.icons.left-top {
+        left: 10px;
+        top: 12px;
+      }
+      
+      .badge {
+        color: #fff!important;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        line-height: 15px;
+        position: absolute;
+      }
+      
+      div[data-task-color] {
+        height: 4px;
+        width: 100%;
+      }
+      
+      .card-title {
+        font-size: 14px;
+        max-width: 75%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 30px;
+      }
+      
+      .card-title,
+      small {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    
+    .add-task {
+      margin: 20px auto;
+    }
+    
+    .card-lane-wrapper {
+      .card-task.empty {
+        transition: all 0.5s ease;
+        background: #e0ebf1;
+        
+        .badge {
+          background-color: #9daec4;
+        }
+        
+        .card-title {
+          color: #607188;
+        }
+        
+        &:hover {
+          -webkit-transform: translateY(-1px);
+          cursor: pointer;
+          background: $brand-primary;
+          color: #fff;
+          
+          .badge {
+            background-color: rgba(255,255,255,.3);
+            color: #fff;
+          }
+          
+          .card-title {
+            color: #fff;
+          }
+        }
+        
+        &:active {
+          transform: translateY(2px);
+        }
+        
+        .card-body {
+          display: none;
+          height: 163px;
+          background: #fff;
+        }
+      }
+      
+      .form-group {
+        margin: 20px 0 0;
+        padding: 0;
+        width: 100%;
+        
+      }
+      
+      .card-lane {
+        min-height: 175px;
+      }
+    }
+  }
+  #taskInfo{
+
+    
+    #task-info-wrapper {
+      .tab-content{
+        
+      }
+      .card {
+        div[data-task-color] {
+          height: 4px;
+        }
+        
+        .card-heading{
+          background: rgba(238,245,249,.6);
+          .card-title{
+            font-size: em(16);
+          }
+        }
+        
+        .card-body {
+          font-weight: 200;
+          
+          p {
+            line-height: 2em;
+            padding-bottom: 20px;
+          }
+          .editable-click, a.editable-click, a.editable-click:hover{
+            border-bottom: dashed 1px rgba(#758396,.6);
+            line-height: 1.8em;
+          }
+        }
+        
+        .task-created {
+          .name {
+            line-height: 2.5em;
+            font-size: 13px;
+          }
+          
+          .date-wrapper {
+            max-width: 130px;
+            padding: 0;
+            background: #EEF5F9;
+            
+            i {
+              font-size: 18px;
+              vertical-align: middle;
+              padding-right: 6px;
+            }
+            
+            .date {
+              font-size: 12px;
+              margin: 0;
+              padding: 0;
+              
+              .datepicker {
+                background: none;
+                margin: 0;
+              }
+              
+              .datepicker:hover {
+                cursor: pointer!important;
+              }
+            }
+          }
+        }
+        .form-group {
+          label{
+            display: block;
+            margin:10px 0;
+            font-size: 16px;
+          }
+        }
+        .user-group {
+          .dropdown.open .dropdown-menu {
+            width: 285px;
+            
+            .form-group {
+              padding-bottom: 0;
+              margin: 0 10px;
+            }
+            
+            li.filter {
+              position: fixed;
+              background: #fff;
+              z-index: 5;
+              margin: 0;
+              padding: 0;
+            }
+            
+            li {
+              a {
+                width: 100%;
+                display: block;
+                padding: 10px;
+              }
+            }
+            
+            li:nth-child(2) {
+              margin-top: 55px;
+            }
+          }
+          .filter_members_list{
+            li.active{
+              opacity: .3;
+              &:hover a{
+                cursor: not-allowed;
+              }
+            }
+            li{
+              width: 100%;
+              display: block;
+              padding: 10px;
+              img{
+                margin-right:7px;
+              }
+            }
+          }
+        }
+      }
+      
+      .editable-unsaved {
+        font-weight: 400;
+      }
+      
+      .editableform .form-control {
+        width: 275px;
+      }
+    }
+  }
+  #tab-activity .card {
+    background: #fff!important;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -khtml-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -ms-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    margin-bottom: 15px!important
+}
+
+#tab-activity .card .list-group .list-group-item {
+    padding: 10px
+}
+
+#tab-activity .card .list-group .list-group-item ul.file-activity {
+    height: 200px;
+    overflow: hidden
+}
+
+#tab-activity .card .list-group .list-group-item ul.file-activity li {
+    border-bottom: solid thin rgba(215,232,241,.6);
+    padding: 6px 0 6px 8px
+}
+
+#tab-activity .card .list-group .list-group-item ul.file-activity.show-all {
+    height: 100%
+}
+
+#tab-activity .card .list-group .list-group-item:hover {
+    background-color: transparent;
+    cursor: default
+}
+
+#tab-activity .card i {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 6px
+}
+
+#tab-activity .card .card-footer {
+    border-top: 1px solid rgba(215,225,237,.6);
+    background: #fff;
+    text-align: center;
+    margin-top: 0;
+    min-height: initial;
+    height: 45px;
+    padding: 0
+}
+
+#tab-activity .card .card-footer a {
+    margin: 0
+}
+}
+
+.taskboard-app {
+  #addTaskForm,
+  #addTaskListForm {
+    .input-group .input-group-btn {
+      padding: 0 6px;
+    }
+  }
+  
+  #taskboard-wrapper .card-lane-wrapper .form-group {
+    margin: 15px 0;
+  }
+}
+
+.card.card-task-item {
+  font-size: 14px;
+  min-height: 53px;
+  margin-bottom: 10px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform,box-shadow;
+  transition-property: transform,box-shadow;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  
+  &:hover {
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px 0 rgba(156, 169, 175,.6);
+    cursor: pointer;
+  }
+  
+  &.active {
+    border: 3px solid #516073;
+  }
+  
+  .card-heading {
+    padding: 10px;
+  }
+  
+  .card-title {
+    max-width: 290px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px!important;
+  }
+  
+  .card-body {
+    padding: 10px;
+    
+    p[data-task="notes"] {
+      display: none;
+    }
+  }
+  .list-group-item{
+    .remove-guests{
+      display:none;
+    }
+  }
+  .card-footer {
+    padding: 5px 20px;
+    min-height: 50px;
+    background: rgba(238, 245, 249,.6);
+    
+    .card-actions {
+      top: 10px;
+      
+      li {
+        padding: 0 1px;
+        vertical-align: middle;
+        font-size: 13px;
+        
+        i {
+          vertical-align: middle;
+        }
+        
+        span {
+          padding: 0 3px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  
+  &.is-moving {
+    @include shadow-24dp();
+  }
+  
+  &.is-moved {
+    .card-title {
+      color: #fff;
+    }
+    
+    .card-footer.border-top {
+      border-top: 1px solid rgba(215,225,237,.3)!important;
+    }
+    background: transparent;
+    color: #fff!important;
+  }
+  
+  #fadedColor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}

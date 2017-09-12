@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Idmanist.Web.ViewModels.IndexViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -26,7 +27,7 @@
     @Html.Partial("_header")
     <!-- end header --> 
     <!-- Navbar -->
-    @Html.Partial("_topNav")
+    @Html.Partial("_topNav", Model.Categories)
     <!-- end nav -->  
     <div class="body-content">
         @RenderBody()

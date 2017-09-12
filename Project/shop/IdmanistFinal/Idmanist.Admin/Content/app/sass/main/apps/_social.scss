@@ -1,0 +1,21 @@
+#header_wrapper {
+    &.social-header {
+        background-image:  -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.45))), url("../img/headers/header-lg-01.jpg")!important;
+        height: 320px;
+        min-height: 320px;
+        max-height: 320px;
+        padding: 25px;
+        background-size: cover;
+        background-position: 0 90%;
+    }
+    // &.social-header:before{
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   background: #4859b4;
+    //   opacity: .8;
+    // }
+}

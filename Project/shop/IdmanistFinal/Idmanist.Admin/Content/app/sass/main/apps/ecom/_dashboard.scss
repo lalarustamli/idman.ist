@@ -1,0 +1,82 @@
+#header_wrapper {
+    &.ecom-header {
+        background-image: url("../img/ecom/ecom-header.jpg")!important;
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        padding: 25px;
+        background-size: cover;
+        background-position: 0 45%!important;
+    }
+}
+
+.totalSales,
+.newSignups {
+    .progressBar {
+        height: 110px;
+        width: 110px;
+        font-size: em(34);
+        text-align: center;
+        line-height: 120px;
+        margin-bottom:10px;
+    }
+
+}
+
+.totalSales{
+  .orders{
+    &:before{
+      content:'From ';
+    }
+    &:after{
+        content:' Orders';
+    }
+  }
+}
+.newSignups{
+  .users{
+    &:before{
+      content:'From ';
+    }
+    &:after{
+        content:' Users';
+    }
+  }
+}
+
+.summary {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+        padding: 15px 20px;
+        position: relative;
+        display: inline-block;
+
+        .percent {
+            display: inline-block;
+            font-weight: 400;
+            margin: 0;
+
+            &:after {
+                content: '%';
+            }
+        }
+
+        i {
+            color: #0db99f;
+            font-size: 40px;
+            position: absolute;
+            right: 45px;
+            top: 10px;
+        }
+    }
+}
+
+.sales-card {
+    h2.money:before {
+        content: '$';
+    }
+}

@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>MaterialWrap - jQuery full version</title>
+  <link rel="stylesheet" href="assets/css/vendor.bundle.css">
+  <link rel="stylesheet" href="assets/css/app.bundle.css">
+  <link rel="stylesheet" href="assets/css/theme-a.css">
+</head>
+
+<body>
+  <div id="app_wrapper">
+    <header id="app_topnavbar-wrapper">
+      <nav role="navigation" class="navbar topnavbar">
+        <div class="nav-wrapper">
+          <ul class="nav navbar-nav pull-left left-menu">
+            <li class="app_menu-open">
+              <a href="javascript:void(0)" data-toggle-state="app_sidebar-left-open" data-key="leftSideBar">
+                <i class="zmdi zmdi-menu"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav left-menu hidden-xs">
+            <li>
+              <a href="javascript:void(0)" class="nav-link">
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown dropdown-lg app_menu_launcher hidden-xs">
+              <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown" aria-expanded="false">
+                <span>Dropdown</span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-lg-menu dropdown-menu-left btn-primary p-15 text-center">
+                <li>
+                  <ul>
+                    <li><a href="app-mail.html"><i class="zmdi zmdi-email"></i><span>Mail</span></a></li>
+                    <li><a href="javascript:void(0)"><i class="zmdi zmdi-accounts-list"></i><span>Contacts</span></a></li>
+                    <li><a href="javascript:void(0)"><i class="zmdi zmdi-comment-text"></i><span>Chat</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="app-notes.html"><i class="mdi mdi-lightbulb"></i><span>Notes</span></a></li>
+                    <li><a href="app-taskboard.html"><i class="zmdi zmdi-view-column"></i><span>Taskboard</span></a></li>
+                    <li><a href="javascript:void(0)"><i class="zmdi zmdi-calendar-note"></i><span>Calendar</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown mega">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" aria-expanded="false">
+                <span>Mega</span>
+                <span class="caret"></span>
+              </a>
+              <div class="dropdown-menu full-width p-l-10">
+                <div class="row">
+                  <div class="col-xs-22 col-sm-2 col-md-4">
+                    <h3>Pages <span class="badge status info">10</span></h3>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <ul>
+                          <li>
+                            <a href="page-profile.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i> Profile</a>
+                          </li>
+                          <li>
+                            <a href="page-invoice.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Invoice</a>
+                          </li>
+                          <li>
+                            <a href="page-timeline.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Timeline</a>
+                          </li>
+                          <li>
+                            <a href="page-locations.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Locations</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <ul>
+                          <li>
+                            <a href="page-pricing-tables.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Pricing Tables</a>
+                          </li>
+                          <li>
+                            <a href="page-gallery.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Gallery</a>
+                          </li>
+                          <li>
+                            <a href="login.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Login</a>
+                          </li>
+                          <li>
+                            <a href="lock-screen.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Lock Screen</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-10 col-md-8">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <h3 class="p-t-15 p-b-15">New Arrivals</h3>
+                      <div class="col-xs-12">
+                        <div id="new_arrivals_megamenu" class="row">
+                          <div><img src="assets/img/ecom/products/39_Ie8T.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                          <div><img src="assets/img/ecom/products/39_8wMD.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                          <div><img src="assets/img/ecom/products/39_JnFC.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                          <div><img src="assets/img/ecom/products/2830_S4ql.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                          <div><img src="assets/img/ecom/products/4107_PPxC.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                          <div><img src="assets/img/ecom/products/5764_YK7g.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <h3 class="p-t-15 p-b-15">Today's Analysis</h3>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="ct-chart ct-golden-section " id="chartist_megaMenu"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li class="dropdown avatar-menu">
+              <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <span class="meta">
+                  <span class="avatar">
+                    <img src="assets/img/profiles/02.jpg" alt="" class="img-circle max-w-35">
+                    <i class="badge mini success status"></i>
+                  </span>
+                  <span class="name">Mike Jones</span>
+                  <span class="caret"></span>
+                </span>
+              </a>
+              <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                <li>
+                  <a href="page-profile.html"><i class="zmdi zmdi-account"></i> Profile</a>
+                </li>
+                <li>
+                  <a href="app-mail.html"><i class="zmdi zmdi-email"></i> Messages</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><i class="zmdi zmdi-settings"></i> Account Settings</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><i class="zmdi zmdi-sign-in"></i> Sign Out</a>
+                </li>
+              </ul>
+            </li>
+            <li class="select-menu hidden-xs hidden-sm">
+              <select class="select form-control country" style="display:none">
+                <option option="EN">English</option>
+                <option option="ES">Español</option>
+                <option option="FN"> Français</option>
+                <option option="IT">Italiano</option>
+              </select>
+            </li>
+            <li>
+              <a href="javascript:void(0)" data-navsearch-open>
+                <i class="zmdi zmdi-search"></i>
+              </a>
+            </li>
+            <li class="dropdown hidden-xs hidden-sm">
+              <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <span class="badge mini status danger"></span>
+                <i class="zmdi zmdi-notifications"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-lg-menu dropdown-menu-right dropdown-alt">
+                <li class="dropdown-menu-header">
+                  <ul class="card-actions icons  left-top">
+                    <li class="withoutripple">
+                      <a href="javascript:void(0)" class="withoutripple">
+                        <i class="zmdi zmdi-settings"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <h5>NOTIFICATIONS</h5>
+                  <ul class="card-actions icons right-top">
+                    <li>
+                      <a href="javascript:void(0)">
+                        <i class="zmdi zmdi-check-all"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="card">
+                    <a href="javascript:void(0)" class="pull-right dismiss" data-dismiss="close">
+                      <i class="zmdi zmdi-close"></i>
+                    </a>
+                    <div class="card-body">
+                      <ul class="list-group ">
+                        <li class="list-group-item ">
+                          <span class="pull-left"><img src="assets/img/profiles/11.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                          <div class="list-group-item-body">
+                            <div class="list-group-item-heading">Dakota Johnson</div>
+                            <div class="list-group-item-text">Do you want to grab some sushi for lunch?</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <a href="javascript:void(0)" class="pull-right dismiss" data-dismiss="close">
+                      <i class="zmdi zmdi-close"></i>
+                    </a>
+                    <div class="card-body">
+                      <ul class="list-group ">
+                        <li class="list-group-item ">
+                          <span class="pull-left"><img src="assets/img/profiles/07.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                          <div class="list-group-item-body">
+                            <div class="list-group-item-heading">Todd Cook</div>
+                            <div class="list-group-item-text">Let's schedule a meeting with our design team at 10am.</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <a href="javascript:void(0)" class="pull-right dismiss" data-dismiss="close">
+                      <i class="zmdi zmdi-close"></i>
+                    </a>
+                    <div class="card-body">
+                      <ul class="list-group ">
+                        <li class="list-group-item ">
+                          <span class="pull-left"><img src="assets/img/profiles/05.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                          <div class="list-group-item-body">
+                            <div class="list-group-item-heading">Jennifer Ross</div>
+                            <div class="list-group-item-text">We're looking to hire two more protypers to our team.</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown-menu-footer">
+                  <a href="javascript:void(0)">
+                    All notifications
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="last">
+              <a href="javascript:void(0)" data-toggle-state="sidebar-overlay-open" data-key="rightSideBar">
+                <i class="mdi mdi-playlist-plus"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <form role="search" action="" class="navbar-form" id="navbar_form">
+          <div class="form-group">
+            <input type="text" placeholder="Search and press enter..." class="form-control" id="navbar_search" autocomplete="off">
+            <i data-navsearch-close class="zmdi zmdi-close close-search"></i>
+          </div>
+          <button type="submit" class="hidden btn btn-default">Submit</button>
+        </form>
+      </nav>
+    </header>
+
+    <aside id="app_sidebar-left">
+      <div id="logo_wrapper">
+        <ul>
+          <li class="logo-icon">
+            <a href="index.html">
+              <div class="logo">
+                <img src="assets/img/logo/logo-icon.png" alt="Logo">
+              </div>
+              <h1 class="brand-text">MaterialWrap</h1>
+            </a>
+          </li>
+          <li class="menu-icon">
+            <a href="javascript:void(0)" role="button" data-toggle-state="app_sidebar-menu-collapsed" data-key="leftSideBar">
+              <i class="mdi mdi-backburger"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav id="app_main-menu-wrapper" class="fadeInLeft scrollbar">
+        <div class="sidebar-inner sidebar-push">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="sidebar-header">NAVIGATION</li>
+            <li><a href="index.html"><i class="zmdi zmdi-view-dashboard"></i>Dashboard</a></li>
+            <li class="nav-dropdown">
+              <a href="#"><i class="zmdi zmdi-view-quilt"></i>Page Layouts </a>
+              <ul class="nav-sub">
+                <li class="nav-dropdown">
+                  <a href="#">Full Width Layouts </a>
+                  <ul class="nav-sub">
+                    <li><a href="layout-fullwidth-v1.html">Full Width v1</a></li>
+                    <li><a href="layout-fullwidth-v2.html">Full Width v2</a></li>
+                    <li><a href="layout-fullwidth-v3.html">Full Width v3</a></li>
+                  </ul>
+                </li>
+                <li class="nav-dropdown">
+                  <a href="#">Boxed Layouts</a>
+                  <ul class="nav-sub">
+                    <li><a href="layout-boxed-v1.html">Boxed Layout v1</a></li>
+                    <li><a href="layout-boxed-v2.html">Boxed Layout v2</a></li>
+                    <li><a href="layout-boxed-v3.html">Boxed Layout v3</a></li>
+                  </ul>
+                </li>
+                <li class="nav-dropdown">
+                  <a href="#">Left Sidenav</a>
+                  <ul class="nav-sub">
+                    <li><a href="layout-left-sidenav-v1.html">Left Side Nav v1</a></li>
+                    <li><a href="layout-left-sidenav-v2.html">Left Side Nav v2</a></li>
+                    
+                  </ul>
+                </li>
+                <li class="nav-dropdown">
+                  <a href="#">Right Sidenav</a>
+                  <ul class="nav-sub">
+                    <li><a href="layout-right-sidenav-v1.html">Right Side Nav v1</a></li>
+                    <li><a href="layout-right-sidenav-v2.html">Right Side Nav v2</a></li>
+                    
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-widgets"></i>Cards</a>
+              <ul class="nav-sub">
+                <li><a href="card-templates.html">Card Templates</a></li>
+                <li><a href="card-demos.html">Card Demos</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-chart"></i>Charts</a>
+              <ul class="nav-sub">
+                <li><a href="charts-c3.html">C3 Charts</a></li>
+                <li><a href="charts-chartist.html">Chartist</a></li>
+                <li><a href="charts-chartjs.html">Chartjs</a></li>
+                <li><a href="charts-morrisjs.html">Morris.js Charts</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-header">APP VIEWS</li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-shopping-cart"></i>E-Commerce</a>
+              <ul class="nav-sub">
+                <li><a href="ecommerce-dashboard.html">Dashboard</a></li>
+                <li><a href="ecommerce-products.html">Products</a></li>
+                
+                <li><a href="ecommerce-customers.html">Customers</a></li>
+                <li><a href="ecommerce-settings.html">Settings</a></li>
+              </ul>
+            </li>
+            <li><a href="app-file-manager.html"><i class="zmdi zmdi-folder"></i>File Manager</a></li>
+            <li><a href="app-taskboard.html"><i class="zmdi zmdi-view-column"></i>Taskboard</a></li>
+            
+            <li><a href="app-notes.html"><i class="mdi mdi-lightbulb"></i>Notes</a></li>
+            <li><a href="app-mail.html"><i class="zmdi zmdi-email"></i>Mail</a></li>
+            
+            <li class="sidebar-header">PAGE VIEWS</li>
+            <li><a href="page-profile.html"><i class="zmdi zmdi-account"></i>Profile</a></li>
+            <li><a href="page-invoice.html"><i class="zmdi zmdi-money"></i>Invoice</a></li>
+            <li><a href="page-timeline.html"><i class="zmdi zmdi-time"></i>Timeline</a></li>
+            <li><a href="page-locations.html"><i class="zmdi zmdi-pin"></i>Locations</a></li>
+            <li><a href="page-pricing-tables.html"><i class="zmdi zmdi-view-column"></i>Pricing Tables</a></li>
+            <li><a href="page-gallery.html"><i class="zmdi zmdi-collection-image"></i>Gallery</a></li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-lock"></i>Authentication</a>
+              <ul class="nav-sub">
+                <li><a href="login.html">Login &amp; Register</a></li>
+                
+                
+                <li><a href="lock-screen.html">Lock Screen</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-header">DESIGN ELEMENTS</li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-palette"></i>User Interface</a>
+              <ul class="nav-sub">
+                <li><a href="ui-alerts.html">Alerts</a></li>
+                <li><a href="ui-animations.html">Animations</a></li>
+                <li><a href="ui-avatars.html">Avatars</a></li>
+                <li><a href="ui-buttons.html">Buttons</a></li>
+                <li><a href="ui-colors.html">Colors</a></li>
+                <li><a href="ui-grid.html">Grid System</a></li>
+                <li><a href="ui-icons.html">Icons</a></li>
+                <li><a href="ui-list.html">List</a></li>
+                <li><a href="ui-preloaders.html">Preloaders</a></li>
+                <li><a href="ui-badges-labels.html">Badges &amp; Labels</a></li>
+                <li><a href="ui-typography.html">Typography</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown active open"><a href="#"><i class="zmdi zmdi-ungroup"></i>Components</a>
+              <ul class="nav-sub">
+                <li><a href="component-notifications-dialogs.html">Notifications &amp; Dialogs</a></li>
+                <li><a href="component-toolbars.html">Toolbars</a></li>
+                <li><a href="component-collapsible.html">Collapsible</a></li>
+                <li><a href="component-chips.html">Chips</a></li>
+                <li><a href="component-drawers.html">Drawers</a></li>
+                <li><a href="component-dropdowns.html">Dropdowns</a></li>
+                <li><a href="component-modals.html">Modals</a></li>
+                <li><a href="component-progressbars-sliders.html">Sliders &amp; Progressbars</a></li>
+                <li class="active"><a href="component-scrollable.html">Scrollable</a></li>
+                <li><a href="component-tabs.html">Tabs &amp; Pills</a></li>
+                <li><a href="component-tooltips-popovers.html">Tooltips &amp; Popovers</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-view-subtitles"></i>Forms</a>
+              <ul class="nav-sub">
+                <li><a href="form-elements.html">Form Elements</a></li>
+                <li><a href="form-components.html">Form Components</a></li>
+                <li><a href="form-layouts.html">Form Layouts</a></li>
+                <li><a href="form-validation.html">Form Validation</a></li>
+                <li><a href="form-wizard.html">Form Wizard</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown"><a href="#"><i class="zmdi zmdi-view-headline"></i>Tables</a>
+              <ul class="nav-sub">
+                <li><a href="tables.html">Basic Tables</a></li>
+                <li><a href="tables-datatables.html">Data Tables</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0)" data-trigger="sidebar-overlay-open"><i class="zmdi zmdi-invert-colors"></i>Theme Settings</a></li>
+            <li class="sidebar-header">EXTRAS</li>
+            <li><a href="index.html"><i class="zmdi zmdi-view-web"></i>Front-end</a><span class="label label-info pull-right font-size-11">Coming soon</span></li>
+            <li class="nav-dropdown">
+              <a href="#" title="Menu Levels">
+                <i class="zmdi zmdi-folder"></i>Menu Levels</a>
+                <ul class="nav-sub">
+                  <li>
+                    <a href="javascript:;" title="Level 2.1">
+                      <i class="fa fa-fw fa-file"></i> Level 1.1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;" title="Level 2.2">
+                      <i class="fa fa-fw fa-file"></i> Level 1.2
+                    </a>
+                  </li>
+                  <li class="nav-dropdown">
+                    <a href="#" title="Level 2.3">
+                      <i class="fa fa-fw fa-folder-open"></i> Level 1.3
+                    </a>
+                    <ul class="nav-sub">
+                      <li>
+                        <a href="javascript:;" title="Level 3.1">
+                          <i class="fa fa-fw fa-file"></i> Level 2.1
+                        </a>
+                      </li>
+                      <li class="nav-dropdown">
+                        <a href="#" title="Level 3.2">
+                          <i class="fa fa-fw fa-folder-open"></i> Level 2.2
+                        </a>
+                        <ul class="nav-sub">
+                          <li>
+                            <a href="javascript:;" title="Level 4.1">
+                              <i class="fa fa-fw fa-file"></i> Level 3.1
+                            </a>
+                          </li>
+                          <li class="nav-dropdown">
+                            <a href="#" title="Level 4.2">
+                              <i class="fa fa-fw fa-folder-open"></i> Level 3.2
+                            </a>
+                            <ul class="nav-sub">
+                              <li class="nav-dropdown">
+                                <a href="#" title="Level 5.1">
+                                  <i class="fa fa-fw fa-folder-open"></i> Level 4.1
+                                </a>
+                                <ul class="nav-sub">
+                                  <li>
+                                    <a href="javascript:;" title="Level 6.1">
+                                      <i class="fa fa-fw fa-file"></i> Level 5.1
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="javascript:;" title="Level 6.2">
+                                      <i class="fa fa-fw fa-file"></i> Level 5.2
+                                    </a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="javascript:;" title="Level 5.2">
+                                  <i class="fa fa-fw fa-file"></i> Level 4.2
+                                </a>
+                              </li>
+                              <li>
+                                <a href="javascript:;" title="Level 5.3">
+                                  <i class="fa fa-fw fa-file"></i> Level 4.3
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="helper-classes.html"><i class="zmdi zmdi-info"></i>Helper Classes</a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+      <section id="content_outer_wrapper">
+        <div id="content_wrapper" class="card-overlay">
+          <div id="header_wrapper" class="header-md">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12">
+                  <header id="header">
+                    <h1>Scrollable Containers</h1>
+                    <header id="header">
+                      <ol class="breadcrumb">
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="javascript:void(0)">Components</a></li>
+                        <li class="active">Scrollable</li>
+                      </ol>
+                    </header>
+                  </header>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="content" class="container">
+            <div class="content-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="card">
+                  <header class="card-heading ">
+                    <h2 class="card-title">Information</h2>
+                    <ul class="card-actions icons right-top">
+                      <li>
+                        <a href="//manos.malihu.gr/jquery-custom-content-scroller/" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="Reference">
+                          <i class="zmdi zmdi-link"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </header>
+                  <div class="card-body">
+                    <p>Highly customizable custom scrollbar jQuery plugin. Features include vertical and/or horizontal scrollbar(s), adjustable scrolling momentum, mouse-wheel (via jQuery mousewheel plugin), keyboard and touch support, ready-to-use
+                      themes and customization via CSS, RTL direction support, option parameters for full control of scrollbar functionality, methods for triggering actions like scroll-to, update, destroy etc., user-defined callbacks
+                      and more.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="card card-salmon">
+                    <header class="card-heading card-salmon">
+                      <h2 class="card-title">Minimal Light Scrollbar</h2>
+                      <small class="text-white p-t-10">Visible on hover</small>
+                    </header>
+                    <div class="card-body scrollbar-minimal-light card-salmon max-h-900">
+                      <p>Normcore bicycle rights mlkshk twee mustache, godard street art cred marfa offal bitters direct trade letterpress scenester. Bitters chicharrones next level, street art cliche hashtag woke stumptown. Flannel hexagon
+                        messenger bag retro la croix, mlkshk thundercats sustainable raw denim. Vape cornhole 8-bit meditation tacos. Hoodie quinoa mustache, tofu chartreuse unicorn kickstarter gastropub viral VHS sriracha godard cray
+                        listicle lomo. Jean shorts vinyl glossier flannel chillwave kinfolk, vaporware sriracha roof party PBR&amp;B disrupt tumblr echo park. Trust fund asymmetrical put a bird on it cronut swag art party biodiesel chartreuse
+                        iceland.
+                      </p>
+                      <p>Tousled banh mi shoreditch plaid. Polaroid yr stumptown, cray fam sartorial sriracha pop-up 3 wolf moon af woke XOXO copper mug truffaut. Vinyl godard tacos seitan, salvia mumblecore fanny pack. PBR&amp;B VHS tbh austin.
+                        Woke meditation vegan hot chicken. Asymmetrical hashtag cronut tattooed pop-up 90's, migas subway tile cray hella fam post-ironic sartorial lomo. Waistcoat ramps fingerstache, asymmetrical slow-carb cred chambray
+                        tote bag PBR&amp;B pok pok paleo poke four dollar toast sriracha mustache.</p>
+                        <p>Cliche disrupt raw denim drinking vinegar skateboard, vice raclette fashion axe food truck art party mustache mumblecore. Vape messenger bag chartreuse snackwave. Taxidermy narwhal occupy, disrupt freegan edison bulb
+                          lomo intelligentsia pickled raclette PBR&amp;B banh mi green juice subway tile. Narwhal leggings hoodie pug art party man braid, flannel gastropub marfa messenger bag locavore etsy godard austin gochujang. IPhone
+                          disrupt lumbersexual, brooklyn kogi sartorial try-hard twee. Food truck dreamcatcher subway tile glossier. Tbh beard cred, migas organic VHS listicle 90's typewriter roof party wayfarers post-ironic pinterest direct
+                          trade selvage.</p>
+                          <p>Green juice mumblecore keytar, mixtape helvetica disrupt man br aid chicharrones pop-up neutra. Ethical iPhone listicle health goth, echo park chambray neutra cornhole. Brunch mixtape tilde master cleanse. Semiotics
+                            portland mixtape sriracha truffaut franzen distillery narwhal, activated charcoal hashtag stumptown craft beer crucifix hot chicken 8-bit. Direct trade activated charcoal bushwick drinking vinegar polaroid. Kale
+                            chips food truck migas, thundercats authentic whatever fixie scenester asymmetrical. Neutra normcore snackwave sriracha activated charcoal.</p>
+                            <p>Cronut hoodie iPhone sustainable PBR&amp;B lo-fi tofu. Taxidermy franzen you probably haven't heard of them flexitarian. Plaid kogi meh retro raw denim. Cronut ugh offal man braid, pop-up single-origin coffee roof party
+                              hoodie plaid scenester kale chips yr. Sartorial stumptown microdosing, asymmetrical shoreditch celiac jean shorts. Chambray messenger bag kale chips raw denim farm-to-table. Whatever kogi celiac, schlitz chia locavore
+                              kale chips church-key.</p>
+                              <p>Coloring book drinking vinegar everyday carry, vinyl tumeric plaid gochujang. Godard banjo squid dreamcatcher messenger bag copper mug, direct trade gentrify kale chips blog. Asymmetrical dreamcatcher venmo, irony etsy
+                                yuccie godard post-ironic ennui distillery VHS air plant tofu. 3 wolf moon celiac seitan thundercats mlkshk, yuccie paleo messenger bag jianbing shoreditch unicorn austin microdosing crucifix helvetica. Irony unicorn
+                                bitters portland tattooed aesthetic. Quinoa retro jianbing williamsburg. Quinoa fashion axe chambray, sartorial chartreuse thundercats cold-pressed sustainable helvetica.</p>
+                                <p>Af jean shorts slow-carb shabby chic heirloom freegan, actually aesthetic gochujang hexagon cray chia farm-to-table mlkshk cornhole. Pour-over tilde paleo kombucha. Cray viral keytar, sriracha meditation bitters tote
+                                  bag direct trade fam. Cornhole iPhone flannel, occupy mlkshk cray irony waistcoat DIY chicharrones tofu photo booth dreamcatcher copper mug mixtape. Actually poke yr fingerstache raclette, master cleanse whatever
+                                  vaporware heirloom irony. VHS before they sold out hell of artisan. Wolf 3 wolf moon hot chicken neutra, meditation mlkshk heirloom yr.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                              <div class="card">
+                                <header class="card-heading">
+                                  <h2 class="card-title">Minimal Dark Scrollbar</h2>
+                                  <small class="p-t-10">Visible on hover (default)</small>
+                                </header>
+                                <div class="card-body scrollbar max-h-250">
+                                  <p>Schlitz chambray knausgaard four loko everyday carry bicycle rights synth, pour-over fashion axe thundercats shoreditch hashtag typewriter. Enamel pin irony austin gastropub. Plaid edison bulb migas hoodie. Street art
+                                    fam cray fixie. Asymmetrical stumptown retro mixtape leggings. Plaid literally marfa, listicle viral DIY coloring book hashtag sriracha synth hot chicken kickstarter photo booth. Ugh bespoke iceland photo booth
+                                    vegan, pok pok thundercats activated charcoal tacos banh mi biodiesel banjo.</p>
+                                    <p>Franzen you probably haven't heard of them messenger bag succulents literally, vinyl austin prism. Tattooed microdosing gluten-free retro, +1 chia cray portland hoodie dreamcatcher skateboard. Lumbersexual disrupt chartreuse,
+                                      ugh wayfarers flexitarian retro salvia kombucha vinyl chicharrones. Before they sold out whatever gastropub pabst af, microdosing XOXO banjo 8-bit blog schlitz celiac. Wolf tacos before they sold out, 3 wolf moon
+                                      fanny pack migas yr synth schlitz kogi ugh austin fixie. Selvage subway tile cred, beard you probably haven't heard of them try-hard deep v marfa 3 wolf moon hoodie celiac kale chips crucifix paleo williamsburg.
+                                      Blog keytar distillery viral, etsy thundercats af organic celiac unicorn master cleanse vegan.</p>
+                                      <p>Jean shorts flannel photo booth leggings, activated charcoal yr XOXO knausgaard biodiesel trust fund small batch. Dreamcatcher 8-bit shabby chic, whatever affogato try-hard viral cred blue bottle small batch fanny pack
+                                        farm-to-table fam. Gentrify hammock mumblecore, fixie stumptown cardigan tousled scenester leggings wayfarers tumblr. Lyft poutine photo booth next level gluten-free kinfolk. Tote bag whatever lyft pour-over bicycle
+                                        rights viral. Art party activated charcoal messenger bag chicharrones narwhal cardigan. Meggings literally lyft tousled, 3 wolf moon kitsch copper mug roof party pok pok distillery farm-to-table vegan health goth
+                                        chartreuse.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="card card-salmon">
+                                    <header class="card-heading card-salmon">
+                                      <h2 class="card-title">Light Scrollbar</h2>
+                                      <small class="text-white p-t-10">Always visible</small>
+                                    </header>
+                                    <div class="card-body scrollbar-light card-salmon max-h-250">
+                                      <p>Meditation tote bag direct trade, listicle migas crucifix snackwave cornhole jianbing flexitarian banh mi craft beer bushwick letterpress. Tbh lo-fi vape tumblr subway tile, shoreditch street art cardigan fam tacos
+                                        pickled. Stumptown activated charcoal neutra lo-fi cold-pressed raw denim. Messenger bag ramps iPhone subway tile marfa. Iceland kale chips venmo tote bag. Put a bird on it wolf bicycle rights, PBR&amp;B messenger
+                                        bag deep v tote bag vaporware bushwick salvia four dollar toast chicharrones pickled locavore farm-to-table. Artisan trust fund marfa synth raw denim PBR&amp;B.</p>
+                                        <p>Air plant bespoke affogato, four dollar toast intelligentsia cornhole post-ironic photo booth sustainable food truck synth viral crucifix. Blue bottle marfa hella, succulents freegan subway tile organic hoodie beard
+                                          mixtape. Hashtag wayfarers knausgaard, tofu flexitarian seitan fap pitchfork sriracha ugh tacos pug cold-pressed tilde meggings. Bushwick activated charcoal keffiyeh, franzen mixtape hexagon bitters roof party sriracha
+                                          microdosing kinfolk brunch. Everyday carry williamsburg 3 wolf moon austin, pitchfork swag schlitz hell of keytar lumbersexual cred yuccie. Health goth mlkshk brooklyn green juice. Gentrify waistcoat venmo hot chicken,
+                                          vexillologist yr snackwave bicycle rights.</p>
+                                          <p>Air plant jean shorts venmo microdosing, vape pok pok stumptown health goth tumeric. Keffiyeh drinking vinegar viral skateboard. Iceland hashtag biodiesel, taxidermy aesthetic pitchfork swag yuccie food truck gluten-free
+                                            helvetica. Vice banh mi VHS cliche, try-hard copper mug church-key mixtape vinyl lomo tilde selvage enamel pin. Tattooed umami flexitarian actually, man bun celiac man braid fanny pack meh farm-to-table art party
+                                            quinoa raclette shoreditch gochujang. Live-edge shoreditch poke heirloom waistcoat swag before they sold out. Synth actually subway tile man bun, gentrify snackwave street art ramps XOXO fixie.</p>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <header class="card-heading">
+                                            <h2 class="card-title">Dark Scrollbar</h2>
+                                            <small class="p-t-10">Always visible</small>
+                                          </header>
+                                          <div class="card-body scrollbar-dark max-h-250">
+                                            <p>Af jean shorts slow-carb shabby chic heirloom freegan, actually aesthetic gochujang hexagon cray chia farm-to-table mlkshk cornhole. Pour-over tilde paleo kombucha. Cray viral keytar, sriracha meditation bitters tote
+                                              bag direct trade fam. Cornhole iPhone flannel, occupy mlkshk cray irony waistcoat DIY chicharrones tofu photo booth dreamcatcher copper mug mixtape. Actually poke yr fingerstache raclette, master cleanse whatever
+                                              vaporware heirloom irony. VHS before they sold out hell of artisan. Wolf 3 wolf moon hot chicken neutra, meditation mlkshk heirloom yr.</p>
+                                              <p>Coloring book drinking vinegar everyday carry, vinyl tumeric plaid gochujang. Godard banjo squid dreamcatcher messenger bag copper mug, direct trade gentrify kale chips blog. Asymmetrical dreamcatcher venmo, irony etsy
+                                                yuccie godard post-ironic ennui distillery VHS air plant tofu. 3 wolf moon celiac seitan thundercats mlkshk, yuccie paleo messenger bag jianbing shoreditch unicorn austin microdosing crucifix helvetica. Irony unicorn
+                                                bitters portland tattooed aesthetic. Quinoa retro jianbing williamsburg. Quinoa fashion axe chambray, sartorial chartreuse thundercats cold-pressed sustainable helvetica.</p>
+                                                <p>Woke fanny pack thundercats, hoodie cornhole tumeric messenger bag. Chia hashtag put a bird on it waistcoat, small batch XOXO hammock. Vice master cleanse portland, fingerstache vegan locavore selfies butcher meditation
+                                                  you probably haven't heard of them. Distillery kickstarter jianbing tattooed knausgaard pork belly. Deep v hashtag banh mi, food truck tofu photo booth occupy. Affogato vegan authentic, blue bottle copper mug gastropub
+                                                  selfies pabst seitan. XOXO hashtag beard, selvage pitchfork cray cardigan.</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <section id="chat_compose_wrapper">
+                                          <div class="tippy-top">
+                                            <div class="recipient">Allison Grayce</div>
+                                            <ul class="card-actions icons  right-top">
+                                              <li>
+                                                <a href="javascript:void(0)">
+                                                  <i class="zmdi zmdi-videocam"></i>
+                                                </a>
+                                              </li>
+                                              <li class="dropdown">
+                                                <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                                                  <i class="zmdi zmdi-more-vert"></i>
+                                                </a>
+                                                <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                                                  <li>
+                                                    <a href="javascript:void(0)">Option One</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="javascript:void(0)">Option Two</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="javascript:void(0)">Option Three</a>
+                                                  </li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:void(0)" data-chat="close">
+                                                  <i class="zmdi zmdi-close"></i>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                          <div class='chat-wrapper scrollbar'>
+                                            <div class='chat-message scrollbar'>
+                                              <div class='chat-message chat-message-recipient'>
+                                                <img class='chat-image chat-image-default' src='assets/img/profiles/05.jpg' />
+                                                <div class='chat-message-wrapper'>
+                                                  <div class='chat-message-content'>
+                                                    <p>Hey Mike, we have funding for our new project!</p>
+                                                  </div>
+                                                  <div class='chat-details'>
+                                                    <span class='today small'></span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class='chat-message chat-message-sender'>
+                                                <img class='chat-image chat-image-default' src='assets/img/profiles/02.jpg' />
+                                                <div class='chat-message-wrapper '>
+                                                  <div class='chat-message-content'>
+                                                    <p>Awesome! Photo booth banh mi pitchfork kickstarter whatever, prism godard ethical 90's cray selvage.</p>
+                                                  </div>
+                                                  <div class='chat-details'>
+                                                    <span class='today small'></span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class='chat-message chat-message-recipient'>
+                                                <img class='chat-image chat-image-default' src='assets/img/profiles/05.jpg' />
+                                                <div class='chat-message-wrapper'>
+                                                  <div class='chat-message-content'>
+                                                    <p> Artisan glossier vaporware meditation paleo humblebrag forage small batch.</p>
+                                                  </div>
+                                                  <div class='chat-details'>
+                                                    <span class='today small'></span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class='chat-message chat-message-sender'>
+                                                <img class='chat-image chat-image-default' src='assets/img/profiles/02.jpg' />
+                                                <div class='chat-message-wrapper'>
+                                                  <div class='chat-message-content'>
+                                                    <p>Bushwick letterpress vegan craft beer dreamcatcher kickstarter.</p>
+                                                  </div>
+                                                  <div class='chat-details'>
+                                                    <span class='today small'></span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <footer id="compose-footer">
+                                            <form class="form-horizontal compose-form">
+                                              <ul class="card-actions icons left-bottom">
+                                                <li>
+                                                  <a href="javascript:void(0)">
+                                                    <i class="zmdi zmdi-attachment-alt"></i>
+                                                  </a>
+                                                </li>
+                                                <li>
+                                                  <a href="javascript:void(0)">
+                                                    <i class="zmdi zmdi-mood"></i>
+                                                  </a>
+                                                </li>
+                                              </ul>
+                                              <div class="form-group m-10 p-l-75 is-empty">
+                                                <div class="input-group">
+                                                  <label class="sr-only">Leave a comment...</label>
+                                                  <input type="text" class="form-control form-rounded input-lightGray" placeholder="Leave a comment..">
+                                                  <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-blue btn-fab  btn-fab-sm">
+                                                      <i class="zmdi zmdi-mail-send"></i>
+                                                    </button>
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </footer>
+                                        </section>
+                                      </div>
+                                    </div>
+                                      <footer id="footer_wrapper">
+                                        <div class="footer-content">
+                                          <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                              <h6>Want to Work with Us?</h6>
+                                              <p>Paleo flexitarian bushwick letterpress, ea migas yr adipisicing. Man bun tacos tumblr kombucha, yuccie banjo affogato dolore gentrify retro chartreuse. Anim austin tempor ethical, sapiente food truck fanny pack farm-to-table.
+                                                Culpa keytar esse tilde hoodie, art party nostrud messenger bag authentic helvetica kinfolk cred eu affogato forage.</p>
+                                              </div>
+                                              <div class="col-xs-12 col-sm-2">
+                                                <h6>Company</h6>
+                                                <ul>
+                                                  <li><a href="javascript:void(0)">About Us </a></li>
+                                                  <li><a href="javascript:void(0)">Careers</a></li>
+                                                  <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                                                  <li><a href="javascript:void(0)">Contact Us</a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="col-xs-12 col-sm-4">
+                                                <h6>Email Newsletters</h6>
+                                                <p>Sign up for new MaterialWrap content, updates, and offers.</p>
+                                                <div class="form-group is-empty">
+                                                  <div class="input-group">
+                                                    <label class="control-label sr-only" for="footerEmail">Email Address</label>
+                                                    <input type="email" class="form-control" id="footerEmail" placeholder="Enter your email address...">
+                                                    <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-white btn-fab animate-fab btn-fab-sm">
+                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                      </button>
+                                                    </span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="row copy-wrapper">
+                                              <div class="col-xs-8">
+                                                <p class="copy">&copy; Copyright <time class="year"></time> MaterialWrap - All Rights Reserved</p>
+                                              </div>
+                                              <div class="col-xs-4">
+                                                <ul class="social">
+                                                  <li>
+                                                    <a href="javascript:void(0)"> </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="javascript:void(0)"> </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="javascript:void(0)"> </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="javascript:void(0)"> </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </footer>
+                                      </section>
+                                      <aside id="app_sidebar-right">
+                                        <div class="sidebar-inner sidebar-overlay">
+                                          <div class="tabpanel">
+                                            <ul class="nav nav-tabs nav-justified">
+                                              <li class="active" role="presentation"><a href="#sidebar_chat" data-toggle="tab" aria-expanded="true">Chat</a></li>
+                                              <li role="presentation"><a href="#sidebar_activity" data-toggle="tab">Activity</a></li>
+                                              <li role="presentation"><a href="#sidebar_settings" data-toggle="tab">Settings</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                              <div class="tab-pane fade active in" id="sidebar_chat">
+                                                <form class="m-l-15 m-r-15 m-t-30">
+                                                  <div class="input-group search-target">
+                                                    <span class="input-group-addon"><i class="zmdi zmdi-search"></i></span>
+                                                    <div class="form-group is-empty">
+                                                      <input type="text" value="" placeholder="Filter contacts..." class="form-control" data-search-trigger="open">
+                                                    </div>
+                                                  </div>
+                                                </form>
+                                                <ul class="description">
+                                                  <li class="title">
+                                                    Online
+                                                  </li>
+                                                </ul>
+                                                <ul class="list-group p-0">
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="John Smith">
+                                                    <span class="pull-left"><img src="assets/img/profiles/07.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini success status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">John Smith</div>
+                                                      <div class="list-group-item-text">New York, NY</div>
+                                                    </div>
+                                                  </li>
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Allison Grayce">
+                                                    <span class="pull-left"><img src="assets/img/profiles/05.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini success status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Allison Grayce</div>
+                                                      <div class="list-group-item-text">Seattle, WA</div>
+                                                    </div>
+                                                  </li>
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Ashley Ford">
+                                                    <span class="pull-left"><img src="assets/img/profiles/18.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini success status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Ashley Ford</div>
+                                                      <div class="list-group-item-text">Denver, CO</div>
+                                                    </div>
+                                                  </li>
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Johanna Kollmann">
+                                                    <span class="pull-left"><img src="assets/img/profiles/11.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini success status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Johanna Kollmann </div>
+                                                      <div class="list-group-item-text">Palo Alto, Ca</div>
+                                                    </div>
+                                                  </li>
+                                                </ul>
+                                                <ul class="description">
+                                                  <li class="title">
+                                                    Busy
+                                                  </li>
+                                                </ul>
+                                                <ul class="list-group p-0">
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Mike Jones">
+                                                    <span class="pull-left"><img src="assets/img/profiles/03.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini warning status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Mike Jones </div>
+                                                      <div class="list-group-item-text">San Francisco, CA</div>
+                                                    </div>
+                                                  </li>
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Nikki Clark">
+                                                    <span class="pull-left"><img src="assets/img/profiles/06.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini warning status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Nikki Clark </div>
+                                                      <div class="list-group-item-text">Sarasota, FL</div>
+                                                    </div>
+                                                  </li>
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Jason Kendall">
+                                                    <span class="pull-left"><img src="assets/img/profiles/15.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini warning status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Jason Kendall </div>
+                                                      <div class="list-group-item-text">New York, NY</div>
+                                                    </div>
+                                                  </li>
+                                                </ul>
+                                                <ul class="description">
+                                                  <li class="title">
+                                                    Offline
+                                                  </li>
+                                                </ul>
+                                                <ul class="list-group p-0">
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="Josh Hemsley">
+                                                    <span class="pull-left"><img src="assets/img/profiles/16.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini danger status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">Josh Hemsley</div>
+                                                      <div class="list-group-item-text">Salem, MA</div>
+                                                    </div>
+                                                  </li>
+                                                  <li class="list-group-item" data-chat="open" data-chat-name="James Hart">
+                                                    <span class="pull-left"><img src="assets/img/profiles/09.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
+                                                    <i class="badge mini danger status"></i>
+                                                    <div class="list-group-item-body">
+                                                      <div class="list-group-item-heading">James Hart</div>
+                                                      <div class="list-group-item-text">Salem, MA</div>
+                                                    </div>
+                                                  </li>
+                                                </ul>
+                                                <button class="btn btn-primary btn-fab btn-fab-sm animate-fab" data-chat="open" id="chat_fab_new">
+                                                  <i class="zmdi zmdi-plus"></i>
+                                                </button>
+                                              </div>
+                                              <div class="tab-pane fade" id="sidebar_activity">
+                                                <div class="sidebar-timeline">
+                                                  <div class="time-item">
+                                                    <div class="item-info">
+                                                      <small class="text-muted">15 minutes ago</small>
+                                                      <p><a href="#" class="accent">Mike Jones</a> fixed z-index conflict sidebar.scss</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="time-item">
+                                                    <div class="item-info">
+                                                      <small class="text-muted">30 minutes ago</small>
+                                                      <p><a href="javascript:void(0)" class="accent">Hazel	Dean</a> left a comment on product page designs.</p>
+                                                      <p><em>"Yuccie shoreditch trust fund, artisan tumblr sustainable cronut unicorn blog seitan. "</em></p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="time-item">
+                                                    <div class="item-info">
+                                                      <small class="text-muted">45 minutes ago</small>
+                                                      <p><a href="javascript:void(0)" class="accent">Molly</a> requested time off for training.</p>
+                                                      <p><em>"Snackwave church-key cardigan you probably haven't heard of them, asymmetrical microdosing cronut "</em></p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="time-item">
+                                                    <div class="item-info">
+                                                      <small class="text-muted">3 hours ago</small>
+                                                      <p><a href="javascript:void(0)" class="accent">Frederick	Roy</a> commented your post.</p>
+                                                      <p><em>"Skateboard dreamcatcher la croix, edison bulb sustainable sriracha vexillologist kombucha master cleanse."</em></p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="time-item">
+                                                    <div class="item-info">
+                                                      <small class="text-muted">1 hour ago</small>
+                                                      <p><a href="javascript:void(0)" class="accent">Holly Cobb</a> Uploaded 6 new photos.</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="time-item">
+                                                    <div class="item-info">
+                                                      <small class="text-muted">5 hours ago</small>
+                                                      <p><a href="javascript:void(0)" class="accent">Neal Stephens</a> setup a meeting with<a href="#" class="text-success"> Jason Kendall</a>.</p>
+                                                      <p><em>"Authentic aesthetic tattooed, PBR&B squid tote bag schlitz vaporware glossier yr man braid direct trade disrupt poke.  "</em></p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="tab-pane fade" id="sidebar_settings">
+                                                <div class="color-container">
+                                                  <h3 class="title">Preset Color Options</h3>
+                                                  <div class="row">
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-a.css">
+                                                          <input type="radio" name="setting-theme" checked="checked">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-a"></span>
+                                                            <span class="color bg-shade-theme-a"></span>
+                                                          </span>
+                                                          <span class="color bg-menu-darkBlue"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-b.css">
+                                                          <input type="radio" name="setting-theme">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-b"></span>
+                                                            <span class="color bg-shade-theme-b"></span>
+                                                          </span>
+                                                          <span class="color  bg-menu-darkBlue"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-c.css">
+                                                          <input type="radio" name="setting-theme">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-c"></span>
+                                                            <span class="color bg-shade-theme-c"></span>
+                                                          </span>
+                                                          <span class="color  bg-menu-darkBlue"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-d.css">
+                                                          <input type="radio" name="setting-theme">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-d"></span>
+                                                            <span class="color bg-shade-theme-d"></span>
+                                                          </span>
+                                                          <span class="color  bg-menu-darkBlue"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="row m-t-20">
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-e.css">
+                                                          <input type="radio" name="setting-theme" checked="checked">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-e"></span>
+                                                            <span class="color bg-shade-theme-e"></span>
+                                                          </span>
+                                                          <span class="color bg-menu-white"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-f.css">
+                                                          <input type="radio" name="setting-theme">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-f"></span>
+                                                            <span class="color bg-shade-theme-f"></span>
+                                                          </span>
+                                                          <span class="color  bg-menu-white"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-g.css">
+                                                          <input type="radio" name="setting-theme">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-g"></span>
+                                                            <span class="color bg-shade-theme-g"></span>
+                                                          </span>
+                                                          <span class="color  bg-menu-white"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-xs-3 p-0">
+                                                      <div class="color-option-check">
+                                                        <label data-load-css="assets/css/theme-h.css">
+                                                          <input type="radio" name="setting-theme">
+                                                          <span class="icon-check"></span>
+                                                          <span class="split">
+                                                            <span class="color bg-primary-theme-h"></span>
+                                                            <span class="color bg-shade-theme-h"></span>
+                                                          </span>
+                                                          <span class="color  bg-menu-white"></span>
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <h3 class="title m-t-30">Layout Mode</h3>
+                                                  <ul class="description">
+                                                    
+                                                    <li>
+                                                      <div class="radio block"><label><input type="radio" name="layoutMode" value="" checked>FULL WIDTH</label></div>
+                                                      
+                                                      
+                                                    </li>
+                                                    <li>
+                                                      <div class="radio block"><label><input type="radio" name="layoutMode" value="boxed-layout">BOXED</label></div>
+                                                    </li>
+                                                    
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </aside>
+                                    
+
+                                    </div>
+                                    <script src="assets/js/vendor.bundle.js"></script>
+                                    <script src="assets/js/app.bundle.js"></script>
+                                  </body>
+                                  
+                                  </html>

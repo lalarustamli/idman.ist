@@ -1,0 +1,112 @@
+.invoice-page {
+    .invoice {
+        h1 {
+            font-size: em(30);
+        }
+
+        .logo-img {
+            max-width: 40px;
+            vertical-align: text-top;
+        }
+
+        .signature {
+            font-family: $font-family-handwriting;
+            font-size: 22px;
+        }
+    }
+
+    .invoice-total {
+        border-top: 1px solid #d7e1ed;
+        padding-top: 30px;
+
+        span {
+            display: block;
+            font-size: em(14);
+          line-height: 1.6em;
+
+        }
+
+        .total {
+            font-size: em(22);
+            color: $mw-green;
+            font-weight: 600;
+        }
+    }
+
+    .invoice-note {
+        margin: 50px 0 10px;
+        padding: 10px;
+        border-top: 1px solid #d7e1ed;
+        border-bottom: 1px solid #d7e1ed;
+            clear: both;
+
+        p {
+            font-size: em(11);
+            color: $mw-gray;
+        }
+    }
+
+    .invoice-footer {
+        h2 {
+            color: #8fa3c8;
+
+            img {
+                width: 30px;
+                opacity: 0.5;
+            }
+        }
+
+        .contact {
+            font-size: em(12);
+        }
+    }
+}
+@media print {
+     @page{
+        size: auto;
+        /* auto is the initial value */
+        margin: 0;
+        /* this affects the margin in the printer settings */
+    }
+
+    body {
+        margin: 0;
+    }
+
+    #content_outer_wrapper #content_wrapper.card-overlay #header_wrapper.header-md+#content {
+        padding: 0;
+    }
+
+    .invoice-page {
+        #content {
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-body,
+        .card-heading {
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-heading {
+            float: right;
+            font-size: 22px;
+        }
+
+        .today {
+            font-size: 18px;
+        }
+
+        #app_sidebar-left,
+        #app_topnavbar-wrapper,
+        #footer_wrapper,
+        #header_wrapper,
+        .card-actions {
+            display: none;
+        }
+        .email{
+          display: none;
+        }
+    }
+}

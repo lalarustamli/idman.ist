@@ -1,0 +1,17 @@
+#header_wrapper {
+    &.calendar-header {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        padding: 25px;
+        background-size: cover;
+        background-position: 0 45%;
+    }
+}
+#modal_edit_event{
+  #modal-body{
+    .form-group{
+      margin:0!important;
+    }
+  }
+}

@@ -1,4 +1,9 @@
-﻿<header class="header-container">
+﻿@using IdmanistData.Model;
+@{
+    var u = Session["user"] as Customer;
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<header class="header-container">
     <div class="header-top">
         <div class="container">
             <div class="row">
@@ -12,7 +17,6 @@
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/german.png" alt="language"> German </a></li>
                         </ul>
                     </div>
-
                     <!-- End Header Language -->
                     <!-- Header Currency -->
                     <div class="dropdown block-currency-wrapper">
@@ -23,22 +27,41 @@
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> € - Euro </a></li>
                         </ul>
                     </div>
-
                     <!-- End Header Currency -->
-
                     <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
                 </div>
                 <div class="col-xs-6">
-
                     <!-- Header Top Links -->
-                    <div class="toplinks">
-                        <div class="links">
-                            <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
-                            <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
-                            <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
-                            <div class="login"><a title="Login" href="login.html"><span class="hidden-xs">Log In</span></a></div>
-                        </div>
-                    </div>
+                    @{
+
+                        if (Session["user"] == null)
+                        {
+
+                            <div class="toplinks">
+                                <div class="links">
+                                    @*<div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
+                                        <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
+                                        <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
+                                        <div class="login"><a title="Login" href="login.html"><span class="hidden-xs">Log In</span></a></div>*@
+                                    <a href="@Url.Action("Register", "user")">Qeydiyyat <i class="fa fa-user login_icon" aria-hidden="true"></i></a>
+                                    <a href="@Url.Action("Login", "user")">Giriş <i class="fa fa-sign-in login_icon" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <div class="login-details" style="float:right;margin-top:12px;">
+                                <p class="login">
+                                    <a href="@Url.Action("index", "user")" style="color:white; margin-left:20px;"><i class="fa fa-user-circle-o" aria-hidden="true" style="margin-left:5px; font-size: 20px;"></i> @u.UserName</a>
+                                </p>
+                            </div>
+                        }
+
+                    }
+
+
+
                     <!-- End Header Top Links -->
                 </div>
             </div>

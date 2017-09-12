@@ -11,16 +11,25 @@ namespace IdmanistData.Model
     public class Customer
     {
         [Key]
-        public int CustomerId { get; set; }
-        [DisplayName("Ad")]
-        public string CustomerName { get; set; }
-        [DisplayName("Soyad")]
-        public string CustomerSurName { get; set; }
-        [DisplayName("Email")]
-        public string CustomerEmail { get; set; }
-        [DisplayName("Telefon nömrəsi")]
-        public int CustomerPhone { get; set; }
-        [DisplayName("Şifrə")]
-        public int CustomerPassword { get; set; }
+        public int UserID { get; set; }
+        //[Required(ErrorMessage = "User name is required")]
+        public string UserName { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        //[Compare("Password", ErrorMessage = "COnfirm password should be same as password")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }
+        //[Required(ErrorMessage = "First name is required")]
+        //public string FirstName { get; set; }
+        ////[Required(ErrorMessage = "Last name is required")]
+        //public string LastName { get; set; }
+        [Required(ErrorMessage = "Email is required")]
+        //[RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+        // @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+        // @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter the valid email")]
+        [EmailAddress]
+        public string Email { get; set; }
+
     }
 }

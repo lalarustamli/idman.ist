@@ -1,0 +1,17 @@
+//------------------------------------------------------------------------------
+// Prism - Syntax Highlighter.
+//------------------------------------------------------------------------------
+.syntax-highlighter{
+  display: none;
+}
+
+:not(pre)>code[class*=language-], pre[class*=language-] {
+    background: #222F3C;
+}
+pre code{
+  white-space: pre-line!important;
+}
+
+code {
+    border-radius: 4px;
+}

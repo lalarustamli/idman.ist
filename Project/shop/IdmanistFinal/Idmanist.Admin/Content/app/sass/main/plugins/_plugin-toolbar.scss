@@ -1,0 +1,826 @@
+.tool-items {
+a:link, a:visited{
+  color: #fff!important;
+}
+}
+
+.btn-toolbar > i {
+  color: #fff!important;
+}
+
+.btn-toolbar:hover > i {
+  color: #fff;
+}
+
+.btn-toolbar-primary {
+  background-color: $brand-primary;
+}
+
+.btn-toolbar-primary.pressed {
+  background-color: darken($brand-primary,5%);
+}
+
+.btn-toolbar-primary:hover {
+  background-color: lighten($brand-primary,5%);
+}
+
+.btn-toolbar-primary > i {
+  color: #fff;
+}
+
+
+.btn-toolbar
+{
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+
+    -webkit-transition: none;
+         -o-transition: none;
+            transition: none;
+    text-align: center;
+
+    border-radius: 6px;
+    background: $brand-default;
+}
+
+.btn-toolbar > i
+{
+    font-size: 16px;
+
+    color: $brand-default;
+}
+
+.btn-toolbar:hover
+{
+    cursor: pointer;
+
+    background: lighten($brand-default,5%);
+}
+
+.btn-toolbar:hover > i
+{
+    color: white;
+}
+
+.btn-toolbar-primary
+{
+    background-color: $brand-primary;
+}
+
+.btn-toolbar-primary.pressed
+{
+    background-color: darken($brand-primary,5%);
+}
+
+.btn-toolbar-primary:hover
+{
+    background-color:lighten($brand-primary,5%);
+}
+
+.btn-toolbar-primary > i
+{
+    color: #fff;
+}
+
+.btn-toolbar-danger
+{
+    background-color: #f44336;
+}
+
+.btn-toolbar-danger.pressed
+{
+    background-color: $brand-danger;
+}
+
+.btn-toolbar-danger:hover
+{
+    background-color: $brand-danger;
+}
+
+.btn-toolbar-danger > i
+{
+    color: white;
+}
+
+.btn-toolbar-warning
+{
+    background-color: $brand-warning;
+}
+
+.btn-toolbar-warning.pressed
+{
+    background-color: darken($brand-warning,5%);
+}
+
+.btn-toolbar-warning:hover
+{
+    background-color:lighten($brand-warning,5%);
+}
+
+.btn-toolbar-warning > i
+{
+    color: white;
+}
+
+.btn-toolbar-info
+{
+    background-color: $brand-info;
+}
+
+.btn-toolbar-info.pressed
+{
+    background-color: darken($brand-info,5%);
+}
+
+.btn-toolbar-info:hover
+{
+    background-color: lighten($brand-info,5%);
+}
+
+.btn-toolbar-info > i
+{
+    color: white;
+}
+
+.btn-toolbar-success
+{
+    background-color: $brand-success;
+}
+
+.btn-toolbar-success.pressed
+{
+    background-color:darken($brand-success,5%);
+}
+
+.btn-toolbar-success:hover
+{
+    background-color: lighten($brand-success,5%)
+}
+
+.btn-toolbar-success > i
+{
+    color: white;
+}
+
+.btn-toolbar-info-o
+{
+    background-color: $brand-default;
+}
+
+.btn-toolbar-info-o.pressed
+{
+    background-color: darken($brand-default,5%);
+}
+
+.btn-toolbar-info-o:hover
+{
+    background-color:  lighten($brand-default,15%);
+}
+
+.btn-toolbar-info-o > i
+{
+    color: white;
+}
+
+.btn-toolbar-light
+{
+    background-color: #eee;
+}
+
+.btn-toolbar-light.pressed
+{
+    background-color: #e0e0e0;
+}
+
+.btn-toolbar-light:hover
+{
+    background-color: #e0e0e0;
+}
+
+.btn-toolbar-light > i
+{
+    color: white;
+}
+
+.btn-toolbar-dark
+{
+    background-color: $brand-default;
+}
+
+.btn-toolbar-dark.pressed
+{
+    background-color: $brand-default;
+}
+
+.btn-toolbar-dark:hover
+{
+    background-color: $brand-default;
+}
+
+.btn-toolbar-dark > i
+{
+    color: white;
+}
+
+.tool-container
+{
+    position: absolute;
+
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+}
+
+.tool-container.tool-top,
+.tool-container.tool-bottom
+{
+    height: 40px;
+
+    border-bottom: 0 solid #beb8b8;
+}
+
+.tool-container.tool-top .tool-item,
+.tool-container.tool-bottom .tool-item
+{
+    float: left;
+
+    border-right: 0;
+    border-left: 0;
+}
+
+.tool-item
+{
+    display: block;
+
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 20px;
+    height: 100%;
+    height: 20px;
+    padding: 10px;
+
+    -webkit-transition: none;
+         -o-transition: none;
+            transition: none;
+    text-align: center;
+}
+
+.tool-item > .icon
+{
+    color: $brand-default;
+}
+
+.tool-item.selected,
+.tool-item:hover
+{
+    background: $brand-primary;
+}
+
+.tool-item.selected > .icon,
+.tool-item:hover > .icon
+{
+    color: white;
+}
+
+.tool-top .tool-item:first-child:hover,
+.tool-bottom .tool-item:first-child:hover
+{
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.tool-top .tool-item:last-child:hover,
+.tool-bottom .tool-item:last-child:hover
+{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.tool-vertical-top .tool-item:first-child:hover,
+.tool-vertical-bottom .tool-item:first-child:hover,
+.tool-right .tool-item:first-child:hover,
+.tool-left .tool-item:first-child:hover
+{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.tool-vertical-top .tool-item:last-child:hover,
+.tool-vertical-bottom .tool-item:last-child:hover,
+.tool-right .tool-item:last-child:hover,
+.tool-left .tool-item:last-child:hover
+{
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.tool-container .arrow
+{
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-width: 7px;
+    border-style: solid;
+}
+
+.tool-container.tool-top .arrow
+{
+    bottom: -14px;
+    left: 50%;
+
+    margin-left: -7px;
+
+    border-color: #e0e0e0 transparent transparent;
+}
+
+.tool-container.tool-bottom .arrow
+{
+    top: -14px;
+    left: 50%;
+
+    margin-left: -7px;
+
+    border-color: transparent transparent #e0e0e0;
+}
+
+.tool-container.tool-left .arrow
+{
+    top: 50%;
+    right: -14px;
+
+    margin-top: -7px;
+
+    border-color: transparent transparent transparent #e0e0e0;
+}
+
+.tool-container.tool-right .arrow
+{
+    top: 50%;
+    left: -14px;
+
+    margin-top: -7px;
+
+    border-color: transparent #e0e0e0 transparent transparent;
+}
+
+.toolbar-primary
+{
+    background-color:$brand-primary;
+}
+
+.toolbar-primary.tool-top .arrow
+{
+    border-color: $brand-primary transparent transparent;
+}
+
+.toolbar-primary.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-primary;
+}
+
+.toolbar-primary.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-primary;
+}
+
+.toolbar-primary.tool-right .arrow
+{
+    border-color: transparent $brand-primary transparent transparent;
+}
+
+.toolbar-primary .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-primary .tool-item.selected,
+.toolbar-primary .tool-item:hover
+{
+    color: white;
+    background: lighten($brand-primary, 7%);
+}
+
+.toolbar-danger
+{
+    background-color: $brand-danger;
+}
+
+.toolbar-danger.tool-top .arrow
+{
+    border-color: $brand-danger transparent transparent;
+}
+
+.toolbar-danger.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-danger;
+}
+
+.toolbar-danger.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-danger;
+}
+
+.toolbar-danger.tool-right .arrow
+{
+    border-color: transparent $brand-danger transparent transparent;
+}
+
+.toolbar-danger .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-danger .tool-item.selected,
+.toolbar-danger .tool-item:hover
+{
+    color: white;
+    background: lighten($brand-danger,7%);
+}
+
+.toolbar-warning
+{
+    background-color: $brand-warning;
+}
+
+.toolbar-warning.tool-top .arrow
+{
+    border-color: $brand-warning transparent transparent;
+}
+
+.toolbar-warning.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-warning;
+}
+
+.toolbar-warning.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-warning;
+}
+
+.toolbar-warning.tool-right .arrow
+{
+    border-color: transparent $brand-warning transparent transparent;
+}
+
+.toolbar-warning .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-warning .tool-item.selected,
+.toolbar-warning .tool-item:hover
+{
+    color: white;
+    background: lighten($brand-warning,7%);
+}
+
+.toolbar-info
+{
+    background-color: $brand-info;
+}
+
+.toolbar-info.tool-top .arrow
+{
+    border-color: $brand-info transparent transparent;
+}
+
+.toolbar-info.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-info;
+}
+
+.toolbar-info.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-info;
+}
+
+.toolbar-info.tool-right .arrow
+{
+    border-color: transparent $brand-info transparent transparent;
+}
+
+.toolbar-info .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-info .tool-item.selected,
+.toolbar-info .tool-item:hover
+{
+    color: white;
+    background: lighten($brand-info,7%);
+}
+
+.toolbar-success
+{
+    background-color: $brand-success;
+}
+
+.toolbar-success.tool-top .arrow
+{
+    border-color: $brand-success transparent transparent;
+}
+
+.toolbar-success.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-success;
+}
+
+.toolbar-success.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-success;
+}
+
+.toolbar-success.tool-right .arrow
+{
+    border-color: transparent $brand-success transparent transparent;
+}
+
+.toolbar-success .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-success .tool-item.selected,
+.toolbar-success .tool-item:hover
+{
+    color: white;
+    background: lighten($brand-success,7%);
+}
+
+.toolbar-info-o
+{
+    background-color: $brand-default;
+}
+
+.toolbar-info-o.tool-top .arrow
+{
+    border-color: $brand-default transparent transparent;
+}
+
+.toolbar-info-o.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-default;
+}
+
+.toolbar-info-o.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-default;
+}
+
+.toolbar-info-o.tool-right .arrow
+{
+    border-color: transparent $brand-default transparent transparent;
+}
+
+.toolbar-info-o .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-info-o .tool-item.selected,
+.toolbar-info-o .tool-item:hover
+{
+    color: white;
+    background: lighten($brand-default,7%);
+}
+
+.toolbar-light
+{
+    background-color: #eee;
+}
+
+.toolbar-light.tool-top .arrow
+{
+    border-color: #eee transparent transparent;
+}
+
+.toolbar-light.tool-bottom .arrow
+{
+    border-color: transparent transparent #eee;
+}
+
+.toolbar-light.tool-left .arrow
+{
+    border-color: transparent transparent transparent #eee;
+}
+
+.toolbar-light.tool-right .arrow
+{
+    border-color: transparent #eee transparent transparent;
+}
+
+.toolbar-light .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-light .tool-item.selected,
+.toolbar-light .tool-item:hover
+{
+    color: white;
+    background:lighten($brand-default,7%);
+}
+
+.toolbar-dark
+{
+    background-color: $brand-default;
+}
+
+.toolbar-dark.tool-top .arrow
+{
+    border-color: $brand-default transparent transparent;
+}
+
+.toolbar-dark.tool-bottom .arrow
+{
+    border-color: transparent transparent $brand-default;
+}
+
+.toolbar-dark.tool-left .arrow
+{
+    border-color: transparent transparent transparent $brand-default;
+}
+
+.toolbar-dark.tool-right .arrow
+{
+    border-color: transparent $brand-default transparent transparent;
+}
+
+.toolbar-dark .tool-item > .icon
+{
+    color: white;
+}
+
+.toolbar-dark .tool-item.selected,
+.toolbar-dark .tool-item:hover
+{
+    color: white;
+    background: $brand-default;
+}
+
+.animate-standard
+{
+    -webkit-animation: standardAnimate .3s 1 ease;
+}
+
+.animate-flyin
+{
+    -webkit-animation: rotateAnimate .5s 1 ease;
+}
+
+.animate-grow
+{
+    -webkit-animation: growAnimate .4s 1 ease;
+}
+
+.animate-flip
+{
+    -webkit-animation: flipAnimate .4s 1 ease;
+}
+
+.animate-bounce
+{
+    -webkit-animation: bounceAnimate .4s 1 ease-out;
+}
+
+@-webkit-keyframes rotateAnimate
+{
+    from
+    {
+        -webkit-transform: rotate(180deg) translate(-120px);
+                transform: rotate(180deg) translate(-120px);
+
+        opacity: 0;
+    }
+    to
+    {
+        -webkit-transform: rotate(0deg) translate(0px);
+                transform: rotate(0deg) translate(0px);
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes standardAnimate
+{
+    from
+    {
+        -webkit-transform: translateY(20px);
+                transform: translateY(20px);
+
+        opacity: 0;
+    }
+    to
+    {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes growAnimate
+{
+    0%
+    {
+        -webkit-transform: scale(0) translateY(40px);
+                transform: scale(0) translateY(40px);
+
+        opacity: 0;
+    }
+    70%
+    {
+        -webkit-transform: scale(1.5) translate(0px);
+                transform: scale(1.5) translate(0px);
+    }
+    100%
+    {
+        -webkit-transform: scale(1) translate(0px);
+                transform: scale(1) translate(0px);
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes rotate2Animate
+{
+    from
+    {
+        -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        -webkit-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+
+        opacity: 0;
+    }
+    to
+    {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flipAnimate
+{
+    from
+    {
+        -webkit-transform: rotate3d(2, 2, 2, 180deg);
+                transform: rotate3d(2, 2, 2, 180deg);
+
+        opacity: 0;
+    }
+    to
+    {
+        -webkit-transform: rotate3d(0, 0, 0, 0deg);
+                transform: rotate3d(0, 0, 0, 0deg);
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes bounceAnimate
+{
+    0%
+    {
+        -webkit-transform: translateY(40px);
+                transform: translateY(40px);
+
+        opacity: 0;
+    }
+    30%
+    {
+        -webkit-transform: translateY(-40px);
+                transform: translateY(-40px);
+    }
+    70%
+    {
+        -webkit-transform: translateY(20px);
+                transform: translateY(20px);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+
+        opacity: 1;
+    }
+}
+
+.hidden
+{
+    display: none;
+}

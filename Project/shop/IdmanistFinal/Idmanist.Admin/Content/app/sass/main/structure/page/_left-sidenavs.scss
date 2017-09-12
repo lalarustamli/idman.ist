@@ -1,0 +1,817 @@
+//
+// Page Layout for Left Sidenavs
+// Page Layouts > Left Sidenav
+// -----------------------------------------------------------------------------
+
+
+
+// layout-left-sidenav-v1.html
+// -----------------------------------------------------------------------------
+
+.leftnav_v1 {
+  #leftnav {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    position: absolute;
+    z-index: 10;
+    background: transparent;
+    height: calc(100% - 260px);
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    
+    .card-heading,
+    .header {
+      padding: 0;
+      position: relative;
+      
+      .card-title,
+      .header-title {
+        text-transform: uppercase;
+        padding: 0;
+        display: block;
+        font-size: 18px;
+        color: #fff;
+        padding: 25px;
+        margin: 0;
+      }
+    }
+    
+    .subheader {
+      position: absolute;
+      bottom: 0;
+    }
+    
+    .sidebarnav-inner {
+      height: calc(100% - 220px);
+      overflow: auto;
+      position: absolute;
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .card {
+      background: transparent!important;
+      border-color: transparent;
+      box-shadow: none;
+      margin: 0 auto !important;
+      z-index: 0;
+      
+      .card-heading {
+        padding: 15px 10px !important;
+        background: #e7eef3;
+        min-height: initial;
+        
+        h5 {
+          color: rgba(98,114,136,.8);
+          padding: 0;
+          margin: 0;
+          text-transform: uppercase;
+        }
+      }
+      
+      .card-body {
+        padding: 0 !important;
+        
+        .submenu {
+          ul {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+            
+            li {
+              position: relative;
+              display: block;
+              
+              a {
+                position: relative;
+                display: block;
+                padding: 15px 15px 15px 25px;
+                @include transition(all 250ms linear);
+                
+                &:hover {
+                  color: #516073;
+                }
+                
+                i {
+                  width: 25px;
+                  font-size: 1.4em;
+                  vertical-align: text-top;
+                  display: inline-block;
+                }
+              }
+              
+              &:active,
+              &:focus,
+              &:hover {
+                background: rgba(200, 200, 200, 0.2);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.leftnav_v1 {
+  #header {
+    padding-left: 190px;
+  }
+  
+  .content-body {
+    .card {
+      z-index: 10;
+    }
+  }
+}
+
+.leftnav_v1 {
+  #leftnav {
+    + .content-body {
+      margin-left: 190px;
+    }
+  }
+}
+@media (max-width : 1280px) {
+  .leftnav_v1 {
+    #header {
+      padding-left: 60px;
+    }
+    
+    #leftnav {
+      background: #fff;
+      left: -300px;
+      min-width: 245px;
+      max-width: 245px;
+      width: 245px;
+    }
+  }
+  
+  .leftnav_v1 #leftnav+.content-body {
+    margin-left: 0;
+  }
+  
+  .leftnav_v1 .content-body,
+  .leftnav_v2 .content-body {
+    .card-actions.left-top + .card-title,
+    .card-actions.left-top + .card-title + small {
+      padding-left: 30px;
+    }
+  }
+}
+@media (max-width : 992px) {
+  .leftnav {
+    #leftnav {
+      .sidebarnav-inner {
+        height: calc(100% - 150px);
+      }
+    }
+  }
+}
+// layout-left-sidenav-v2.html
+// -----------------------------------------------------------------------------
+
+.leftnav_v2 {
+  #leftnav {
+    position: relative;
+    // width: 200px;
+    // min-width: 200px;
+    // max-width: 200px;
+    
+    .card {
+      .card-heading {
+        padding: 10px 10px 10px 0;
+        
+        .card-title {
+          text-transform: uppercase;
+          padding: 5px 0 5px 10px;
+          display: block;
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+      
+      .card-body {
+        padding: 0 10px 0 0;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}
+
+.leftnav_v2 {
+  .content-col-wrapper {
+    padding-left:50px;
+  }
+  
+  .leftnav-col-wrapper {
+    padding-right: 0;
+    max-width: 250px;
+  }
+}
+
+@media (max-width : 1280px) {
+  .leftnav_v2 {
+    #header{
+      padding-left:60px;
+    }
+    .content-col-wrapper {
+      width: 100%;
+      padding-left:10px;
+    }
+    
+    #leftnav {
+      position: fixed;
+      width: 250px;
+      min-width: 250px;
+      max-width: 250px;
+      padding: 0;
+      left: -250px;
+      
+      .card {
+        .card-heading {
+          padding: 15px;
+          background: $mw-green;
+          position: fixed;
+          width: 250px;
+          z-index: 50;
+          
+          .card-title {
+            color: #fff;
+            font-size: em(18);
+          }
+          
+          ul.card-actions li i {
+            font-size: 1.375em;
+          }
+        }
+        
+        .card-body {
+          padding: 20px 10px 50px;
+          margin: 0 10px 0 0;
+        }
+      }
+      
+      .nav-pills > li > a {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width : 992px) {
+  .leftnav_v1,
+  .leftnav_v2 {
+    #leftnav {
+      .sidebarnav-inner {
+        height: calc(100% - 150px);
+      }
+    }
+    #content{
+      padding-left:0!important;
+      padding-right:0!important;
+      margin:0!important;
+    }
+  }
+}
+@media (max-width :767px) {
+  .leftnav_v2 ,
+  .leftnav_v3 {
+    #header_wrapper{
+      .breadcrumb{
+        display: none!important;
+      }
+    }
+    #content{
+      padding:0!important;
+      margin:0!important;
+    }
+  }
+}
+
+// layout-left-sidenav-v3.html
+// -----------------------------------------------------------------------------
+
+.leftnav_v3 {
+  #leftnav {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+    height: 100%;
+    min-height: 100%;
+    float: left;
+    overflow-y: auto;
+    z-index: 1;
+    color: #627288;
+    .form-group {
+      margin: 0;
+    }
+    //Sidebar Panel Card & Card Actions
+    .card {
+      background: transparent!important;
+      border-color: transparent;
+      box-shadow: none;
+      margin: 0 auto !important;
+      
+      .card-heading {
+        padding: 10px 0 0 25px !important;
+        
+        h5 {
+          color: rgba(98,114,136,.8);
+          padding: 0;
+          margin: 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+    
+    .card .card-body ul.card-actions.left,
+    .card .card-heading ul.card-actions.left {
+      left: 10px;
+      top: 8px;
+    }
+    
+    .nav.nav-tabs {
+      background: none;
+    }
+  }
+  #header {
+    padding-left: 60px;
+  }
+}
+
+.leftnav_v3.panel-lg {
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+}
+@media (max-width: 1280px) {
+  #app_wrapper {
+    #content_outer_wrapper {
+      left: 0 !important;
+      max-width: 100%!important;
+    }
+    
+    .leftnav_v3 {
+      #header h1 {
+        padding-left: 45px;
+      }
+      
+      #leftnav {
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        left: -280px;
+        top: 65px;
+        height: 100%;
+        position: fixed;
+        z-index: 0;
+        box-shadow: 0 0 5px rgba(0,0,0,.3);
+      }
+      
+      .content-body {
+        padding: 20px;
+      }
+    }
+  }
+  
+  .panel-left-open #app_wrapper .leftnav_v3 #leftnav {
+    left: 0;
+    z-index: $zindex_sidebar_panel_right;
+    background: #EEF5F9;
+  }
+}
+
+.leftnav_v3 {
+  #leftnav {
+    .header {
+      position: relative;
+      padding: 15px;
+      
+      .header-title {
+        text-transform: uppercase;
+        padding: 5px 0 5px 10px;
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+    
+    .card-body {
+      padding: 0 !important;
+      
+      .submenu {
+        ul {
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+          
+          li {
+            position: relative;
+            display: block;
+            
+            a {
+              position: relative;
+              display: block;
+              padding: 0;
+              @include transition(all 250ms linear);
+              
+              &:hover {
+                color: #516073;
+              }
+              
+              i {
+                width: 10px;
+                font-size: 1.4em;
+                vertical-align: text-top;
+              }
+            }
+            
+            &:active,
+            &:focus,
+            &:hover {
+              background: rgba(200, 200, 200, 0.2);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Open Left Menus - Styles for v1,v2
+// -----------------------------------------------------------------------------
+
+#content_wrapper.open-left {
+  &.leftnav_v1,
+  &.leftnav_v2 {
+    #leftnav {
+      left: 0;
+    }
+  }
+}
+//when app menu is open and collapsed
+
+.app_sidebar-menu-collapsed {
+  #content_wrapper.open-left {
+    .leftnav_v1,
+    .leftnav_v2 {
+      #leftnav {
+        left: 50px;
+      }
+    }
+  }
+}
+
+#content_wrapper.open-left {
+  &.leftnav_v1,
+  &.leftnav_v2 {
+    #leftnav {
+      .card-heading,
+      .header {
+        position: relative;
+        padding: 15px;
+        height: 70px;
+        
+        .card-title,
+        .header-title {
+          text-transform: uppercase;
+          padding: 5px 0 5px 10px;
+          margin-top: 0;
+          display: block;
+          font-size: 18px;
+          font-weight: 400;
+          color: #fff;
+          line-height: 2em;
+        }
+      }
+      background: #fff;
+      top: 65px;
+      position: fixed;
+      z-index: 80;
+      height: 100%;
+      left: 0;
+      
+      .card {
+        box-shadow: none;
+        
+        .header {
+          background: $mw-green;
+        }
+      }
+    }
+  }
+}
+// layout-left-sidenav-v3.html
+// -----------------------------------------------------------------------------
+
+#content_wrapper {
+  &.leftnav_v3 {
+    margin-left: 250px;
+    @include transition(all 150ms linear);
+    #leftnav {
+      width: 250px;
+      min-width: 250px;
+      max-width: 250px;
+      left: 240px;
+      top: 65px;
+      height: 100%;
+      min-height: 100%;
+      position: fixed;
+      overflow-x: hidden;
+      overflow-y: auto;
+      box-shadow: inset -3px 0 22px 2px rgba(0,0,0,.06);
+      color: #627288;
+      padding-left: 0;
+      @include transform(translateX(0px));
+      @include transition(all 150ms linear);
+      
+      .form-group {
+        margin: 0;
+      }
+      //Sidebar Panel Card & Card Actions
+      .card {
+        background: transparent!important;
+        border-color: transparent;
+        box-shadow: none;
+        margin-bottom: 15px 0 15px 0!important;
+        
+        .card-heading {
+          padding: 15px 10px !important;
+          //background: #e7eef3;
+          z-index: 5;
+          display: none;
+          
+          h5 {
+            color: #8190a5;
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+          }
+        }
+        
+        .card-body {
+            padding: 0 !important;
+          
+          form {
+            z-index: 0;
+            @include transform(translateY(-60px));
+            height: 0;
+          }
+          
+          form.open {
+            @include transition(all 150ms linear);
+            @include transform(translateY(0));
+            height: 55px;
+          }
+        }
+      }
+      //== Card current date
+      .card.date {
+        margin: 0 !important;
+        
+        .curr-date {
+          padding: 20px 0 0 23px;
+          
+          span {
+            display: block;
+          }
+          
+          .curr-dd,
+          .curr-mmmm-dd {
+            font-size: em(30);
+            padding: 0;
+            font-weight: 200;
+            margin: 5px 0;
+            color: #8190a5;
+          }
+        }
+      }
+      
+      .card .card-body ul.card-actions.left,
+      .card .card-heading ul.card-actions.left {
+        left: 10px;
+        top: 8px;
+      }
+      
+      .nav.nav-tabs {
+        background: none;
+      }
+    }
+  }
+}
+//when app menu is open and collapsed
+
+.app_sidebar-menu-collapsed {
+  #content_wrapper {
+    &.leftnav_v3 {
+      margin-left: 250px;
+      #leftnav {
+          @include transition(all 150ms linear);
+        left: 50px;
+      }
+    }
+  }
+  
+}
+
+@media (max-width : 1280px) {
+  #content_wrapper {
+    &.leftnav_v3 {
+      #leftnav {
+        left: 0!important;
+        .card-heading{
+          display: block;
+        }
+      }
+    }
+  }
+  
+}
+
+#content_wrapper.leftnav_v3 + #footer_wrapper {
+  margin-left: 250px;
+    @include transition(all 150ms linear);
+}
+// Open Left Menus - Styles for v3
+// -----------------------------------------------------------------------------
+
+#content_wrapper.toggle-left {
+  &.leftnav_v3 {
+    margin-left: 0;
+    
+    #leftnav {
+      -webkit-transform: translateX(-250px);
+      -moz-transform: translateX(-250px);
+      -ms-transform: translateX(-250px);
+      -o-transform: translateX(-250px);
+      transform: translateX(-250px);
+    }
+  }
+}
+
+#content_wrapper.leftnav_v3.toggle-left + #footer_wrapper {
+    @include transition(all 150ms linear);
+  margin-left: 0;
+}
+@media (max-width : 992px) {
+  #content_wrapper {
+    &.leftnav_v3 {
+      margin-left: 0;
+      @include transition(all 150ms linear);
+      
+      #leftnav {
+        @include transition(all 150ms linear);
+        -webkit-transform: translateX(-250px);
+        -moz-transform: translateX(-250px);
+        -ms-transform: translateX(-250px);
+        -o-transform: translateX(-250px);
+        transform: translateX(-250px);
+        top: 60px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        position: fixed!important;
+        overflow-y: auto!important;
+        height: 100%;
+        max-height: 100%;
+        padding-bottom: 60px;
+      }
+    }
+  }
+  
+  #content_wrapper.toggle-left {
+    &.leftnav_v3 {
+      overflow: hidden;
+      
+      #leftnav {
+        @include transition(all 150ms linear);
+        left: 0;
+        top: 60px;
+        padding-bottom: 60px;
+        background: #fff;
+        z-index: $zindex_toggle_sidebars;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        position: fixed!important;
+        overflow-y: auto!important;
+        height: 100%;
+        max-height: 100%;
+        @include transform(translateX(0px));
+        box-shadow: none;
+        
+        .card-heading.card-img {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  #content_wrapper.leftnav_v3 + #footer_wrapper {
+      @include transition(all 150ms linear);
+    margin-left: 0;
+  }
+}
+@media (max-width : 767px) {
+  #content_wrapper.toggle-left {
+    &.leftnav_v3 {
+      #leftnav {
+        @include transition(all 150ms linear);
+        width: 275px;
+  min-width: 275px;
+  max-width: 275px;
+      }
+    }
+  }
+}
+// layout-left-sidenav-v3 Wide Version
+// -----------------------------------------------------------------------------
+
+#content_wrapper {
+  &.leftnav_v3.lg {
+    margin-left: 360px;
+    
+    #leftnav {
+      width: 360px;
+      min-width: 360px;
+      max-width: 360px;
+      @include transform(translateX(0px));
+    }
+  }
+}
+
+#content_wrapper.toggle-left {
+  &.leftnav_v3.lg {
+    margin-left: 0;
+    
+    #leftnav {
+      -webkit-transform: translateX(360px);
+      -moz-transform: translateX(360px);
+      -ms-transform: translateX(360px);
+      -o-transform: translateX(360px);
+      transform: translateX(360px);
+    }
+  }
+}
+
+#content_wrapper.leftnav_v3.lg + #footer_wrapper {
+    @include transition(all 150ms linear);
+  margin-left: 360px;
+}
+
+#content_wrapper.leftnav_v3.toggle-left.lg + #footer_wrapper {
+  margin-left: 0;
+    @include transition(all 150ms linear);
+}
+@media (max-width : 992px) {
+  #content_wrapper {
+    &.leftnav_v3.lg {
+      margin-left: 0;
+      
+      #leftnav {
+        @include transition(all 150ms linear);
+        -webkit-transform: translateX(360px);
+        -moz-transform: translateX(360px);
+        -ms-transform: translateX(360px);
+        -o-transform: translateX(360px);
+        transform: translateX(360px);
+      }
+    }
+  }
+  
+  #content_wrapper.toggle-left {
+    &.leftnav_v3.lg {
+      #leftnav {
+        @include transition(all 150ms linear);
+        @include transform(translateX(0px));
+      }
+    }
+  }
+  
+  #content_wrapper.leftnav_v3.lg + #footer_wrapper {
+    margin-left: 0;
+      @include transition(all 150ms linear);
+  }
+}
+@media (max-width: $screen-sm) {
+  #content_wrapper {
+    &.leftnav_v3.lg {
+      margin-left: 0;
+      
+      #leftnav {
+        width: 275px;
+        min-width: 275px;
+        max-width: 275px;
+        @include transition(all 150ms linear);
+        -webkit-transform: translateX(275px);
+        -moz-transform: translateX(275px);
+        -ms-transform: translateX(275px);
+        -o-transform: translateX(275px);
+        transform: translateX(275px);
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.card-heading.card-img {
+  min-height: 150px;
+  padding: 0;
+  width: 100%;
+  background-image: url("../img/headers/header-md-02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .actions > a,
+  .actions > li > a {
+    color: #fff;
+  }
+  
+  .profile {
+    min-height: 90px;
+    padding: 15px;
+  }
+  
+  .card-title {
+    width: 50px;
+    height: 50px;
+    background: #f04e1b;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    line-height: 2.4em;
+    text-indent: 9px;
+  }
+  
+  a.info:link {
+    font-size: em(13);
+    padding: 8px 0;
+    margin: 5px 0 0;
+    display: block;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: rgb(255,255,255);
+    
+    span {
+      padding: 0 15px;
+    }
+  }
+}
+
+.card.profile-menu {
+  .accounts {
+    ul {
+      li {
+        a {
+          display: block;
+          vertical-align: middle;
+          padding: 0;
+          
+          .switch {
+            width: 30px;
+            height: 30px;
+            margin-right:10px;
+                margin-left: -5px;
+            vertical-align: middle;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

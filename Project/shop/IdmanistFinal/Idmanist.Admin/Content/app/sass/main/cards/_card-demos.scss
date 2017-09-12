@@ -1,0 +1,664 @@
+//--------------------------------------------
+// Card Templates - styles for card layouts
+//--------------------------------------------
+//== Card Stacks
+
+.card-stack-wrapper {
+  list-style: none;
+  display: block;
+  float: left;
+  width: 100%;
+  height: 230px;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  > li {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    cursor: pointer;
+    -webkit-transform: scale(.85);
+    -moz-transform: scale(.85);
+    -ms-transform: scale(.85);
+    -o-transform: scale(.85);
+    transform: scale(.85);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  > li:nth-child(1) {
+    z-index: 3;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+  
+  > li:nth-child(2) {
+    z-index: 2;
+    top: -15px;
+    -webkit-transform: scale(.95);
+    -moz-transform: scale(.95);
+    -ms-transform: scale(.95);
+    -o-transform: scale(.95);
+    transform: scale(.95);
+    -webkit-opacity: 0.9;
+    -moz-opacity: 0.9;
+    opacity: 0.9;
+  }
+  
+  > li:nth-child(3) {
+    z-index: 1;
+    top: -28px;
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: scale(.9);
+    transform: scale(.9);
+    -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+  }
+  
+  .card {
+    float: left;
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    
+    .card-body {
+      padding: 0;
+    }
+  }
+}
+//== Drawer
+
+.card.drawer {
+  .card-off-canvas {
+    height: 100%;
+    width: 35%;
+    min-width: 240px;
+    top: 0;
+    background: #fff;
+    -moz-transform: translateX(-105%);
+    -ms-transform: translateX(-105%);
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+    position: absolute;
+    z-index: 5;
+    -moz-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+    -ms-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+    box-shadow: 0 2px 2px rgba(0,0,0,.1);
+    @include transition(all, .2s, ease-in-out);
+    
+    .card-heading {
+      min-height: 150px;
+      padding: 0;
+      width: 100%;
+      background-image: url("../img/headers/header-md-02.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      
+      .profile {
+        min-height: 90px;
+        padding: 15px;
+        
+        .card-title {
+          width: 50px;
+          height: 50px;
+          background: #f04e1b;
+          border-radius: 50%;
+          font-size: 18px;
+          color: #fff;
+          line-height: 46px;
+          text-indent: 9px;
+        }
+        
+        .card-img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+      }
+      
+      a.info:link {
+        font-size: 0.8125em;
+        padding: 8px 0;
+        margin: 5px 0 0;
+        display: block;
+        background-color: rgba(0,0,0,.35);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: #fff;
+        
+        span {
+          padding: 0 15px;
+        }
+      }
+    }
+    
+    .card-body {
+      .submenu {
+        li {
+          position: relative;
+        }
+      }
+    }
+    
+    ul {
+      @include unstyled-list();
+      padding: 15px 0 0;
+      
+      li a {
+        font-size: em(14);
+        line-height: 44px;
+        height: 44px;
+        padding: 0 20px;
+        display: block;
+        
+        &:hover {
+          background-color: lighten($mw_lightGray,2%);
+        }
+      }
+      
+      li i {
+        font-size: em(20);
+        vertical-align: text-bottom;
+        width: 20px;
+      }
+    }
+  }
+  
+  .is-active {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+//== Card profile
+.card.profile-menu {
+  a.info:after {
+    font-family: $materialDesignIconic;
+    right: 10px;
+    top: 8px;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    color: #fff;
+    content: "\f2f2";
+    position: absolute;
+  }
+  
+  .accounts {
+    display: none;
+  }
+  
+  &.open {
+    a.info:after {
+      font-family: $materialDesignIconic;
+      right: 10px;
+      top: 8px;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      pointer-events: none;
+      color: #fff;
+      content: "\f2f8";
+      position: absolute;
+    }
+  }
+}
+@media (max-width: $screen-sm) {
+  .card.drawer {
+    .card-off-canvas {
+      width: 75%;
+    }
+  }
+}
+
+.card.type--profile {
+  .card-heading {
+    &.card-background {
+      padding: 0;
+      position: relative;
+      height: 160px;
+      width: 100%;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    &#card_img_01 {
+      background-image: url($card_img_01);
+    }
+    
+    &#card_img_02 {
+      background-image: url($card_img_02);
+    }
+    
+    img {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      bottom: -34px;
+      left: 50%;
+      margin-left: -60px;
+      @include shadow-8dp-color($mw-gray);
+      z-index: 1;
+    }
+  }
+  
+  .card-body {
+    text-align: center;
+    
+    .name {
+      font-size: em(22)!important;
+      padding: 25px 0 0;
+      margin: 25px auto 0 !important;
+    }
+    
+    span {
+      display: block;
+      font-size: em(14);
+    }
+    
+    .btn {
+      margin: 20px 0 5px !important;
+    }
+  }
+  
+  .card-footer {
+    padding: 10px 20px;
+    background: rgba(238,245,249,.6);
+    
+    span {
+      font-size: em(14);
+      font-weight: 200;
+      display: block;
+      text-align: center;
+    }
+    
+    span.count {
+      font-size: em(20);
+    }
+  }
+}
+//== Card task
+
+.card-task {
+  .card-body {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      
+      li {
+        font-size: em(12);
+        padding: 0;
+        
+        .checkbox label,
+        .radio label,
+        label {
+          font-weight: 300;
+        }
+        
+        .checkbox .checkbox-material .check,
+        label.checkbox-inline .checkbox-material .check {
+          margin-right: 5px;
+          vertical-align: sub;
+        }
+      }
+    }
+  }
+}
+
+.card.type--scheduler {
+  .curr-date {
+    margin: 15px 21px 33px 10px;
+    font-size: 1.4em;
+    left: 10px;
+    position: absolute;
+  }
+  
+  .card-heading {
+    padding: 0;
+    position: relative;
+    height: 150px;
+    width: 100%;
+    background-image: url("../img/headers/header-md-03.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: darken($mw_purple,10%);
+      opacity: 0.8;
+    }
+  }
+  
+  .week-container {
+    padding: 5px 20px;
+  }
+  
+  ul.week {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    &.top {
+      margin-top: 10px;
+    }
+    
+    &.bottom {
+      margin-top: -10px;
+    }
+  }
+  
+  li.day {
+    display: inline-block;
+    width: 13%;
+    height: 0;
+    padding: 0 0 13%;
+    font-weight: 300;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  li.day.current {
+    background-color: #EEF5F9;
+    border-radius: 50%;
+  }
+  
+  li.day span {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+  }
+  
+  li.day.day-names span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .point::after {
+    width: 4px;
+    height: 4px;
+    background-color: #fc3768;
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 50%;
+  }
+  
+  .entry {
+    padding: 20px;
+    border-top: 1px solid #dadada;
+  }
+  
+  .entry img {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .text {
+    display: inline-block;
+  }
+  
+  .title {
+    font-size: 16px;
+  }
+  
+  .title .name {
+    font-weight: 500;
+  }
+  
+  .time {
+    color: #909090;
+    font-weight: 300;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+.card.type--weather {
+  .curr-weather {
+    text-align: center;
+    padding: 10px 0;
+    
+    h5,
+    h6 {
+      font-size: em(14);
+      color: #8190a5;
+    }
+    
+    i {
+      font-size: em(38);
+      color: #8190a5;
+      padding: 15px 0 10px;
+    }
+    
+    .curr-temp-wrapper {
+      font-size: em(32);
+      display: inline-block;
+      color: #8190a5;
+      
+      .curr-temp {
+        margin-right: -9px;
+      }
+    }
+  }
+  
+  ul.forcast {
+    margin: 0 0 0 10px;
+    padding: 10px 0 0;
+    list-style: none;
+    
+    li {
+      color: #8190a5;
+      line-height: 1.7em;
+      
+      .forcast-day {
+        width: 140px;
+        display: inline-block;
+        font-size: em(13);
+        font-weight: 400;
+      }
+      
+      .curr-temp {
+        margin-right: -4px;
+      }
+      
+      .curr-f,
+      .curr-sup,
+      .curr-temp,
+      i {
+        font-size: em(15);
+      }
+    }
+  }
+}
+
+.card-mail {
+  .list-group-item-heading {
+    margin-bottom: 3px;
+  }
+  
+  .card-reveal {
+    .card-heading {
+      padding: 27px 20px;
+    }
+    
+    .card-body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 55px;
+      background: rgba(238,245,249,.4);
+    }
+  }
+  
+  .email-form {
+    .form-group {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .form-control {
+      padding: 30px 20px;
+      background-image: none;
+      border-bottom: 1px solid #e3ecf7;
+    }
+    
+    .message {
+      background: none;
+      padding: 15px 20px 30px;
+      margin: 0;
+      border-bottom: none;
+    }
+  }
+}
+//Card gallery
+.card.card-gallery {
+  .card-body {
+    padding: 0;
+    
+    .row {
+      padding: 2px !important;
+      margin: 0;
+      
+      div[class*=col-] {
+        padding: 2px;
+      }
+      
+      [class*=col-] > a {
+        display: block;
+      }
+      
+      [class*=col-] > a img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.card-morris-demo {
+  h1 {
+    color: #F4B0B2;
+    padding: 35px 0 0 35px;
+    font-weight: 200;
+  }
+  
+  .percent {
+    font-size: 37px;
+  }
+  
+  text[text-anchor="end"] {
+    display: none;
+  }
+  
+  text[text-anchor="middle"] {
+    fill: #F4B0B2;
+  }
+  
+  path[stroke] {
+    display: none;
+  }
+  
+  #morris_card_demo {
+    margin-top: -80px;
+  }
+}
+//== Scrumboard Widget
+.card {
+  .scrum-group {
+    @include unstyled-list();
+    padding: 5px 0;
+    position: relative;
+    
+    .scrum-item {
+      position: relative;
+      min-height: 75px;
+      margin: 10px;
+      background: #fff;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      -webkit-transition-property: -webkit-transform,box-shadow;
+      transition-property: transform,box-shadow;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-timing-function: ease-in-out;
+      @include box-shadow();
+      
+      .scrum-header {
+        .scrum-title {
+          padding: 10px 20px;
+          font-size: em(14);
+        }
+      }
+      
+      .scrum-body {
+        padding: 0 15px;
+        
+        img {
+          max-width: 35px;
+        }
+      }
+      
+      .scrum-footer {
+        width: 100%;
+        padding: 15px 0;
+      }
+    }
+  }
+}

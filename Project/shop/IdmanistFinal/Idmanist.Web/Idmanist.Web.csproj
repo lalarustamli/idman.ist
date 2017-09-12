@@ -196,11 +196,13 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\404error.html" />
@@ -213,11 +215,14 @@
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\blogmate.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\colors\main.css" />
     <Content Include="Content\css\fancybox.css" />
     <Content Include="Content\css\flexslider.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\owl.theme.css" />
+    <Content Include="Content\css\profilstyle.css" />
+    <Content Include="Content\css\registerr.css" />
     <Content Include="Content\css\revslider.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\dashboard.html" />
@@ -291,12 +296,24 @@
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\cloud-zoom.js" />
     <Content Include="Content\js\common.js" />
+    <Content Include="Content\js\icheck.min.js" />
     <Content Include="Content\js\jquery.fancybox.js" />
     <Content Include="Content\js\jquery.flexslider.js" />
+    <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jsscripts\chosen.min.js" />
+    <Content Include="Content\js\jsscripts\counterup.min.js" />
+    <Content Include="Content\js\jsscripts\custom.js" />
+    <Content Include="Content\js\jsscripts\jpanelmenu.min.js" />
+    <Content Include="Content\js\jsscripts\jquery-2.2.0.min.js" />
+    <Content Include="Content\js\jsscripts\magnific-popup.min.js" />
+    <Content Include="Content\js\jsscripts\rangeslider.min.js" />
+    <Content Include="Content\js\jsscripts\slick.min.js" />
+    <Content Include="Content\js\jsscripts\tooltips.min.js" />
     <Content Include="Content\js\owl.carousel.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="Content\js\parallax.js" />
+    <Content Include="Content\js\registermain.js" />
     <Content Include="Content\js\revslider.js" />
     <Content Include="Content\js\toggle.js" />
     <Content Include="Content\list.html" />
@@ -360,6 +377,13 @@
     <Content Include="Views\Shared\_topNav.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\_sliderTop.cshtml" />
+    <Content Include="Views\Shared\_featuredSlider.cshtml" />
+    <Content Include="Views\Shared\_breadcrumbs.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\_UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

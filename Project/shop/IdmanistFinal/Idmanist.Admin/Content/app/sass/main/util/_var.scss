@@ -1,0 +1,63 @@
+/*
+ *
+ *   MaterialWrap - Bootstrap + Material Design Admin Theme
+ *   version 1.0
+*/
+$materialDesignIconic: 'Material-Design-Iconic-Font';
+$materialDesignIcons: "Material Design Icons";
+$font-family-header: 'Poppins', sans-serif;
+$font-family-body: 'Open Sans', sans-serif;
+$font-family-handwriting: 'Covered By Your Grace', cursive;
+//== Import Material Design Colors
+@import '_var-material-colors';
+//== Skin Colors
+$mw_green: #28bebd;
+$mw_blue: #42a5f5;
+$mw_royalBlue:#4285F4;
+$mw_lightBlue: #2EBAEE;
+$mw_red: #EF5350;
+$mw_yellow:#f8c200;
+$mw_paleYellow:#FDDD7E;
+$mw_lightGray: #e3ecf7;
+$mw_gray:#8f9eb5;
+$mw_drakGray:#707C94;
+$mw_grayBlue:#59779B;
+$mw_purple:#6B79C4;
+$mw_turquoise:#00c5dc;
+$mw_peach:#feb38d;
+$mw_salmon:#EE6E73;
+$mw_cyan:#26C6DA;
+$twitter:#2EA4FB;
+$facebook:#2855AA;
+$dribbble:#FF5C93;
+// Bootstrap brand color customization
+$white-color: #FFFFFF !default;
+$gray-color:  #999999 !default;
+$brand-primary: $md-pink-400 !default;
+$brand-success: $md-teal-400 !default;
+$brand-danger: $md-red-400!default;
+$brand-warning: #FEC007 !default;
+$brand-info: $md-blue-400 !default;
+//== Border Radius
+$border-radius-base: 3px !default;
+$border-radius-small: 3px !default;
+$border-radius-huge: 10px !default;
+$border-radius-extreme: 30px !default;
+//== Keep control of zindex :)
+$zindex_ul_action:3;
+$zindex_sidebar_panel_right: 5;
+$zindex_content_sidebarnav:10;
+$zindex_topnavbar_search: 20;
+$zindex_sidebar_menu_wrapper: 65;
+$zindex_sidebarnav_backdrop:70;
+$zindex_toggle_sidebars:80;
+$zindex_toggle_drawers:80;
+$zindex_app_topnavbar-wrapper: 85;
+$zindex_sidebarnav_backdrop_top:90;
+$zindex_leftsidebar_wrapper:95;
+$zindex_rightsidebar_wrapper:95;
+$zindex_header_action_bar:96;
+
+//== Cards with background images
+$card_img_01: '../img/headers/header-md-02.jpg';
+$card_img_02: '../img/gallery/full/full-33.jpg';

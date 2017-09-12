@@ -1,0 +1,86 @@
+.dtp-content div {
+    font-family: Poppins,sans-serif;
+
+    .btn.btn-flat,
+    .navbar .navbar-nav > li > a.btn.btn-flat {
+        background-color: transparent;
+        color: $mw-blue;
+        box-shadow: none;
+
+        &:hover {
+            outline: 0;
+            outline: none;
+            background-color: rgba($mw-blue,.1);
+            box-shadow: none;
+        }
+    }
+
+    .btn,
+    .navbar .navbar-nav > li > a.btn {
+        padding: 10px 15px;
+        margin: 0;
+    }
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time {
+    background: lighten($mw_blue,5%);
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
+.dtp table.dtp-picker-days tr > td > a.selected {
+    background: darken($mw_blue,5%);
+    color: #fff;
+}
+
+.dtp .p10 > a {
+    color: darken($mw_blue,5%);
+    text-decoration: none;
+}
+
+.dtp .dtp-actual-meridien a.selected {
+    background: darken($mw_blue,5%);
+    color: #fff;
+}
+
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header {
+    background: darken($mw_blue,5%);
+    color: #fff;
+    text-align: center;
+    padding: 0.3em;
+}
+
+.dtp div.dtp-actual-year {
+    font-size: 1.5em;
+    color: darken($mw_blue,5%);
+}
+
+.dtp>.dtp-content{
+      max-width: 370px;
+}
+
+line.hour-hand {
+    stroke: $mw_blue;
+}
+
+
+.dtp .dtp-picker-time > a,
+.dtp table.dtp-picker-days tr > td > a {
+    color: #6f829c;
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 100%!important;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.dtp table.dtp-picker-days tr > th {
+    color: #6f829c;
+    text-align: center;
+    font-weight: 700;
+    padding: 0.4em 0.3em;
+}
