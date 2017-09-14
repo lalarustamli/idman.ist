@@ -41,7 +41,7 @@
                                           
                                             <h3 class="product-name"><a title="Sample Product" href="@Url.Action("Index","Product", new { id= wishes.Product.ProductId})">@wishes.Product.ProductName</a></h3>
                                             <div class="description std">
-                                                <div class="inner">@wishes.Product.ProductInfo.Substring(0, Math.Min(wishes.Product.ProductInfo.Length, 50))...</div>
+                                                <div class="inner">@wishes.Product.ProductInfo@*.Substring(0, Math.Min(wishes.Product.ProductInfo.Length, 50))...*@</div>
                                             </div>
                                             <textarea title="Comment" onblur="focusComment(this)" onfocus="focusComment(this)" cols="5" rows="3" name="description[31]"></textarea>
                                         </td>

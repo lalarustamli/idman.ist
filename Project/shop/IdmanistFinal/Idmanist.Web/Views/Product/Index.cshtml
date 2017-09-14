@@ -1,8 +1,8 @@
 ﻿@model Idmanist.Web.ViewModels.ProdInViewModel
-@{
+@*@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+}*@
 
 
 <section class="main-container col1-layout">
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="short-description">
                                     <h2>Product Information</h2>
-                                    <p>@Model.Product.ProductInfo.Substring(0, Math.Min(Model.Product.ProductInfo.Length, 30))... </p>
+                                    <p>@Model.Product.ProductInfo@*.Substring(0, Math.Min(Model.Product.ProductInfo.Length, 30))*@... </p>
                                 </div>
                                 <div class="add-to-box">
                                     <div class="add-to-cart">

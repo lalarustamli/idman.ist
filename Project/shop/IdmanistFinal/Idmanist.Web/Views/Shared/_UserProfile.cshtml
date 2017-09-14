@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/Content/css/colors/main.css" id="colors">
     <link rel="stylesheet" href="~/Content/css/icons.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    @RenderSection("wishCss",false)
 </head>
 <body>
     <div id="wrapper">
@@ -29,8 +30,8 @@
                             <!-- User Menu -->
                             <div class="user-menu">
                                 <div class="user-nme">
-                                    <a href="@Url.Action("Index", "Home")" style="color:white;">Home page<i class="fa fa-home" aria-hidden="true" style="margin-left:5px; font-size: 20px;"></i></a>
-                                    <a href="@Url.Action("index", "user")" style="color:white; margin-left:20px;">Account<i class="fa fa-user-circle-o" aria-hidden="true" style="margin-left:5px; font-size: 20px;"></i></a>
+                                    <a href="@Url.Action("Index", "Home")" style="color:white;">Ana səhifə<i class="fa fa-home" aria-hidden="true" style="margin-left:5px; font-size: 20px;"></i></a>
+                                    <a href="@Url.Action("index", "user")" style="color:white; margin-left:20px;">Hesabım<i class="fa fa-user-circle-o" aria-hidden="true" style="margin-left:5px; font-size: 20px;"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +45,7 @@
         <div class="clearfix"></div>
         <!-- Header Container / End -->
         <!-- Dashboard -->
-        <div id="dashboard">
+        <div id="dashboard" style="background-color:none!important">
             <!-- Navigation
             ================================================== -->
             <!-- Responsive Navigation Trigger -->
@@ -53,7 +54,7 @@
                 <div class="dashboard-nav-inner" style="height:450px;">
                     <ul data-submenu-title="Siyahılarım">
                         <li class="active">
-                            <a href="@Url.Action("Index", "Liked")"> <i class="fa fa-book" aria-hidden="true"></i>Bəyəndiklərim</a>
+                            <a href="@Url.Action("Index", "Wished")"> <i class="fa fa-book" aria-hidden="true"></i>Bəyəndiklərim</a>
                         </li>
                         @*<li><a href="@Url.Action("Index", "Meqale")"><i class="fa fa-pencil-square" aria-hidden="true"></i> Məqalə Göndər</a></li>*@
                     </ul>
