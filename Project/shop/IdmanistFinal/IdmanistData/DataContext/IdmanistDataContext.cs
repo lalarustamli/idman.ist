@@ -19,6 +19,7 @@ namespace IdmanistData.DataContext
         public DbSet<MainSlider> MainSlider { get; set; }
         public DbSet<Reklam> Reklam { get; set; }
         public DbSet<Customer> Customer { get; set; }
+        public DbSet<Wishes> Wishes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

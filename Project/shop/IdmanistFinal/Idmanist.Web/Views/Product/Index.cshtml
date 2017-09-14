@@ -1,2 +1,229 @@
-﻿@model Idmanist.Web.ViewModels.IndexViewModel
-@Html.Partial("_breadcrumbs",Model.Products)
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="main-container col1-layout">
+    <div class="main container">
+        <div class="col-main">
+            <div class="row">
+                <div class="product-view">
+                    <div class="product-essential">
+                        <form action="#" method="post" id="product_addtocart_form">
+                            <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
+                            <div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
+                                <ul class="moreview" id="moreview">
+                                    <li class="moreview_thumb thumb_1"> <img class="moreview_thumb_image" src="products-images/product1.jpg" alt="thumbnail"> <img class="moreview_source_image" src="products-images/product1.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img class="zoomImg" src="products-images/product1.jpg" alt="thumbnail"></li>
+                                    <li class="moreview_thumb thumb_2 moreview_thumb_active"> <img class="moreview_thumb_image" src="products-images/product1.jpg" alt="thumbnail"> <img class="moreview_source_image" src="products-images/product1.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img class="zoomImg" src="images/product4.jpg" alt="thumbnail"></li>
+                                    <li class="moreview_thumb thumb_3"> <img class="moreview_thumb_image" src="products-images/product1.jpg" alt="thumbnail"> <img class="moreview_source_image" src="products-images/product1.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img class="zoomImg" src="products-images/product1.jpg" alt="thumbnail"></li>
+                                    <li class="moreview_thumb thumb_4"> <img class="moreview_thumb_image" src="products-images/product1.jpg" alt="thumbnail"> <img class="moreview_source_image" src="products-images/product1.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img class="zoomImg" src="products-images/product1.jpg" alt="thumbnail"></li>
+                                    <li class="moreview_thumb thumb_5"> <img class="moreview_thumb_image" src="products-images/product1.jpg" alt="thumbnail"> <img class="moreview_source_image" src="products-images/product1.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img class="zoomImg" src="products-images/product1.jpg" alt="thumbnail"></li>
+                                    <li class="moreview_thumb thumb_6"> <img class="moreview_thumb_image" src="products-images/product1.jpg" alt="thumbnail"> <img class="moreview_source_image" src="products-images/product1.jpg" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img class="zoomImg" src="products-images/product1.jpg" alt="thumbnail"></li>
+                                </ul>
+                                <div class="moreview-control"> <a href="javascript:void(0)" class="moreview-prev"></a> <a href="javascript:void(0)" class="moreview-next"></a> </div>
+                            </div>
+                            <div class="product-shop col-lg-6 col-sm-6 col-xs-12">
+                                <div class="product-next-prev">
+                                    @if (Model.PrevProduct != null)
+                                    {
+                                        <a class="product-prev" href="@Url.Action("index","product",new { id = Model.PrevProduct.ProductId })"><span></span></a>
+                                    }
+                                    @if (Model.NextProduct != null)
+                                    {
+                                        <a class="product-next" href="@Url.Action("index","product",new { id = Model.NextProduct.ProductId })"><span></span></a>
+                                    }
+
+                                </div>
+
+
+                                <div class="product-name">
+                                    <h1>@Model.Product.ProductName</h1>
+                                </div>
+                                @*<div class="ratings">
+                                        <div class="rating-box">
+                                            <div class="rating"></div>
+                                        </div>
+                                        <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Your Review</a> </p>
+                                    </div>*@
+                                <p class="availability in-stock">Availability: <span>In stock</span></p>
+                                <div class="price-block">
+                                    <div class="price-box">
+                                        @*<p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $315.99 </span> </p>*@
+                                        <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> @Model.Product.Product_Price </span> </p>
+                                    </div>
+                                </div>
+                                <div class="short-description">
+                                    <h2>Product Information</h2>
+                                    <p>@Model.Product.ProductInfo.Substring(0, Math.Min(Model.Product.ProductInfo.Length, 30))... </p>
+                                </div>
+                                <div class="add-to-box">
+                                    <div class="add-to-cart">
+                                        <label for="qty">Quantity:</label>
+                                        <div class="pull-left">
+                                            <div class="custom pull-left">
+                                                <button onClick="var result = document.getElementById('qty'); var qty = result.value; if (!isNaN(qty) & amp); &amp; qty & gt; 0;) result.value--;return false;" class="reduced items-count" type="button"><i class="icon-minus">&nbsp;</i></button>
+                                                <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+                                                <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
+                                            </div>
+                                        </div>
+                                        <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
+                                        <div class="email-addto-box">
+                                            <ul class="add-to-links">
+                                                @{
+                                                    IdmanistData.Model.Customer thisuser = (IdmanistData.Model.Customer)(Session["user"]);
+
+
+
+
+                                                    if (Session["user"] == null)
+                                                    {
+
+                                                        <a class="link-wishlist" data-id="@Model.Product.ProductId" href="#">
+                                                            <i class="fa fa-heart-o fa-lg"></i><span>@Model.Product.mywishes  </span>
+                                                        </a>
+
+                                                    }
+                                                    else if (new List<dynamic>(Model.wishesss).FirstOrDefault(a => a.customer_id == thisuser.UserID && a.product_id == Model.Product.ProductId) != null || Ajax.ViewBag.wished == true)
+                                                    {
+                                                        <a class="link-wishlist unlike" data-id="@Model.Product.ProductId" href="javascript:void(0)">
+                                                            <i class="fa fa-heart fa-lg text-danger"></i><span>@Model.Product.mywishes  </span>
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="link-wishlist like" data-id="@Model.Product.ProductId" href="javascript:void(0)">
+                                                            <i class="fa fa-heart-o fa-lg"></i><span>@Model.Product.mywishes  </span>
+                                                        </a>
+                                                    }
+                                                }
+
+                                                <li><span class="separator">|</span> <a class="link-compare" href="compare.html"><span>Add to Compare</span></a></li>
+                                            </ul>
+                                            <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="social">
+                                    <ul>
+                                        <li class="fb"><a href="#"></a></li>
+                                        <li class="tw"><a href="#"></a></li>
+                                        <li class="googleplus"><a href="#"></a></li>
+                                        <li class="rss"><a href="#"></a></li>
+                                        <li class="pintrest"><a href="#"></a></li>
+                                        <li class="linkedin"><a href="#"></a></li>
+                                        <li class="youtube"><a href="#"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="product-collateral">
+                        <div class="col-sm-12 wow bounceInUp animated">
+                            <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+                                <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Product Description </a> </li>
+                                @*<li><a href="#product_tabs_tags" data-toggle="tab">Tags</a></li>
+                                    <li> <a href="#reviews_tabs" data-toggle="tab">Reviews</a> </li>
+                                    <li> <a href="#product_tabs_custom" data-toggle="tab">Custom Tab</a> </li>
+                                    <li> <a href="#product_tabs_custom1" data-toggle="tab">Custom Tab1</a> </li>*@
+                            </ul>
+                            <div id="productTabContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="product_tabs_description">
+                                    <div class="std">
+                                        <p> @Model.Product.ProductInfo</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="box-additional">
+                                <div class="related-pro wow bounceInUp animated">
+                                    <div class="slider-items-products">
+                                        <div class="new_title center">
+                                            <h2>Related Products</h2>
+                                        </div>
+                                        <div id="related-products-slider" class="product-flexslider hidden-buttons">
+                                            <div class="slider-items slider-width-col4">
+                                                <!-- Item -->
+                                                @foreach (var prod in Model.RelatedProducts)
+                                                {
+                                                    <div class="item">
+                                                        <div class="col-item">
+                                                            <div class="sale-label sale-top-right">Sale</div>
+                                                            <div class="product-image-area">
+                                                                <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="~/Content/products-images/product1.jpg" class="img-responsive" alt="a" /> </a>
+                                                                <div class="hover_fly">
+                                                                    <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
+                                                                        <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
+                                                                    </a> <a class="quick-view" href="quick_view.html">
+                                                                        <div><i class="icon-eye-open"></i><span>Quick view</span></div>
+                                                                    </a> <a class="add_to_compare" href="compare.html">
+                                                                        <div><i class="icon-random"></i><span>Add to compare</span></div>
+                                                                    </a>
+                                                                    @{
+                                                                        IdmanistData.Model.Customer thisuserr = (IdmanistData.Model.Customer)(Session["user"]);
+
+                                                                        if (Session["user"] == null)
+                                                                        {
+                                                                            <a class="addToWishlist wishlistProd_5" data-id="@Model.Product.ProductId" href="#">
+                                                                                <i class="fa fa-heart-o fa-lg"></i><span>@Model.Product.mywishes  </span>
+                                                                            </a>
+
+                                                                        }
+                                                                        else if (new List<dynamic>(Model.wishesss).FirstOrDefault(a => a.customer_id == thisuserr.UserID && a.product_id == prod.ProductId) != null || Ajax.ViewBag.wished == true)
+                                                                        {
+                                                                            <a class="addToWishlist wishlistProd_5 unlike" data-id="@Model.Product.ProductId" href="javascript:void(0)">
+                                                                                <i class="fa fa-heart fa-lg text-danger"></i><span>@Model.Product.mywishes Add to Wishlist   </span>
+                                                                            </a>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <a class="addToWishlist wishlistProd_5 like" data-id="@Model.Product.ProductId" href="javascript:void(0)">
+                                                                                <i class="fa fa-heart-o fa-lg"></i><span>@Model.Product.mywishes Add to Wishlist  </span>
+                                                                            </a>
+                                                                        }
+                                                                    }
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="info">
+                                                                <div class="info-inner">
+                                                                    <div class="item-title"> <a href="#l" title=" Sample Product"> @prod.ProductName </a> </div>
+                                                                    <!--item-title-->
+                                                                    <div class="item-content">
+                                                                        <div class="ratings">
+                                                                            <div class="rating-box">
+                                                                                <div class="rating"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="price-box">
+                                                                            <p class="special-price"> <span class="price"> @prod.Product_Price </span> </p>
+                                                                            @*<p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>*@
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--item-content-->
+                                                                </div>
+                                                                <!--info-inner-->
+                                                                <div class="clearfix"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                                        }
+
+                                                <!-- End Item -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

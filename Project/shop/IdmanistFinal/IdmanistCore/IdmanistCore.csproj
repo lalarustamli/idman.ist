@@ -83,6 +83,7 @@
     <Compile Include="Infrastructure\IReklamRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\ISliderRepository.cs" />
+    <Compile Include="Infrastructure\IWishRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BrandRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Repository\ProductFeatureRepository.cs" />
     <Compile Include="Repository\ProductImageRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\WishRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IdmanistData\IdmanistData.csproj">

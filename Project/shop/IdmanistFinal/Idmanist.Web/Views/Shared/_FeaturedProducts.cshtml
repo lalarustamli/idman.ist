@@ -1,0 +1,90 @@
+﻿@model Idmanist.Web.ViewModels.IndexViewModel
+
+
+<section class="featured-pro container wow bounceInUp animated">
+    <div class="slider-items-products">
+        <div class="new_title center">
+            <h2>Featured Products</h2>
+        </div>
+        <div id="featured-slider" class="product-flexslider hidden-buttons">
+            <div class="slider-items slider-width-col4">
+
+                @foreach (var product in Model.FeaturedProducts)
+                {
+                      <!-- Item -->
+                    <div class="item">
+                        <div class="col-item">
+                            <div class="sale-label sale-top-right">Sale</div>
+                            <div class="product-image-area">
+                                <a class="product-image" title="Sample Product" href="@Url.Action("Index","Product", new { id= product.ProductId})"> <img src="~/Content/products-images/product1.jpg" class="img-responsive" alt="product-image" /> </a>
+                                <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span></span></a>
+                                <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="quick_view.html"><span>quickview</span></a> 
+
+                                                               @{
+                                                                   IdmanistData.Model.Customer thisuser = (IdmanistData.Model.Customer)(Session["user"]);
+
+                                                                   if (Session["user"] == null)
+                                                                   {
+                                                                    <a class="link-wishlist" data-id="@product.ProductId" href="#">
+                                                                        <i class="fa fa-heart-o fa-lg"></i><span>@product.mywishes  </span>
+                                                                    </a>
+
+                                                                   }
+                                                                   else if (new List<dynamic>(Model.wishesss).FirstOrDefault(a => a.customer_id == thisuser.UserID && a.product_id == product.ProductId) != null || Ajax.ViewBag.wished == true)
+                                                                   {
+                                                                       <a class="link-wishlist unlike" data-id="@product.ProductId" href="javascript:void(0)">
+                                                                           <i class="fa fa-heart fa-lg text-danger"></i><span>@product.mywishes  </span>
+                                                                       </a>
+                                                                   }
+                                                                   else
+                                                                   {
+                                                                       <a class="link-wishlist like" data-id="@product.ProductId" href="javascript:void(0)">
+                                                                           <i class="fa fa-heart-o fa-lg"></i><span>@product.mywishes  </span>
+                                                                       </a>
+                                                                   }
+                                                               }
+                                    <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span>
+                                
+                                </div>
+
+
+
+
+
+
+                            </div>
+                            <div class="info">
+                                <div class="info-inner">
+                                    <div class="item-title"> <a title=" Sample Product" href= "#">@Html.ActionLink(product.ProductName, "Index", "Product", new { id = product.ProductId }, new { })  </a> </div>
+                                    <!--item-title-->
+                                    <div class="item-content">
+                                        <div class="ratings">
+                                            <div class="rating-box">
+                                                <div class="rating"></div>
+                                            </div>
+                                        </div>
+                                        <div class="price-box">
+                                            <p class="special-price"> <span class="price"> @product.Product_Price </span> </p>
+                                            @*<p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>*@
+                                        </div>
+                                    </div>
+                                    <!--item-content-->
+                                </div>
+                                <!--info-inner-->
+                                <div class="actions">
+                                    <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
+                                </div>
+                                <!--actions-->
+
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- End Item -->
+                }
+              
+             
+            </div>
+        </div>
+    </div>
+</section>

@@ -20,10 +20,12 @@ namespace IdmanistData.Model
         public decimal Product_Price { get; set; }
         [DisplayName("Məlumat")]
         public string ProductInfo { get; set; }
-        
+
+        public int mywishes { get; set; }
+
         public virtual ICollection<ProductImage> ProductImages { get; set; }
         public virtual ICollection<ProductFeature> ProductFeatures { get; set; }
-
+        public virtual ICollection<Wishes> Wishes { get; set; }
         [Required]
         
         public int CategoryId { get; set; }

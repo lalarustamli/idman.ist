@@ -96,6 +96,22 @@
     <Compile Include="Migrations\201709111000200_AdileAdded.Designer.cs">
       <DependentUpon>201709111000200_AdileAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709131621509_LatestOne.cs" />
+    <Compile Include="Migrations\201709131621509_LatestOne.Designer.cs">
+      <DependentUpon>201709131621509_LatestOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709131628327_WishesAdded.cs" />
+    <Compile Include="Migrations\201709131628327_WishesAdded.Designer.cs">
+      <DependentUpon>201709131628327_WishesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709131634113_WishAdded.cs" />
+    <Compile Include="Migrations\201709131634113_WishAdded.Designer.cs">
+      <DependentUpon>201709131634113_WishAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709131705402_TheLastHope.cs" />
+    <Compile Include="Migrations\201709131705402_TheLastHope.Designer.cs">
+      <DependentUpon>201709131705402_TheLastHope.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -105,6 +121,7 @@
     <Compile Include="Model\ProductFeature.cs" />
     <Compile Include="Model\ProductImage.cs" />
     <Compile Include="Model\Reklam.cs" />
+    <Compile Include="Model\Wishes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +164,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709111000200_AdileAdded.resx">
       <DependentUpon>201709111000200_AdileAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131621509_LatestOne.resx">
+      <DependentUpon>201709131621509_LatestOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131628327_WishesAdded.resx">
+      <DependentUpon>201709131628327_WishesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131634113_WishAdded.resx">
+      <DependentUpon>201709131634113_WishAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131705402_TheLastHope.resx">
+      <DependentUpon>201709131705402_TheLastHope.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2151,9 +2151,9 @@ a.btn-button-st:hover {
 .col-item .actions-links .add-to-links a.magik-btn-quickview:hover {
 	background: #4ca811;
 }
-.col-item .actions-links .add-to-links a.link-wishlist:before {
+/*.col-item .actions-links .add-to-links a.link-wishlist:before {
 	content: "\f004";
-}
+}*/
 .col-item .actions-links .add-to-links a.link-compare:before {
 	content: "\f012";
 }
@@ -2628,13 +2628,13 @@ div.moreview_description.rtl {
 .product-view .product-shop .add-to-links li .separator {
 	display: none;
 }
-.product-view .product-shop .add-to-links .link-wishlist:before {
+/*.product-view .product-shop .add-to-links .link-wishlist:before {
 	content: "\f004";
 	font-family: FontAwesome;
 	font-size: 14px;
 	vertical-align: top;
 	text-align: center;
-}
+}*/
 .product-view .product-shop .add-to-links .link-wishlist {
 	border: 1px solid #ddd;
 	color: #666;
@@ -3814,7 +3814,7 @@ fieldset {
 }
 .product-prev {
 	margin: 0 0 0 0px;
-	float: right;
+	/*float: right;*/
 }
 .product-next-prev .product-prev:before {
 	content: "\f104";
@@ -7090,7 +7090,7 @@ input#hideit {
 }
 .hover_fly a i {
 	height: 34px;
-	line-height: 32px;
+	line-height: 15px;
 	font-size: 14px;
 }
 .hover_fly a:hover {
