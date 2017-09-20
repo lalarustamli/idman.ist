@@ -17,22 +17,29 @@ namespace Idmanist.Web.Controllers
         private readonly IProductRepository _productRepository;
         private readonly ISliderRepository _sliderRepository;
         private readonly IWishRepository _wishRepository;
+        private readonly IReklamRepository _reklamRepository;
+        private readonly IBrandRepository _brandRepository;
 
-        public HomeController(ICategoryRepository categoryRepository, IProductRepository productRepository, ISliderRepository sliderRepository, IWishRepository wishRepository)
+        public HomeController(ICategoryRepository categoryRepository, IProductRepository productRepository, ISliderRepository sliderRepository, IWishRepository wishRepository,IReklamRepository reklamRepository,IBrandRepository brandRepository)
         {
             _categoryRepository = categoryRepository;
             _productRepository = productRepository;
             _sliderRepository = sliderRepository;
             _wishRepository = wishRepository;
+            _reklamRepository = reklamRepository;
+            _brandRepository = brandRepository;
         }
         public ActionResult Index()
         {
-            IndexViewModel model = new IndexViewModel();
+            ProdInViewModel model = new ProdInViewModel();
             model.Categories = _categoryRepository.GetAll().ToList();
             model.Products = _productRepository.GetAll().ToList();
             model.Sliders = _sliderRepository.GetAll().ToList();
+            model.MyProperty = 4;
             model.FeaturedProducts = _productRepository.GetAll().OrderByDescending(k => k.Product_date).Take(7).ToList();
             model.wishesss = _wishRepository.GetAll().ToList();
+            model.reklam = _reklamRepository.GetAll().ToList();
+            model.Brendler = _brandRepository.GetAll().ToList();
 
             return View(model);
         }

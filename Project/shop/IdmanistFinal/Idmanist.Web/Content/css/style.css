@@ -363,11 +363,11 @@ a.block-currency:focus {
 	border: none;
 	background: #f0f0f0;
 }
-#search {
+#searchString {
 	margin: 0;
-	width: 62%;
+	width: 90%;
 	font-size: 12px;
-	height: 32px;
+	height: 33px;
 	color: #333;
 	border: 1px solid #F5F5F5;
 	padding: 0 10px;
@@ -388,7 +388,8 @@ a.block-currency:focus {
 	color: #565656;
 	cursor: pointer;
 	font-weight: bold;
-	height: 34px;
+	height: 33px;
+    right:0px;
 	line-height: 17px;
 	padding: 5px 15px;
 	position: absolute;
@@ -6248,7 +6249,7 @@ a.button-asc.left span {
 	padding: 5px 8px 5px 30px;
 }
 .toolbar .pager {
-	text-align: left;
+	
 	margin: 0 10px 0 0;
 	padding: 0;
 	float: right;
@@ -8477,18 +8478,18 @@ nav {
 	left: 2%;
 	margin: auto;
 	padding-left: 0;
-	width: 50%;
+	width: 50%;s
 	margin-top: 10px;
 }
-#search {
+/*#searchString {
 	border: none;
-	height: 30px;
+	height: 50px;
 	margin: 0;
 	padding: 3px 6px;
 	width: 90%;
 	font-size: 12px;
 	border: 1px #fff solid;
-}
+}*/
 #search:focus {
 	width: 90%;
 	padding: 3px 6px;
@@ -9655,3 +9656,57 @@ ol#compare-items li a.product-name {
 	font-size: 13px;
 	color: #000;
 }
+/*Search section*/
+#searchingResult {
+    display: none;
+    position: relative;
+    z-index: 5;
+    margin-top: 2px;
+    overflow-y: auto;
+    width: 100%;
+    height: 150px;
+    -ms-overflow-style: none;
+}
+
+    #searchingResult::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    #searchingResult li {
+        background: white;
+        float: none;
+        display: block;
+        padding: 0;
+        border-bottom: 3px solid #646A82;
+        text-transform: capitalize;
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+    }
+
+        #searchingResult li:first-child {
+            border-top: 3px solid #646A82;
+        }
+
+        #searchingResult li a p {
+            font-family: 'Fry Pro';
+            color: #646A82;
+            padding: 10px;
+            height: 42px;
+            margin: 0
+        }
+
+        #searchingResult li a:hover, #searchingResult li a:focus {
+            text-decoration: none;
+        }
+
+@media only screen and (max-width: 767px) {
+    .formSearch {
+        position: relative;
+    }
+}
+.allproducts {
+    left:13%;
+    margin-top:5%;
+}
+   

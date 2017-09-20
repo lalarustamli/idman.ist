@@ -24,8 +24,8 @@
                     </ul>
                     <ul class="nav navbar-nav left-menu hidden-xs">
                         <li>
-                            <a href="javascript:void(0)" class="nav-link">
-                                <span>Home</span>
+                            <a href="@Url.Action("Index", "Home")" class="nav-link">
+                                <span>Ana səhifə</span>
                             </a>
                         </li>
                         <li class="dropdown dropdown-lg app_menu_launcher hidden-xs">
@@ -282,16 +282,16 @@
             <nav id="app_main-menu-wrapper" class="scrollbar">
                 <div class="sidebar-inner sidebar-push">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="sidebar-header">NAVIGATION</li>
-                        <li class="active"><a href="index.html"><i class="zmdi zmdi-view-dashboard"></i>Dashboard</a></li>
-                        <li class="nav-dropdown">
+                        <li class="sidebar-header">Əsas komponentlər</li>
+                        <li class="active"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-view-dashboard"></i>Ana səhifə</a></li>
+                        @*<li class="nav-dropdown">
                             <a href="#"><i class="zmdi zmdi-view-quilt"></i>Page Layouts</a>
                             <ul class="nav-sub">
                                 <li class="nav-dropdown">
-                                    <a href="#">Full Width Layouts </a>
+                                    <a href="#">Brendlər </a>
                                     <ul class="nav-sub">
-                                        <li><a href="layout-fullwidth-v1.html">Full Width v1</a></li>
-                                        <li><a href="layout-fullwidth-v2.html">Full Width v2</a></li>
+                                        <li><a href="@Url.Action("Index", "Brand")">Bütün brendlər</a></li>
+                                        <li><a href="@Url.Action("Create", "Brand")">Yeni brend</a></li>
                                         <li><a href="layout-fullwidth-v3.html">Full Width v3</a></li>
                                     </ul>
                                 </li>
@@ -320,15 +320,15 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-dropdown">
+                        </li>*@
+                        @*<li class="nav-dropdown">
                             <a href="#"><i class="zmdi zmdi-widgets"></i>Cards</a>
                             <ul class="nav-sub">
                                 <li><a href="card-templates.html">Card Templates</a></li>
                                 <li><a href="card-demos.html">Card Demos</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-dropdown">
+                        </li>*@
+                        @*<li class="nav-dropdown">
                             <a href="#"><i class="zmdi zmdi-chart"></i>Charts</a>
                             <ul class="nav-sub">
                                 <li><a href="charts-c3.html">C3 Charts</a></li>
@@ -336,8 +336,8 @@
                                 <li><a href="charts-chartjs.html">Chartjs</a></li>
                                 <li><a href="charts-morrisjs.html">Morris.js Charts</a></li>
                             </ul>
-                        </li>
-                        <li class="sidebar-header">APP VIEWS</li>
+                        </li>*@
+                        @*<li class="sidebar-header">APP VIEWS</li>
                         <li class="nav-dropdown">
                             <a href="#"><i class="zmdi zmdi-shopping-cart"></i>E-Commerce</a>
                             <ul class="nav-sub">
@@ -347,11 +347,13 @@
                                 <li><a href="ecommerce-customers.html">Customers</a></li>
                                 <li><a href="ecommerce-settings.html">Settings</a></li>
                             </ul>
-                        </li>
-                        <li><a href="app-file-manager.html"><i class="zmdi zmdi-folder"></i>File Manager</a></li>
-                        <li><a href="app-taskboard.html"><i class="zmdi zmdi-view-column"></i>Taskboard</a></li>
-                        <li><a href="app-notes.html"><i class="mdi mdi-lightbulb"></i>Notes</a></li>
-                        <li><a href="app-mail.html"><i class="zmdi zmdi-email"></i>Mail</a></li>
+                        </li>*@
+                        <li><a href="@Url.Action("Index", "Brand")"><i class="zmdi zmdi-folder"></i>Brendlər</a></li>
+                        <li><a href="@Url.Action("Index", "Product")"><i class="zmdi zmdi-view-column"></i>Məhsullar</a></li>
+                        <li><a href="@Url.Action("Index", "Category")"><i class="zmdi zmdi-view-column"></i>Kateqoriyalar</a></li>
+                        <li><a href="@Url.Action("Index", "Reklam")"><i class="mdi mdi-lightbulb"></i>Reklamlar</a></li>
+                        <li><a href="@Url.Action("Index", "Slider")"><i class="mdi mdi-lightbulb"></i>Slider</a></li>
+                        @*<li><a href="app-mail.html"><i class="zmdi zmdi-email"></i>Mail</a></li>
                         <li class="sidebar-header">PAGE VIEWS</li>
                         <li><a href="page-profile.html"><i class="zmdi zmdi-account"></i>Profile</a></li>
                         <li><a href="page-invoice.html"><i class="zmdi zmdi-money"></i>Invoice</a></li>
@@ -489,12 +491,12 @@
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </li>
-                                    </ul>
+                                        </li>*@
+                                    @*</ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="helper-classes.html"><i class="zmdi zmdi-info"></i>Helper Classes</a></li>
+                        <li><a href="helper-classes.html"><i class="zmdi zmdi-info"></i>Helper Classes</a></li>*@
                     </ul>
                 </div>
             </nav>
@@ -1866,9 +1868,7 @@
         </section>*@
 
     </div>
-    <div class="body-content">
-        @RenderBody()
-    </div>
+   
     <div class="modal fade" id="schedule_modal" tabindex="-1" role="dialog" aria-labelledby="schedule_modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -1890,6 +1890,9 @@
             <!-- modal-content -->
         </div>
         <!-- modal-dialog -->
+    </div>
+    <div class="body-content">
+        @RenderBody()
     </div>
     <script src="~/Content/dist/assets/js/vendor.bundle.js"></script>
     <script src="~/Content/dist/assets/js/app.bundle.js"></script>

@@ -1,23 +1,42 @@
-﻿using System;
+﻿using IdmanistCore.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IdmanistData.Model;
+using System.Net;
 
 namespace Idmanist.Admin.Controllers
 {
     public class BrandController : Controller
     {
+        private readonly IBrandRepository _brandRepository;
+        public BrandController(IBrandRepository brandRepository)
+        {
+            _brandRepository = brandRepository;
+        }
         // GET: Brand
         public ActionResult Index()
         {
-            return View();
+            var brandList = _brandRepository.GetAll().ToList();
+            return View(brandList);
         }
 
         // GET: Brand/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var brand = _brandRepository.GetById(id.Value);
+            if (brand == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(brand);
         }
 
         // GET: Brand/Create
@@ -28,62 +47,78 @@ namespace Idmanist.Admin.Controllers
 
         // POST: Brand/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ProductBrand brand)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                return View(brand);
             }
-            catch
-            {
-                return View();
-            }
+            _brandRepository.Insert(brand);
+            _brandRepository.Save();
+            return RedirectToAction("Index");
         }
 
         // GET: Brand/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int ? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var brand = _brandRepository.GetById(id.Value);
+
+            if (brand == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(brand);
         }
 
         // POST: Brand/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProductBrand brand)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            _brandRepository.Update(brand);
+            _brandRepository.Save();
+            return View(brand);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         // GET: Brand/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int ? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var brand = _brandRepository.GetById(id.Value);
+            if (brand== null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(brand);
         }
 
         // POST: Brand/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            _brandRepository.Delete(id);
+            _brandRepository.Save();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-@model Idmanist.Web.ViewModels.IndexViewModel
+@model Idmanist.Web.ViewModels.ProdInViewModel
    
 <section class="main-container col1-layout home-content-container">
     <div class="container">
@@ -7,18 +7,29 @@
             <div class="best-seller-pro wow bounceInUp animated">
                 <div class="slider-items-products">
                     <div class="new_title center">
-                        <h2>Best Seller</h2>
+                        <h2>Ən çox satılanlar</h2>
                     </div>
                     <div id="best-seller-slider" class="product-flexslider hidden-buttons">
                         <div class="slider-items slider-width-col4">
                            @foreach (var product in Model.Products)
                            {
+                               var productFirstImage = product.ProductImages.FirstOrDefault();
                                 <!-- Item -->
                             <div class="item">
                                 <div class="col-item">
                                     <div class="sale-label sale-top-right">Sale</div>
                                     <div  class="product-image-area">
-                                        <a class="product-image" title="Sample Product" href="@Url.Action("Index","Product", new { id= product.ProductId})"> <img  src="~/Content/products-images/product1.jpg"data:{0};base64,{1}",product.ProductImages.FirstOrDefault().ContentType, product.ProductImages.FirstOrDefault().ContentType)*@" class="img-responsive" alt="product-image" /> </a>
+                                        <a class="product-image" title="Sample Product" href="@Url.Action("Index","Product", new { id= product.ProductId})"> 
+                                            @if (productFirstImage != null)
+                                            {
+                                        <img  src="@string.Format("data: {0}; base64, {1} ", product.ProductImages.FirstOrDefault().ContentType, Convert.ToBase64String(product.ProductImages.FirstOrDefault().Content))" class="img-responsive" alt="product-image" />
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Content/images/No-image-found.jpg" class="img-responsive" alt="product-image" />
+                                            }
+
+                                        </a>
                                         <div class="hover_fly">
                                             <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                                                 <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>

@@ -1,5 +1,6 @@
 ﻿using IdmanistCore.Infrastructure;
 using IdmanistData.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,13 +49,33 @@ namespace Idmanist.Admin.Controllers
                 var img = new ProductImage()
                 {
                     ImageName = Path.GetFileName(productImage.FileName),
-                    ContentType = productImage.ContentType
+                    ContentType = productImage.ContentType,
+
                 };
                 using (var reader = new BinaryReader(productImage.InputStream))
                 {
                     img.Content = reader.ReadBytes(productImage.ContentLength);
                 }
-                product.ProductImages = new List<ProductImage> { img };
+
+
+                //var filename = Path.GetFileName(productImage.FileName);
+                //var path = Path.Combine(Server.MapPath("~/Content/images/"), filename);
+                //productImage.SaveAs(path);
+
+
+
+
+                //product.ProductImages = new List<ProductImage> { img };
+                var filename = Path.GetFileName(productImage.FileName);
+                var path = Path.Combine(Server.MapPath("~/Content/images/"), filename);
+                productImage.SaveAs(path);
+                //tyre.Url = filename;
+
+                //_db.EventModels.AddObject(eventmodel);
+                //_db.SaveChanges();
+                //return RedirectToAction("Index");
+
+
             }
             _productRepository.Insert(product);
             _productRepository.Save();

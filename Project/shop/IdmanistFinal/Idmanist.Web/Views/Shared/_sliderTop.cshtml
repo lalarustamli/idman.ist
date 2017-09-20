@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IdmanistData.Model.MainSlider>
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
 
     <div id="magik-slideshow" class="magik-slideshow">
         <div class="container">
@@ -7,8 +7,8 @@
                     <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
                         <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
                             <ul>
-
-                                @foreach (var slide in Model)
+                                
+                                @foreach (var slide in Model.Sliders)
                                 {
                                     <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='@slide.slideImage'>
                                         <img src='@slide.slideImage' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner" />
@@ -23,7 +23,7 @@
                                     </li>
                                 }
 
-                                
+
                             </ul>
                             <div class="tp-bannertimer"></div>
                         </div>
@@ -32,7 +32,7 @@
                 <aside class="col-xs-12 col-sm-12 col-md-4 wow bounceInUp animated">
                     <div class="RHS-banner">
                         <div class="add">
-                            <a href="#"><img alt="banner-img" src="images/rhs-banner.jpg"></a>
+                            <a href="#"><img alt="banner-img" src="@Model.reklam.FirstOrDefault().reklamImage"></a>
                             <div class="overlay"><a class="info" href="#">Learn More</a></div>
                         </div>
                     </div>
@@ -41,3 +41,5 @@
         </div>
     </div>
     <!-- end Slider -->
+}
+   

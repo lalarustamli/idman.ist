@@ -1,0 +1,107 @@
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
+@using PagedList.Mvc
+@using PagedList;
+@{
+    ViewBag.Title = "AllProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section allproductsCss {
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+    }
+
+<section class="col-main col-sm-9 col-sm-push-3 wow bounceInUp animated allproducts " >
+    
+    <div class="category-title">
+        <h1>Məhsullar</h1>
+    </div>
+    <div class="category-products">
+        <div class="toolbar">
+          
+            
+            <div class="pager">
+              
+              
+
+                @Html.PagedListPager((IPagedList)Model.Products, page => Url.Action("AllProducts", "products", new { id = Model.Category.CategoryId, page }))
+
+
+            </div>
+        </div>
+        <ul class="products-grid">
+            @foreach (var prods in Model.Products)
+            {
+                <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="col-item">
+                        <div class="sale-label sale-top-right">Sale</div>
+                        <div class="product-image-area">
+                            <a class="product-image" title="Sample Product" href="@Url.Action("Index","Product", new { id= prods.ProductId})"> <img src="~/Content/products-images/product1.jpg" class="img-responsive" alt="a" /> </a>
+                            <div class="hover_fly">
+                                <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
+                                    <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
+                                </a> <a class="quick-view" href="quick_view.html">
+                                    <div><i class="icon-eye-open"></i><span>Quick view</span></div>
+                                </a> <a class="add_to_compare" href="compare.html">
+                                    <div><i class="icon-random"></i><span>Add to compare</span></div>
+                                </a>
+                                @{
+                                    IdmanistData.Model.Customer thisuser = (IdmanistData.Model.Customer)(Session["user"]);
+
+
+
+
+                                    if (Session["user"] == null)
+                                    {
+
+                                        <a class="addToWishlist wishlistProd_5" data-id="@prods.ProductId" href="#">
+                                            <i class="fa fa-heart-o fa-lg"></i><span>@prods.mywishes  </span>
+                                        </a>
+
+                                    }
+                                    else if (new List<dynamic>(Model.wishesss).FirstOrDefault(a => a.customer_id == thisuser.UserID && a.product_id == prods.ProductId) != null || Ajax.ViewBag.wished == true)
+                                    {
+                                        <a class="addToWishlist wishlistProd_5 unlike" data-id="@prods.ProductId" href="javascript:void(0)">
+                                            <i class="fa fa-heart fa-lg text-danger"></i><span>@prods.mywishes  </span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="addToWishlist wishlistProd_5 like" data-id="@prods.ProductId" href="javascript:void(0)">
+                                            <i class="fa fa-heart-o fa-lg"></i><span>@prods.mywishes  </span>
+                                        </a>
+                                    }
+                                }
+                              
+
+
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="info-inner">
+                                <div class="item-title"> <a title=" Sample Product" href="@Url.Action("Index","Product", new { id= prods.ProductId})"> @prods.ProductName </a> </div>
+                                <!--item-title-->
+                                <div class="item-content">
+                                    <div class="ratings">
+                                        <div class="rating-box">
+                                            <div class="rating"></div>
+                                        </div>
+                                    </div>
+                                    <div class="price-box">
+                                        <p class="special-price"> <span class="price"> @prods.Product_Price </span> </p>
+                                        @*<p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>*@
+                                    </div>
+                                </div>
+                                <!--item-content-->
+                            </div>
+                            <!--info-inner-->
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </li>
+            }
+          
+         
+        </ul>
+    </div>
+</section>
+

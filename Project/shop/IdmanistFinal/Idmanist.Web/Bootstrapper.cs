@@ -26,6 +26,7 @@ namespace Idmanist.Admin
             builder.RegisterType<SliderRepository>().As<ISliderRepository>();
             builder.RegisterType<BrandRepository>().As<IBrandRepository>();
             builder.RegisterType<WishRepository>().As<IWishRepository>();
+            builder.RegisterType<ReklamRepository>().As<IReklamRepository>();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

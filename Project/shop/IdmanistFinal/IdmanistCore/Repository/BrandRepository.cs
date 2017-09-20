@@ -43,6 +43,11 @@ namespace IdmanistCore.Repository
             return _context.ProductBrand.FirstOrDefault(x => x.ProductBrandId == id);
         }
 
+        public object GetById(object value)
+        {
+            throw new NotImplementedException();
+        }
+
         public IQueryable<ProductBrand> GetMany(Expression<Func<ProductBrand, bool>> expression)
         {
             return _context.ProductBrand.Where(expression);

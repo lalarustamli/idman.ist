@@ -9,6 +9,7 @@ namespace Idmanist.Web.ViewModels
     public class ProdInViewModel
     {
         public Product Product { get; set; }
+        public Category Category { get; set; }
         public IEnumerable<IdmanistData.Model.Product> RelatedProducts { get; set; }
         public Product PrevProduct { get; set; }
         public Product NextProduct { get; set; }
@@ -16,5 +17,9 @@ namespace Idmanist.Web.ViewModels
         public IEnumerable<IdmanistData.Model.Product> Products { get; set; }
         public IEnumerable<IdmanistData.Model.Product> FeaturedProducts { get; set; }
         public IEnumerable<IdmanistData.Model.Wishes> wishesss { get; set; }
+        public IEnumerable<IdmanistData.Model.MainSlider> Sliders { get; set; }
+        public IEnumerable<IdmanistData.Model.Reklam> reklam { get; set; }
+        public IEnumerable<IdmanistData.Model.ProductBrand> Brendler { get; set; }
+        public int MyProperty { get; set; }
     }
 }

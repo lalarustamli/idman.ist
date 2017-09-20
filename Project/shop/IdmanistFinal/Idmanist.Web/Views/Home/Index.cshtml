@@ -1,11 +1,12 @@
-﻿@model Idmanist.Web.ViewModels.IndexViewModel
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
 @{
     ViewBag.Title = "Məhsullar ana səhifə";
 }
  <!-- Slider -->
-@Html.Partial("_sliderTop", Model.Sliders);
+@Html.Partial("_sliderTop", Model);
 <!-- end Slider --> 
 <!-- header service -->
+
 <div class="container">
     <div class="header-service wow bounceInUp animated">
         <div class="col-lg-3 col-sm-6 col-xs-3">
@@ -35,8 +36,8 @@
     </div>
 </div>
 <!-- end header service --> 
-@Html.Partial("_newItems", Model);
-@Html.Partial("_featuredSlider");
+@Html.Partial("_newItems",Model );
+
 
   <!-- promo banner section -->
 <div class="promo-banner-section container wow bounceInUp animated">
@@ -52,8 +53,13 @@
             <div class="slider-items-products">
                 <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
                     <div class="slider-items slider-width-col6">
-
-                        <!-- Item -->
+                        @foreach (var item in Model.Brendler)
+                        {
+                            <!-- Item -->
+                            <div class="item"> <a href="#x"><img src="@item.BrandImage" alt="@item.BrandName"></a> </div>
+                        <!-- End Item -->
+                        }
+                        @*<!-- Item -->
                         <div class="item"> <a href="#x"><img src="images/b-logo1.png" alt="Image"></a> </div>
                         <!-- End Item -->
                         <!-- Item -->
@@ -76,7 +82,7 @@
                         <!-- End Item -->
                         <!-- Item -->
                         <div class="item"> <a href="#x"><img src="images/b-logo4.png" alt="Image"></a> </div>
-                        <!-- End Item -->
+                        <!-- End Item -->*@
 
                     </div>
                 </div>

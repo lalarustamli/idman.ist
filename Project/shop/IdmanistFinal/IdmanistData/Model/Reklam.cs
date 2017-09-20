@@ -13,5 +13,6 @@ namespace IdmanistData.Model
         public int reklamId { get; set; }
         public string reklamAd { get; set; }
         public string reklamLocation { get; set; }
+        public string reklamImage { get; set; }
     }
 }

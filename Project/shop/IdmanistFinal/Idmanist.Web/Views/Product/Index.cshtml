@@ -1,8 +1,8 @@
 ﻿@model Idmanist.Web.ViewModels.ProdInViewModel
-@*@{
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}*@
+}
 
 
 <section class="main-container col1-layout">
@@ -153,7 +153,7 @@
                                                         <div class="col-item">
                                                             <div class="sale-label sale-top-right">Sale</div>
                                                             <div class="product-image-area">
-                                                                <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="~/Content/products-images/product1.jpg" class="img-responsive" alt="a" /> </a>
+                                                                <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="@Url.Action("Index","Product", new { id= prod.ProductId})" class="img-responsive" alt="a" /> </a>
                                                                 <div class="hover_fly">
                                                                     <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                                                                         <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -190,7 +190,7 @@
                                                             </div>
                                                             <div class="info">
                                                                 <div class="info-inner">
-                                                                    <div class="item-title"> <a href="#l" title=" Sample Product"> @prod.ProductName </a> </div>
+                                                                    <div class="item-title"> <a href="@Url.Action("Index","Product", new { id= prod.ProductId})" title=" Sample Product"> @prod.ProductName </a> </div>
                                                                     <!--item-title-->
                                                                     <div class="item-content">
                                                                         <div class="ratings">

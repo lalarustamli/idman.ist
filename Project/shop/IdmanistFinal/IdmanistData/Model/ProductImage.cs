@@ -15,6 +15,9 @@ namespace IdmanistData.Model
         public string ContentType { get; set; }
         [Required]
         public byte[] Content { get; set; }
+        [Required]
+        public string Path { get; set; }
+
 
         [Required]
         public int ProductId { get; set; }

@@ -1,4 +1,5 @@
 ﻿@using IdmanistData.Model;
+
 @{
     var u = Session["user"] as Customer;
 }
@@ -9,29 +10,34 @@
             <div class="row">
                 <!-- Header Language -->
                 <div class="col-xs-6">
-                    <div class="dropdown block-language-wrapper">
+                    @*<div class="dropdown block-language-wrapper">
                         <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#"> <img src="images/english.png" alt="language"> English <span class="caret"></span> </a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/english.png" alt="language"> English </a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/francais.png" alt="language"> French </a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/german.png" alt="language"> German </a></li>
                         </ul>
-                    </div>
+                    </div>*@
+
                     <!-- End Header Language -->
                     <!-- Header Currency -->
-                    <div class="dropdown block-currency-wrapper">
+                    @*<div class="dropdown block-currency-wrapper">
                         <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> USD <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> $ - Dollar </a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> £ - Pound </a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> € - Euro </a></li>
                         </ul>
-                    </div>
+                    </div>*@
+
                     <!-- End Header Currency -->
-                    <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
+
+                    @*<div class="welcome-msg hidden-xs"> Default welcome msg! </div>*@
                 </div>
                 <div class="col-xs-6">
+
                     <!-- Header Top Links -->
+
                     @{
 
                         if (Session["user"] == null)
@@ -43,8 +49,8 @@
                                         <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
                                         <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
                                         <div class="login"><a title="Login" href="login.html"><span class="hidden-xs">Log In</span></a></div>*@
-                                    <a href="@Url.Action("Register", "user")">Qeydiyyat <i class="fa fa-user login_icon" aria-hidden="true"></i></a>
-                                    <a href="@Url.Action("Login", "user")">Giriş <i class="fa fa-sign-in login_icon" aria-hidden="true"></i></a>
+                                    <a style="color:white" href="@Url.Action("Register", "user")">Qeydiyyat <i class="fa fa-user login_icon" aria-hidden="true"></i></a>
+                                    <a style="color:white" href="@Url.Action("Login", "user")">Giriş <i class="fa fa-sign-in login_icon" aria-hidden="true"></i></a>
                                 </div>
                             </div>
 
@@ -62,6 +68,10 @@
 
 
 
+
+
+
+
                     <!-- End Header Top Links -->
                 </div>
             </div>
@@ -71,31 +81,17 @@
         <div class="row">
             <div class="col-lg-2 col-sm-3 col-md-2">
                 <!-- Header Logo -->
-                <a class="logo" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="images/logo.png"></a>
+                <a class="logo" title="Idmanist" href="index.html"><img alt="Idmanist" src="~/Content/Logo/PNG/Idmanist_logo_white.png" width="150px" style="margin-top:0px;"></a>
                 <!-- End Header Logo -->
             </div>
             <div class="col-lg-8 col-sm-6 col-md-8">
                 <!-- Search-col -->
                 <div class="search-box">
-                    <form action="cat" method="POST" id="search_mini_form" name="Categories">
-                        <select name="category_id" class="cate-dropdown hidden-xs">
-                            <option value="0">All Categories</option>
-                            <option value="36">Camera</option>
-                            <option value="37">Electronics</option>
-                            <option value="42">&nbsp;&nbsp;&nbsp;Cell Phones</option>
-                            <option value="43">&nbsp;&nbsp;&nbsp;Cameras</option>
-                            <option value="44">&nbsp;&nbsp;&nbsp;Laptops</option>
-                            <option value="45">&nbsp;&nbsp;&nbsp;Hard Drives</option>
-                            <option value="46">&nbsp;&nbsp;&nbsp;Monitors</option>
-                            <option value="47">&nbsp;&nbsp;&nbsp;Mouse</option>
-                            <option value="48">&nbsp;&nbsp;&nbsp;Digital Cameras</option>
-                            <option value="38">Desktops</option>
-                            <option value="39">Computer Parts</option>
-                            <option value="40">Televisions</option>
-                            <option value="41">Featured</option>
-                        </select>
-                        <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
-                        <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
+                    <form action="@Url.Action("Index", "Search", new { id = 1 })" method="get" class="formSearch" autocomplete="off">
+
+                        <input type="text" placeholder="Axtar . . . " class="" name="searchString" id="searchString">
+                        <button id="submit-button" class="search-btn-bg" type="submit" value="submit"><span>Axtar</span></button>
+                        <ul id="searchingResult" class="searchingResult"></ul>
                     </form>
                 </div>
                 <!-- End Search-col -->

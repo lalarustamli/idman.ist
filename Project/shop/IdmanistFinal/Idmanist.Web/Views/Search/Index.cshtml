@@ -1,0 +1,67 @@
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
+@using PagedList.Mvc
+@using PagedList
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section searchCss{
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Public/css/search.css" rel="stylesheet" />
+}
+
+<!--search starts-->
+<div class="searching">
+    <div class="container">
+        <form method="get" action="@Url.Action("Index", "Search", new { id = 1, searchString = ViewBag.searchStr })" autocomplete="off" style="margin-top:20px;">
+            <div class="form-group">
+                <div class="input-group">
+                    <input id="searchString" name="searchString" type="text" class="form-control" placeholder="Axtar" value="@ViewBag.searchStr">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" value="Submit">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </form>
+        <div class="searchResult">
+            @{
+                if (!String.IsNullOrEmpty(ViewBag.searchStr))
+                {
+                    if (ViewBag.ResultCount != 0)
+                    {
+                        foreach (var ProDuct in ViewBag.Searching)
+                        {
+                            <div class="row single_blog">
+                                <div class="col-md-2 col-sm-3 col-xs-12">
+                                    <img src="~/Content/products-images/product1.jpg" alt="@ProDuct.ProductName" class="img-responsive" />
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <div class="blog_title">
+                                        <h2><a href=@Url.Action("Index", "Product", new { id = ProDuct.ProductId })>@ProDuct.ProductName</a></h2>
+                                        <p class="blog_category">@ProDuct.Category.CategoryName</p>
+                                        <p>@ProDuct.ProductInfo.Substring(0, 80)...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        @Html.PagedListPager((IPagedList)ViewBag.Searching, id => Url.Action("Index", "Search", new { id, searchString = ViewBag.searchStr }))
+                    }
+                    else
+                    {
+                        <p class="text-danger">@ViewBag.NoResult</p>
+                    }
+
+                }
+                else
+                {
+                    <p class="text-danger">@ViewBag.EmptyString</p>
+                }
+            }
+        </div>
+
+    </div>
+</div>
+<!--search ends-->
+

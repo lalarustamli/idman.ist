@@ -10,6 +10,6 @@ namespace IdmanistCore.Infrastructure
 {
     public interface IBrandRepository : IRepository<ProductBrand>
     {
-        
+        object GetById(object value);
     }
 }

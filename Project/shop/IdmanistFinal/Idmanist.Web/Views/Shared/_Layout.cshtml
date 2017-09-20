@@ -1,4 +1,4 @@
-﻿@model Idmanist.Web.ViewModels.IndexViewModel
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,8 @@
                       "~/Content/css/owl.carousel.css",
                       "~/Content/css/owl.theme.css",
                       "~/Content/css/font-awesome.css")
+    @RenderSection("searchCss", false)
+    @RenderSection("allproductsCss", false)
     @*@Scripts.Render("~/Content/js")*@
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css' />
@@ -27,7 +29,7 @@
     @Html.Partial("_header")
     <!-- end header --> 
     <!-- Navbar -->
-    @*@Html.Partial("_topNav", Model.Categories)*@
+    @Html.Partial("_topNav", Model)
     <!-- end nav -->  
     <div class="body-content">
         @RenderBody()
@@ -39,6 +41,7 @@
                       "~/Content/js/revslider.js",
                       "~/Content/js/owl.carousel.min.js")
 
+
     <!-- JavaScript -->
     <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
     <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
@@ -47,6 +50,7 @@
     <script type="text/javascript" src="~/Scripts/like.js"></script>
     <script type="text/javascript" src="~/Content/js/revslider.js"></script>
     <script type="text/javascript" src="~/Content/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/search.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
             jQuery('#rev_slider_4').show().revolution({

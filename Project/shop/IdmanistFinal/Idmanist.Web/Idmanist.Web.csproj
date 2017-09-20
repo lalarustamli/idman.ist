@@ -56,6 +56,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -194,18 +200,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\AllProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WishedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ProdInViewModel.cs" />
-    <Compile Include="ViewModels\ProductViewModel.cs" />
-    <Compile Include="ViewModels\WishViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\404error.html" />
@@ -227,6 +232,7 @@
     <Content Include="Content\css\profilstyle.css" />
     <Content Include="Content\css\registerr.css" />
     <Content Include="Content\css\revslider.css" />
+    <Content Include="Content\css\search.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\dashboard.html" />
     <Content Include="Content\faq.html" />
@@ -318,10 +324,15 @@
     <Content Include="Content\js\parallax.js" />
     <Content Include="Content\js\registermain.js" />
     <Content Include="Content\js\revslider.js" />
+    <Content Include="Content\js\search.js" />
     <Content Include="Content\js\toggle.js" />
     <Content Include="Content\list.html" />
     <Content Include="Content\login.html" />
+    <Content Include="Content\Logo\PNG\Idmanist_logo_black.png" />
+    <Content Include="Content\Logo\PNG\Idmanist_logo_blue-zodiac.png" />
+    <Content Include="Content\Logo\PNG\Idmanist_logo_white.png" />
     <Content Include="Content\multiple_addresses.html" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\products-images\product1.jpg" />
     <Content Include="Content\product_detail.html" />
     <Content Include="Content\quick_view.html" />
@@ -348,6 +359,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Logo\.DS_Store" />
+    <Content Include="Content\Logo\Ai\Idmanist_logos.ai" />
+    <Content Include="Content\Logo\PDF\Idmanist_logos.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -382,7 +396,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_sliderTop.cshtml" />
-    <Content Include="Views\Shared\_featuredSlider.cshtml" />
     <Content Include="Views\Shared\_breadcrumbs.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
@@ -390,6 +403,8 @@
     <Content Include="Views\Shared\_UserProfile.cshtml" />
     <Content Include="Views\Wished\Index.cshtml" />
     <Content Include="Views\Shared\_FeaturedProducts.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Product\AllProducts.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

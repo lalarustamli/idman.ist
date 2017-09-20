@@ -1,15 +1,22 @@
-﻿@model IEnumerable<IdmanistData.Model.Category>
-    <div>
-        @if(Model.Any())
-        {
-            <ul class="nav nav-pills nav-stacked">
-                @foreach(var category in Model)
-                {
-                    <li>
-                        @Html.ActionLink(category.CategoryName, "Index", "Category", new { id = category.CategoryId })
-                    </li>
-                }
-            </ul>
+﻿@*@model IEnumerable<IdmanistData.Model.Category>
+    <nav>
+    <div class="container">
+        <div class="nav-inner">
+            @if (Model.Any())
+            {
 
-        }
+                
+                <ul id="nav" class="hidden-xs">
+                    @foreach (var category in Model)
+                {
+                        <li id="nav-home" class="level0 parent drop-menu">
+                            @Html.ActionLink(category.CategoryName, "AllProducts", "Product", new { id = category.CategoryId, Page })
+                        </li>
+                    }
+                </ul>
+
+            }
+        </div>
     </div>
+</nav>*@
+

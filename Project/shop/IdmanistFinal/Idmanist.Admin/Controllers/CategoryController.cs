@@ -96,7 +96,7 @@ namespace Idmanist.Admin.Controllers
                 return HttpNotFound();
             }
 
-            return View(category); ;
+            return View(category); 
         }
 
         [HttpPost]
